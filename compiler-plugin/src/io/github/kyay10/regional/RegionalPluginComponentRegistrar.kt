@@ -1,12 +1,10 @@
-package io.github.kyay10.highkt
+package io.github.kyay10.regional
 
-import io.github.kyay10.highkt.ir.SimpleIrGenerationExtension
-import org.jetbrains.kotlin.backend.common.extensions.IrGenerationExtension
 import org.jetbrains.kotlin.compiler.plugin.CompilerPluginRegistrar
 import org.jetbrains.kotlin.config.CompilerConfiguration
 import org.jetbrains.kotlin.fir.extensions.FirExtensionRegistrarAdapter
 
-class SimplePluginComponentRegistrar : CompilerPluginRegistrar() {
+class RegionalPluginComponentRegistrar : CompilerPluginRegistrar() {
   override val pluginId: String
     get() = BuildConfig.KOTLIN_PLUGIN_ID
 
@@ -14,7 +12,6 @@ class SimplePluginComponentRegistrar : CompilerPluginRegistrar() {
     get() = true
 
   override fun ExtensionStorage.registerExtensions(configuration: CompilerConfiguration) {
-    FirExtensionRegistrarAdapter.registerExtension(SimplePluginRegistrar())
-    IrGenerationExtension.registerExtension(SimpleIrGenerationExtension())
+    FirExtensionRegistrarAdapter.registerExtension(RegionalPluginRegistrar())
   }
 }

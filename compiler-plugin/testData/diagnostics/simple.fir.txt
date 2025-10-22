@@ -1,16 +1,25 @@
 FILE: simple.kt
     package foo.bar
 
-    @R|io/github/kyay10/highkt/SomeAnnotation|() public final fun test(): R|kotlin/Unit| {
-        lval s: R|kotlin/String| = R|foo/bar/MyClass|().R|foo/bar/MyClass.foo|()
-        R|<local>/s|.<Unresolved name: inc>#()
+    public final class Region<R> : R|kotlin/Any| {
+        public constructor<R>(): R|foo/bar/Region<R>| {
+            super<R|kotlin/Any|>()
+        }
+
     }
-FILE: foo/bar/MyClass.kt
-    package foo.bar
+    public final fun withRegion(block: R|foo/bar/Region<out @R|io/github/kyay10/regional/Regional|()  kotlin/Any?>.() -> kotlin/Unit|): R|kotlin/Unit| {
+    }
+    public final fun test(): R|kotlin/Unit| {
+        R|foo/bar/withRegion|(<L> = withRegion@fun R|foo/bar/Region<out @R|io/github/kyay10/regional/Regional|()  kotlin/Any?>|.<anonymous>(): R|kotlin/Unit| <inline=NoInline>  {
+            local abstract class WithRegionRegion : R|kotlin/Any| {
+                public constructor(): R|<local>/WithRegionRegion| {
+                    super<R|kotlin/Any|>()
+                }
 
-    public final class MyClass : R|kotlin/Any| {
-        public final fun foo(): R|kotlin/String|
+            }
 
-        public constructor(): R|foo/bar/MyClass|
-
+            Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|foo/bar/Region<<local>/WithRegionRegion>|>(this@R|special/anonymous|)
+            lval x: R|foo/bar/Region<<local>/WithRegionRegion>| = this@R|special/anonymous|
+        }
+        )
     }

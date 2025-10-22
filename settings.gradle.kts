@@ -18,7 +18,7 @@ dependencyResolutionManagement {
   }
 }
 
-rootProject.name = "compiler-plugin-template"
+rootProject.name = "regional"
 
 include("compiler-plugin")
 include("gradle-plugin")

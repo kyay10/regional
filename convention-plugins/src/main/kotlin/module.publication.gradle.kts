@@ -8,9 +8,9 @@ publishing {
   publications.withType<MavenPublication> {
     // Provide artifacts information required by Maven Central
     pom {
-      name.set("HighKT")
-      description.set("A Kotlin Compiler Plugin enabling the usage of Higher-Kinded Types without resorting to inelegant encodings")
-      url.set("https://github.com/kyay10/highkt")
+      name.set("Regional")
+      description.set("Kotlin compiler plugin that supports region safety by creating local classes that represent regions")
+      url.set("https://github.com/kyay10/regional")
 
       licenses {
         license {
@@ -25,7 +25,7 @@ publishing {
         }
       }
       scm {
-        url.set("https://github.com/kyay10/highkt")
+        url.set("https://github.com/kyay10/regional")
       }
     }
   }

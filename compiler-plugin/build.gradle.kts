@@ -88,7 +88,7 @@ val generateTests by tasks.registering(JavaExec::class) {
     .withPropertyName("generatedTests")
 
   classpath = sourceSets.testFixtures.get().runtimeClasspath
-  mainClass.set("io.github.kyay10.highkt.GenerateTestsKt")
+  mainClass.set("io.github.kyay10.regional.GenerateTestsKt")
   workingDir = rootDir
 }
 

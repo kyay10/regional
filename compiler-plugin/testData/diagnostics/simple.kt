@@ -1,11 +1,15 @@
-// RUN_PIPELINE_TILL: FRONTEND
+// RUN_PIPELINE_TILL: BACKEND
 
 package foo.bar
 
-import io.github.kyay10.highkt.SomeAnnotation
+import io.github.kyay10.regional.Regional
 
-@SomeAnnotation
+class Region<R>
+
+fun withRegion(block: Region<out @Regional Any?>.() -> Unit) {}
+
 fun test() {
-  val s = MyClass().foo()
-  s.<!UNRESOLVED_REFERENCE!>inc<!>() // should be an error
+  withRegion {
+    val x: Region<WithRegionRegion> = this
+  }
 }

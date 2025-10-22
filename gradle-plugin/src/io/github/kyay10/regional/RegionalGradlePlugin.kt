@@ -1,17 +1,17 @@
-package io.github.kyay10.highkt
+package io.github.kyay10.regional
 
 import org.gradle.api.Project
 import org.gradle.api.provider.Provider
-import io.github.kyay10.highkt.BuildConfig.ANNOTATIONS_LIBRARY_COORDINATES
+import io.github.kyay10.regional.BuildConfig.ANNOTATIONS_LIBRARY_COORDINATES
 import org.jetbrains.kotlin.gradle.plugin.KotlinCompilation
 import org.jetbrains.kotlin.gradle.plugin.KotlinCompilerPluginSupportPlugin
 import org.jetbrains.kotlin.gradle.plugin.SubpluginArtifact
 import org.jetbrains.kotlin.gradle.plugin.SubpluginOption
 
 @Suppress("unused") // Used via reflection.
-class SimpleGradlePlugin : KotlinCompilerPluginSupportPlugin {
+class RegionalGradlePlugin : KotlinCompilerPluginSupportPlugin {
   override fun apply(target: Project) {
-    target.extensions.create("simplePlugin", SimpleGradleExtension::class.java)
+    target.extensions.create("regional", RegionalGradleExtension::class.java)
   }
 
   override fun isApplicable(kotlinCompilation: KotlinCompilation<*>): Boolean = true
@@ -35,7 +35,7 @@ class SimpleGradlePlugin : KotlinCompilerPluginSupportPlugin {
     }
 
     return project.provider {
-      val extension = project.extensions.getByType(SimpleGradleExtension::class.java)
+      val extension = project.extensions.getByType(RegionalGradleExtension::class.java)
 
       emptyList()
     }

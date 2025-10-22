@@ -1,4 +1,4 @@
-package io.github.kyay10.highkt.services
+package io.github.kyay10.regional.services
 
 import org.jetbrains.kotlin.cli.jvm.config.addJvmClasspathRoots
 import org.jetbrains.kotlin.config.CompilerConfiguration

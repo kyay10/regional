@@ -1,45 +1,249 @@
 FILE fqName:foo.bar fileName:/simple.kt
-  FUN name:box visibility:public modality:FINAL returnType:kotlin.String
-    BLOCK_BODY
-      VAR name:result type:kotlin.String [val]
-        CALL 'public final fun foo (): kotlin.String declared in foo.bar.MyClass' type=kotlin.String origin=null
-          ARG <this>: CONSTRUCTOR_CALL 'public constructor <init> () declared in foo.bar.MyClass' type=foo.bar.MyClass origin=null
-      RETURN type=kotlin.Nothing from='public final fun box (): kotlin.String declared in foo.bar'
-        WHEN type=kotlin.String origin=IF
-          BRANCH
-            if: CALL 'public final fun EQEQ (arg0: kotlin.Any?, arg1: kotlin.Any?): kotlin.Boolean declared in kotlin.internal.ir' type=kotlin.Boolean origin=EQEQ
-              ARG arg0: GET_VAR 'val result: kotlin.String declared in foo.bar.box' type=kotlin.String origin=null
-              ARG arg1: CONST String type=kotlin.String value="Hello world"
-            then: BLOCK type=kotlin.String origin=null
-              CONST String type=kotlin.String value="OK"
-          BRANCH
-            if: CONST Boolean type=kotlin.Boolean value=true
-            then: BLOCK type=kotlin.String origin=null
-              STRING_CONCATENATION type=kotlin.String
-                CONST String type=kotlin.String value="Fail: "
-                GET_VAR 'val result: kotlin.String declared in foo.bar.box' type=kotlin.String origin=null
-FILE fqName:foo.bar fileName:foo/bar/MyClass.kt
-  CLASS GENERATED[io.github.kyay10.highkt.fir.SimpleClassGenerator.Key] CLASS name:MyClass modality:FINAL visibility:public superTypes:[kotlin.Any]
-    thisReceiver: VALUE_PARAMETER INSTANCE_RECEIVER kind:DispatchReceiver name:<this> type:foo.bar.MyClass
-    CONSTRUCTOR GENERATED[io.github.kyay10.highkt.fir.SimpleClassGenerator.Key] visibility:public returnType:foo.bar.MyClass
+  CLASS CLASS name:Prompt modality:FINAL visibility:public [data] superTypes:[kotlin.Any]
+    thisReceiver: VALUE_PARAMETER INSTANCE_RECEIVER kind:DispatchReceiver name:<this> type:foo.bar.Prompt<Region of foo.bar.Prompt>
+    TYPE_PARAMETER name:Region index:0 variance: superTypes:[kotlin.Any?] reified:false
+    PROPERTY name:name visibility:public modality:FINAL [val]
+      FIELD PROPERTY_BACKING_FIELD name:name type:kotlin.String visibility:private [final]
+        EXPRESSION_BODY
+          GET_VAR 'name: kotlin.String declared in foo.bar.Prompt.<init>' type=kotlin.String origin=INITIALIZE_PROPERTY_FROM_PARAMETER
+      FUN DEFAULT_PROPERTY_ACCESSOR name:<get-name> visibility:public modality:FINAL returnType:kotlin.String
+        VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:foo.bar.Prompt<Region of foo.bar.Prompt>
+        correspondingProperty: PROPERTY name:name visibility:public modality:FINAL [val]
+        BLOCK_BODY
+          RETURN type=kotlin.Nothing from='public final fun <get-name> (): kotlin.String declared in foo.bar.Prompt'
+            GET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:name type:kotlin.String visibility:private [final]' type=kotlin.String origin=null
+              receiver: GET_VAR '<this>: foo.bar.Prompt<Region of foo.bar.Prompt> declared in foo.bar.Prompt.<get-name>' type=foo.bar.Prompt<Region of foo.bar.Prompt> origin=null
+    CONSTRUCTOR visibility:public returnType:foo.bar.Prompt<Region of foo.bar.Prompt> [primary]
+      VALUE_PARAMETER kind:Regular name:name index:0 type:kotlin.String
       BLOCK_BODY
         DELEGATING_CONSTRUCTOR_CALL 'public constructor <init> () declared in kotlin.Any'
-        INSTANCE_INITIALIZER_CALL classDescriptor='CLASS GENERATED[io.github.kyay10.highkt.fir.SimpleClassGenerator.Key] CLASS name:MyClass modality:FINAL visibility:public superTypes:[kotlin.Any]' type=foo.bar.MyClass
-    FUN FAKE_OVERRIDE name:equals visibility:public modality:OPEN returnType:kotlin.Boolean [fake_override,operator]
-      VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+        INSTANCE_INITIALIZER_CALL classDescriptor='CLASS CLASS name:Prompt modality:FINAL visibility:public [data] superTypes:[kotlin.Any]' type=kotlin.Unit
+    FUN GENERATED_DATA_CLASS_MEMBER name:component1 visibility:public modality:FINAL returnType:kotlin.String [operator]
+      VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:foo.bar.Prompt<Region of foo.bar.Prompt>
+      BLOCK_BODY
+        RETURN type=kotlin.Nothing from='public final fun component1 (): kotlin.String declared in foo.bar.Prompt'
+          GET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:name type:kotlin.String visibility:private [final]' type=kotlin.String origin=null
+            receiver: GET_VAR '<this>: foo.bar.Prompt<Region of foo.bar.Prompt> declared in foo.bar.Prompt.component1' type=foo.bar.Prompt<Region of foo.bar.Prompt> origin=null
+    FUN GENERATED_DATA_CLASS_MEMBER name:copy visibility:public modality:FINAL returnType:foo.bar.Prompt<Region of foo.bar.Prompt>
+      VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:foo.bar.Prompt<Region of foo.bar.Prompt>
+      VALUE_PARAMETER kind:Regular name:name index:1 type:kotlin.String
+        EXPRESSION_BODY
+          GET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:name type:kotlin.String visibility:private [final]' type=kotlin.String origin=null
+            receiver: GET_VAR '<this>: foo.bar.Prompt<Region of foo.bar.Prompt> declared in foo.bar.Prompt.copy' type=foo.bar.Prompt<Region of foo.bar.Prompt> origin=null
+      BLOCK_BODY
+        RETURN type=kotlin.Nothing from='public final fun copy (name: kotlin.String): foo.bar.Prompt<Region of foo.bar.Prompt> declared in foo.bar.Prompt'
+          CONSTRUCTOR_CALL 'public constructor <init> (name: kotlin.String) declared in foo.bar.Prompt' type=foo.bar.Prompt<Region of foo.bar.Prompt> origin=null
+            TYPE_ARG (of class) Region: Region of foo.bar.Prompt
+            ARG name: GET_VAR 'name: kotlin.String declared in foo.bar.Prompt.copy' type=kotlin.String origin=null
+    FUN GENERATED_DATA_CLASS_MEMBER name:equals visibility:public modality:OPEN returnType:kotlin.Boolean [operator]
+      VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:foo.bar.Prompt<Region of foo.bar.Prompt>
       VALUE_PARAMETER kind:Regular name:other index:1 type:kotlin.Any?
       overridden:
         public open fun equals (other: kotlin.Any?): kotlin.Boolean declared in kotlin.Any
-    FUN FAKE_OVERRIDE name:hashCode visibility:public modality:OPEN returnType:kotlin.Int [fake_override]
-      VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+      BLOCK_BODY
+        WHEN type=kotlin.Unit origin=null
+          BRANCH
+            if: CALL 'public final fun EQEQEQ (arg0: kotlin.Any?, arg1: kotlin.Any?): kotlin.Boolean declared in kotlin.internal.ir' type=kotlin.Boolean origin=EQEQEQ
+              ARG arg0: GET_VAR '<this>: foo.bar.Prompt<Region of foo.bar.Prompt> declared in foo.bar.Prompt.equals' type=foo.bar.Prompt<Region of foo.bar.Prompt> origin=null
+              ARG arg1: GET_VAR 'other: kotlin.Any? declared in foo.bar.Prompt.equals' type=kotlin.Any? origin=null
+            then: RETURN type=kotlin.Nothing from='public open fun equals (other: kotlin.Any?): kotlin.Boolean declared in foo.bar.Prompt'
+              CONST Boolean type=kotlin.Boolean value=true
+        WHEN type=kotlin.Unit origin=null
+          BRANCH
+            if: TYPE_OP type=kotlin.Boolean origin=NOT_INSTANCEOF typeOperand=foo.bar.Prompt<Region of foo.bar.Prompt>
+              GET_VAR 'other: kotlin.Any? declared in foo.bar.Prompt.equals' type=kotlin.Any? origin=null
+            then: RETURN type=kotlin.Nothing from='public open fun equals (other: kotlin.Any?): kotlin.Boolean declared in foo.bar.Prompt'
+              CONST Boolean type=kotlin.Boolean value=false
+        VAR IR_TEMPORARY_VARIABLE name:tmp_0 type:foo.bar.Prompt<Region of foo.bar.Prompt> [val]
+          TYPE_OP type=foo.bar.Prompt<Region of foo.bar.Prompt> origin=IMPLICIT_CAST typeOperand=foo.bar.Prompt<Region of foo.bar.Prompt>
+            GET_VAR 'other: kotlin.Any? declared in foo.bar.Prompt.equals' type=kotlin.Any? origin=null
+        WHEN type=kotlin.Unit origin=null
+          BRANCH
+            if: CALL 'public final fun not (): kotlin.Boolean declared in kotlin.Boolean' type=kotlin.Boolean origin=EXCLEQ
+              ARG <this>: CALL 'public final fun EQEQ (arg0: kotlin.Any?, arg1: kotlin.Any?): kotlin.Boolean declared in kotlin.internal.ir' type=kotlin.Boolean origin=EXCLEQ
+                ARG arg0: GET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:name type:kotlin.String visibility:private [final]' type=kotlin.String origin=null
+                  receiver: GET_VAR '<this>: foo.bar.Prompt<Region of foo.bar.Prompt> declared in foo.bar.Prompt.equals' type=foo.bar.Prompt<Region of foo.bar.Prompt> origin=null
+                ARG arg1: GET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:name type:kotlin.String visibility:private [final]' type=kotlin.String origin=null
+                  receiver: GET_VAR 'val tmp_0: foo.bar.Prompt<Region of foo.bar.Prompt> declared in foo.bar.Prompt.equals' type=foo.bar.Prompt<Region of foo.bar.Prompt> origin=null
+            then: RETURN type=kotlin.Nothing from='public open fun equals (other: kotlin.Any?): kotlin.Boolean declared in foo.bar.Prompt'
+              CONST Boolean type=kotlin.Boolean value=false
+        RETURN type=kotlin.Nothing from='public open fun equals (other: kotlin.Any?): kotlin.Boolean declared in foo.bar.Prompt'
+          CONST Boolean type=kotlin.Boolean value=true
+    FUN GENERATED_DATA_CLASS_MEMBER name:hashCode visibility:public modality:OPEN returnType:kotlin.Int
+      VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:foo.bar.Prompt<Region of foo.bar.Prompt>
       overridden:
         public open fun hashCode (): kotlin.Int declared in kotlin.Any
-    FUN FAKE_OVERRIDE name:toString visibility:public modality:OPEN returnType:kotlin.String [fake_override]
-      VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+      BLOCK_BODY
+        RETURN type=kotlin.Nothing from='public open fun hashCode (): kotlin.Int declared in foo.bar.Prompt'
+          CALL 'public open fun hashCode (): kotlin.Int declared in kotlin.String' type=kotlin.Int origin=null
+            ARG <this>: GET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:name type:kotlin.String visibility:private [final]' type=kotlin.String origin=null
+              receiver: GET_VAR '<this>: foo.bar.Prompt<Region of foo.bar.Prompt> declared in foo.bar.Prompt.hashCode' type=foo.bar.Prompt<Region of foo.bar.Prompt> origin=null
+    FUN GENERATED_DATA_CLASS_MEMBER name:toString visibility:public modality:OPEN returnType:kotlin.String
+      VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:foo.bar.Prompt<Region of foo.bar.Prompt>
       overridden:
         public open fun toString (): kotlin.String declared in kotlin.Any
-    FUN GENERATED[io.github.kyay10.highkt.fir.SimpleClassGenerator.Key] name:foo visibility:public modality:FINAL returnType:kotlin.String
-      VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:foo.bar.MyClass
       BLOCK_BODY
-        RETURN type=kotlin.Nothing from='public final fun foo (): kotlin.String declared in foo.bar.MyClass'
-          CONST String type=kotlin.String value="Hello world"
+        RETURN type=kotlin.Nothing from='public open fun toString (): kotlin.String declared in foo.bar.Prompt'
+          STRING_CONCATENATION type=kotlin.String
+            CONST String type=kotlin.String value="Prompt("
+            CONST String type=kotlin.String value="name="
+            GET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:name type:kotlin.String visibility:private [final]' type=kotlin.String origin=null
+              receiver: GET_VAR '<this>: foo.bar.Prompt<Region of foo.bar.Prompt> declared in foo.bar.Prompt.toString' type=foo.bar.Prompt<Region of foo.bar.Prompt> origin=null
+            CONST String type=kotlin.String value=")"
+  CLASS CLASS name:Scope modality:FINAL visibility:public [data] superTypes:[kotlin.Any]
+    thisReceiver: VALUE_PARAMETER INSTANCE_RECEIVER kind:DispatchReceiver name:<this> type:foo.bar.Scope<Region of foo.bar.Scope>
+    TYPE_PARAMETER name:Region index:0 variance: superTypes:[kotlin.Any?] reified:false
+    PROPERTY name:name visibility:public modality:FINAL [val]
+      FIELD PROPERTY_BACKING_FIELD name:name type:kotlin.String visibility:private [final]
+        EXPRESSION_BODY
+          GET_VAR 'name: kotlin.String declared in foo.bar.Scope.<init>' type=kotlin.String origin=INITIALIZE_PROPERTY_FROM_PARAMETER
+      FUN DEFAULT_PROPERTY_ACCESSOR name:<get-name> visibility:public modality:FINAL returnType:kotlin.String
+        VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:foo.bar.Scope<Region of foo.bar.Scope>
+        correspondingProperty: PROPERTY name:name visibility:public modality:FINAL [val]
+        BLOCK_BODY
+          RETURN type=kotlin.Nothing from='public final fun <get-name> (): kotlin.String declared in foo.bar.Scope'
+            GET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:name type:kotlin.String visibility:private [final]' type=kotlin.String origin=null
+              receiver: GET_VAR '<this>: foo.bar.Scope<Region of foo.bar.Scope> declared in foo.bar.Scope.<get-name>' type=foo.bar.Scope<Region of foo.bar.Scope> origin=null
+    CONSTRUCTOR visibility:public returnType:foo.bar.Scope<Region of foo.bar.Scope> [primary]
+      VALUE_PARAMETER kind:Regular name:name index:0 type:kotlin.String
+      BLOCK_BODY
+        DELEGATING_CONSTRUCTOR_CALL 'public constructor <init> () declared in kotlin.Any'
+        INSTANCE_INITIALIZER_CALL classDescriptor='CLASS CLASS name:Scope modality:FINAL visibility:public [data] superTypes:[kotlin.Any]' type=kotlin.Unit
+    FUN GENERATED_DATA_CLASS_MEMBER name:component1 visibility:public modality:FINAL returnType:kotlin.String [operator]
+      VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:foo.bar.Scope<Region of foo.bar.Scope>
+      BLOCK_BODY
+        RETURN type=kotlin.Nothing from='public final fun component1 (): kotlin.String declared in foo.bar.Scope'
+          GET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:name type:kotlin.String visibility:private [final]' type=kotlin.String origin=null
+            receiver: GET_VAR '<this>: foo.bar.Scope<Region of foo.bar.Scope> declared in foo.bar.Scope.component1' type=foo.bar.Scope<Region of foo.bar.Scope> origin=null
+    FUN GENERATED_DATA_CLASS_MEMBER name:copy visibility:public modality:FINAL returnType:foo.bar.Scope<Region of foo.bar.Scope>
+      VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:foo.bar.Scope<Region of foo.bar.Scope>
+      VALUE_PARAMETER kind:Regular name:name index:1 type:kotlin.String
+        EXPRESSION_BODY
+          GET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:name type:kotlin.String visibility:private [final]' type=kotlin.String origin=null
+            receiver: GET_VAR '<this>: foo.bar.Scope<Region of foo.bar.Scope> declared in foo.bar.Scope.copy' type=foo.bar.Scope<Region of foo.bar.Scope> origin=null
+      BLOCK_BODY
+        RETURN type=kotlin.Nothing from='public final fun copy (name: kotlin.String): foo.bar.Scope<Region of foo.bar.Scope> declared in foo.bar.Scope'
+          CONSTRUCTOR_CALL 'public constructor <init> (name: kotlin.String) declared in foo.bar.Scope' type=foo.bar.Scope<Region of foo.bar.Scope> origin=null
+            TYPE_ARG (of class) Region: Region of foo.bar.Scope
+            ARG name: GET_VAR 'name: kotlin.String declared in foo.bar.Scope.copy' type=kotlin.String origin=null
+    FUN GENERATED_DATA_CLASS_MEMBER name:equals visibility:public modality:OPEN returnType:kotlin.Boolean [operator]
+      VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:foo.bar.Scope<Region of foo.bar.Scope>
+      VALUE_PARAMETER kind:Regular name:other index:1 type:kotlin.Any?
+      overridden:
+        public open fun equals (other: kotlin.Any?): kotlin.Boolean declared in kotlin.Any
+      BLOCK_BODY
+        WHEN type=kotlin.Unit origin=null
+          BRANCH
+            if: CALL 'public final fun EQEQEQ (arg0: kotlin.Any?, arg1: kotlin.Any?): kotlin.Boolean declared in kotlin.internal.ir' type=kotlin.Boolean origin=EQEQEQ
+              ARG arg0: GET_VAR '<this>: foo.bar.Scope<Region of foo.bar.Scope> declared in foo.bar.Scope.equals' type=foo.bar.Scope<Region of foo.bar.Scope> origin=null
+              ARG arg1: GET_VAR 'other: kotlin.Any? declared in foo.bar.Scope.equals' type=kotlin.Any? origin=null
+            then: RETURN type=kotlin.Nothing from='public open fun equals (other: kotlin.Any?): kotlin.Boolean declared in foo.bar.Scope'
+              CONST Boolean type=kotlin.Boolean value=true
+        WHEN type=kotlin.Unit origin=null
+          BRANCH
+            if: TYPE_OP type=kotlin.Boolean origin=NOT_INSTANCEOF typeOperand=foo.bar.Scope<Region of foo.bar.Scope>
+              GET_VAR 'other: kotlin.Any? declared in foo.bar.Scope.equals' type=kotlin.Any? origin=null
+            then: RETURN type=kotlin.Nothing from='public open fun equals (other: kotlin.Any?): kotlin.Boolean declared in foo.bar.Scope'
+              CONST Boolean type=kotlin.Boolean value=false
+        VAR IR_TEMPORARY_VARIABLE name:tmp_1 type:foo.bar.Scope<Region of foo.bar.Scope> [val]
+          TYPE_OP type=foo.bar.Scope<Region of foo.bar.Scope> origin=IMPLICIT_CAST typeOperand=foo.bar.Scope<Region of foo.bar.Scope>
+            GET_VAR 'other: kotlin.Any? declared in foo.bar.Scope.equals' type=kotlin.Any? origin=null
+        WHEN type=kotlin.Unit origin=null
+          BRANCH
+            if: CALL 'public final fun not (): kotlin.Boolean declared in kotlin.Boolean' type=kotlin.Boolean origin=EXCLEQ
+              ARG <this>: CALL 'public final fun EQEQ (arg0: kotlin.Any?, arg1: kotlin.Any?): kotlin.Boolean declared in kotlin.internal.ir' type=kotlin.Boolean origin=EXCLEQ
+                ARG arg0: GET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:name type:kotlin.String visibility:private [final]' type=kotlin.String origin=null
+                  receiver: GET_VAR '<this>: foo.bar.Scope<Region of foo.bar.Scope> declared in foo.bar.Scope.equals' type=foo.bar.Scope<Region of foo.bar.Scope> origin=null
+                ARG arg1: GET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:name type:kotlin.String visibility:private [final]' type=kotlin.String origin=null
+                  receiver: GET_VAR 'val tmp_1: foo.bar.Scope<Region of foo.bar.Scope> declared in foo.bar.Scope.equals' type=foo.bar.Scope<Region of foo.bar.Scope> origin=null
+            then: RETURN type=kotlin.Nothing from='public open fun equals (other: kotlin.Any?): kotlin.Boolean declared in foo.bar.Scope'
+              CONST Boolean type=kotlin.Boolean value=false
+        RETURN type=kotlin.Nothing from='public open fun equals (other: kotlin.Any?): kotlin.Boolean declared in foo.bar.Scope'
+          CONST Boolean type=kotlin.Boolean value=true
+    FUN GENERATED_DATA_CLASS_MEMBER name:hashCode visibility:public modality:OPEN returnType:kotlin.Int
+      VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:foo.bar.Scope<Region of foo.bar.Scope>
+      overridden:
+        public open fun hashCode (): kotlin.Int declared in kotlin.Any
+      BLOCK_BODY
+        RETURN type=kotlin.Nothing from='public open fun hashCode (): kotlin.Int declared in foo.bar.Scope'
+          CALL 'public open fun hashCode (): kotlin.Int declared in kotlin.String' type=kotlin.Int origin=null
+            ARG <this>: GET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:name type:kotlin.String visibility:private [final]' type=kotlin.String origin=null
+              receiver: GET_VAR '<this>: foo.bar.Scope<Region of foo.bar.Scope> declared in foo.bar.Scope.hashCode' type=foo.bar.Scope<Region of foo.bar.Scope> origin=null
+    FUN GENERATED_DATA_CLASS_MEMBER name:toString visibility:public modality:OPEN returnType:kotlin.String
+      VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:foo.bar.Scope<Region of foo.bar.Scope>
+      overridden:
+        public open fun toString (): kotlin.String declared in kotlin.Any
+      BLOCK_BODY
+        RETURN type=kotlin.Nothing from='public open fun toString (): kotlin.String declared in foo.bar.Scope'
+          STRING_CONCATENATION type=kotlin.String
+            CONST String type=kotlin.String value="Scope("
+            CONST String type=kotlin.String value="name="
+            GET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:name type:kotlin.String visibility:private [final]' type=kotlin.String origin=null
+              receiver: GET_VAR '<this>: foo.bar.Scope<Region of foo.bar.Scope> declared in foo.bar.Scope.toString' type=foo.bar.Scope<Region of foo.bar.Scope> origin=null
+            CONST String type=kotlin.String value=")"
+  FUN name:box visibility:public modality:FINAL returnType:kotlin.String
+    BLOCK_BODY
+      RETURN type=kotlin.Nothing from='public final fun box (): kotlin.String declared in foo.bar'
+        CALL 'public final fun withPrompt <R> (block: @[ExtensionFunctionType] kotlin.Function2<foo.bar.Prompt<out @[Regional] kotlin.Any?>, foo.bar.Scope<out @[Regional] kotlin.Any?>, R of foo.bar.withPrompt>): R of foo.bar.withPrompt declared in foo.bar' type=kotlin.String origin=null
+          TYPE_ARG R: kotlin.String
+          ARG block: FUN_EXPR type=@[ExtensionFunctionType] kotlin.Function2<foo.bar.Prompt<out @[Regional] kotlin.Any?>, foo.bar.Scope<out @[Regional] kotlin.Any?>, kotlin.String> origin=LAMBDA
+            FUN LOCAL_FUNCTION_FOR_LAMBDA name:<anonymous> visibility:local modality:FINAL returnType:kotlin.String
+              VALUE_PARAMETER UNDERSCORE_PARAMETER kind:Context name:$context-Prompt index:0 type:foo.bar.Prompt<out @[Regional] kotlin.Any?>
+              VALUE_PARAMETER kind:ExtensionReceiver name:$this$withPrompt index:1 type:foo.bar.Scope<out @[Regional] kotlin.Any?>
+              BLOCK_BODY
+                CLASS GENERATED[io.github.kyay10.regional.fir.GeneratedRegionKey] CLASS name:WithPromptRegion modality:ABSTRACT visibility:local superTypes:[kotlin.Any]
+                  thisReceiver: VALUE_PARAMETER INSTANCE_RECEIVER kind:DispatchReceiver name:<this> type:foo.bar.box.<anonymous>.WithPromptRegion
+                  CONSTRUCTOR GENERATED[io.github.kyay10.regional.fir.GeneratedRegionKey] visibility:public returnType:foo.bar.box.<anonymous>.WithPromptRegion [primary]
+                    BLOCK_BODY
+                      DELEGATING_CONSTRUCTOR_CALL 'public constructor <init> () declared in kotlin.Any'
+                      INSTANCE_INITIALIZER_CALL classDescriptor='CLASS GENERATED[io.github.kyay10.regional.fir.GeneratedRegionKey] CLASS name:WithPromptRegion modality:ABSTRACT visibility:local superTypes:[kotlin.Any]' type=kotlin.Unit
+                  FUN FAKE_OVERRIDE name:equals visibility:public modality:OPEN returnType:kotlin.Boolean [fake_override,operator]
+                    VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+                    VALUE_PARAMETER kind:Regular name:other index:1 type:kotlin.Any?
+                    overridden:
+                      public open fun equals (other: kotlin.Any?): kotlin.Boolean declared in kotlin.Any
+                  FUN FAKE_OVERRIDE name:hashCode visibility:public modality:OPEN returnType:kotlin.Int [fake_override]
+                    VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+                    overridden:
+                      public open fun hashCode (): kotlin.Int declared in kotlin.Any
+                  FUN FAKE_OVERRIDE name:toString visibility:public modality:OPEN returnType:kotlin.String [fake_override]
+                    VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+                    overridden:
+                      public open fun toString (): kotlin.String declared in kotlin.Any
+                CALL 'public final fun assertHasRegion <T> (value: kotlin.Any?, next: kotlin.Unit): kotlin.Unit declared in io.github.kyay10.regional' type=kotlin.Unit origin=null
+                  TYPE_ARG T: foo.bar.Prompt<foo.bar.box.<anonymous>.WithPromptRegion>
+                  ARG value: GET_VAR '$context-Prompt: foo.bar.Prompt<out @[Regional] kotlin.Any?> declared in foo.bar.box.<anonymous>' type=foo.bar.Prompt<out @[Regional] kotlin.Any?> origin=null
+                  ARG next: CALL 'public final fun assertHasRegion <T> (value: kotlin.Any?, next: kotlin.Unit): kotlin.Unit declared in io.github.kyay10.regional' type=kotlin.Unit origin=null
+                    TYPE_ARG T: foo.bar.Scope<foo.bar.box.<anonymous>.WithPromptRegion>
+                    ARG value: GET_VAR '$this$withPrompt: foo.bar.Scope<out @[Regional] kotlin.Any?> declared in foo.bar.box.<anonymous>' type=foo.bar.Scope<out @[Regional] kotlin.Any?> origin=null
+                RETURN type=kotlin.Nothing from='local final fun <anonymous> ($context-Prompt: foo.bar.Prompt<out @[Regional] kotlin.Any?>, $this$withPrompt: foo.bar.Scope<out @[Regional] kotlin.Any?>): kotlin.String declared in foo.bar.box'
+                  CALL 'public final fun usePromptInScope <Region> (p: foo.bar.Prompt<Region of foo.bar.usePromptInScope>, s: foo.bar.Scope<Region of foo.bar.usePromptInScope>): kotlin.String declared in foo.bar' type=kotlin.String origin=null
+                    TYPE_ARG Region: foo.bar.box.<anonymous>.WithPromptRegion
+                    ARG p: TYPE_OP type=foo.bar.Prompt<foo.bar.box.<anonymous>.WithPromptRegion> origin=IMPLICIT_CAST typeOperand=foo.bar.Prompt<foo.bar.box.<anonymous>.WithPromptRegion>
+                      GET_VAR '$context-Prompt: foo.bar.Prompt<out @[Regional] kotlin.Any?> declared in foo.bar.box.<anonymous>' type=foo.bar.Prompt<out @[Regional] kotlin.Any?> origin=null
+                    ARG s: TYPE_OP type=foo.bar.Scope<foo.bar.box.<anonymous>.WithPromptRegion> origin=IMPLICIT_CAST typeOperand=foo.bar.Scope<foo.bar.box.<anonymous>.WithPromptRegion>
+                      GET_VAR '$this$withPrompt: foo.bar.Scope<out @[Regional] kotlin.Any?> declared in foo.bar.box.<anonymous>' type=foo.bar.Scope<out @[Regional] kotlin.Any?> origin=IMPLICIT_ARGUMENT
+  FUN name:usePromptInScope visibility:public modality:FINAL returnType:kotlin.String
+    TYPE_PARAMETER name:Region index:0 variance: superTypes:[kotlin.Any?] reified:false
+    VALUE_PARAMETER kind:Context name:p index:0 type:foo.bar.Prompt<Region of foo.bar.usePromptInScope>
+    VALUE_PARAMETER kind:Context name:s index:1 type:foo.bar.Scope<Region of foo.bar.usePromptInScope>
+    BLOCK_BODY
+      RETURN type=kotlin.Nothing from='public final fun usePromptInScope <Region> (p: foo.bar.Prompt<Region of foo.bar.usePromptInScope>, s: foo.bar.Scope<Region of foo.bar.usePromptInScope>): kotlin.String declared in foo.bar'
+        CALL 'public final fun plus (other: kotlin.Any?): kotlin.String declared in kotlin.String' type=kotlin.String origin=PLUS
+          ARG <this>: CALL 'public final fun <get-name> (): kotlin.String declared in foo.bar.Prompt' type=kotlin.String origin=GET_PROPERTY
+            ARG <this>: GET_VAR 'p: foo.bar.Prompt<Region of foo.bar.usePromptInScope> declared in foo.bar.usePromptInScope' type=foo.bar.Prompt<Region of foo.bar.usePromptInScope> origin=null
+          ARG other: CALL 'public final fun <get-name> (): kotlin.String declared in foo.bar.Scope' type=kotlin.String origin=GET_PROPERTY
+            ARG <this>: GET_VAR 's: foo.bar.Scope<Region of foo.bar.usePromptInScope> declared in foo.bar.usePromptInScope' type=foo.bar.Scope<Region of foo.bar.usePromptInScope> origin=null
+  FUN name:withPrompt visibility:public modality:FINAL returnType:R of foo.bar.withPrompt
+    TYPE_PARAMETER name:R index:0 variance: superTypes:[kotlin.Any?] reified:false
+    VALUE_PARAMETER kind:Regular name:block index:0 type:@[ExtensionFunctionType] kotlin.Function2<foo.bar.Prompt<out @[Regional] kotlin.Any?>, foo.bar.Scope<out @[Regional] kotlin.Any?>, R of foo.bar.withPrompt>
+    BLOCK_BODY
+      RETURN type=kotlin.Nothing from='public final fun withPrompt <R> (block: @[ExtensionFunctionType] kotlin.Function2<foo.bar.Prompt<out @[Regional] kotlin.Any?>, foo.bar.Scope<out @[Regional] kotlin.Any?>, R of foo.bar.withPrompt>): R of foo.bar.withPrompt declared in foo.bar'
+        CALL 'public abstract fun invoke (p1: P1 of kotlin.Function2, p2: P2 of kotlin.Function2): R of kotlin.Function2 declared in kotlin.Function2' type=R of foo.bar.withPrompt origin=INVOKE
+          ARG <this>: GET_VAR 'block: @[ExtensionFunctionType] kotlin.Function2<foo.bar.Prompt<out @[Regional] kotlin.Any?>, foo.bar.Scope<out @[Regional] kotlin.Any?>, R of foo.bar.withPrompt> declared in foo.bar.withPrompt' type=@[ExtensionFunctionType] kotlin.Function2<foo.bar.Prompt<out @[Regional] kotlin.Any?>, foo.bar.Scope<out @[Regional] kotlin.Any?>, R of foo.bar.withPrompt> origin=VARIABLE_AS_FUNCTION
+          ARG p1: CONSTRUCTOR_CALL 'public constructor <init> (name: kotlin.String) declared in foo.bar.Prompt' type=foo.bar.Prompt<kotlin.Any> origin=null
+            TYPE_ARG (of class) Region: kotlin.Any
+            ARG name: CONST String type=kotlin.String value="O"
+          ARG p2: CONSTRUCTOR_CALL 'public constructor <init> (name: kotlin.String) declared in foo.bar.Scope' type=foo.bar.Scope<kotlin.Any> origin=null
+            TYPE_ARG (of class) Region: kotlin.Any
+            ARG name: CONST String type=kotlin.String value="K"

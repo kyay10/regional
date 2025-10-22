@@ -1,8 +1,8 @@
-package io.github.kyay10.highkt.runners
+package io.github.kyay10.regional.runners
 
-import io.github.kyay10.highkt.services.ExtensionRegistrarConfigurator
-import io.github.kyay10.highkt.services.PluginAnnotationsProvider
-import io.github.kyay10.highkt.services.PluginRuntimeAnnotationsProvider
+import io.github.kyay10.regional.services.ExtensionRegistrarConfigurator
+import io.github.kyay10.regional.services.PluginAnnotationsProvider
+import io.github.kyay10.regional.services.PluginRuntimeAnnotationsProvider
 import org.jetbrains.kotlin.test.FirParser
 import org.jetbrains.kotlin.test.builders.TestConfigurationBuilder
 import org.jetbrains.kotlin.test.directives.CodegenTestDirectives

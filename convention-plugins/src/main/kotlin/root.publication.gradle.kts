@@ -3,7 +3,7 @@ plugins {
 }
 
 allprojects {
-  group = "io.github.kyay10.highkt"
+  group = "io.github.kyay10.regional"
   version = "0.0.1"
 }
 

@@ -42,16 +42,16 @@ buildConfig {
 }
 
 gradlePlugin {
-  website = "https://github.com/kyay10/highkt"
-  vcsUrl = "https://github.com/kyay10/highkt"
+  website = "https://github.com/kyay10/regional"
+  vcsUrl = "https://github.com/kyay10/regional"
   plugins {
-    create("HighKtPlugin") {
+    create("RegionalPlugin") {
       id = rootProject.group.toString()
-      displayName = "HighKT"
+      displayName = "Regional"
       description =
-        "A Kotlin Compiler Plugin enabling the usage of Higher-Kinded Types without resorting to inelegant encodings"
+        "Kotlin compiler plugin that supports region safety by creating local classes that represent regions"
       tags = listOf("kotlin-compiler-plugin")
-      implementationClass = "io.github.kyay10.highkt.SomeGradlePlugin"
+      implementationClass = "io.github.kyay10.regional.SomeGradlePlugin"
     }
   }
 }

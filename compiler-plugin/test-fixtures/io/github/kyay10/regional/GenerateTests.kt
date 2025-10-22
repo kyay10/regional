@@ -1,7 +1,7 @@
-package io.github.kyay10.highkt
+package io.github.kyay10.regional
 
-import io.github.kyay10.highkt.runners.AbstractJvmBoxTest
-import io.github.kyay10.highkt.runners.AbstractJvmDiagnosticTest
+import io.github.kyay10.regional.runners.AbstractJvmBoxTest
+import io.github.kyay10.regional.runners.AbstractJvmDiagnosticTest
 import org.jetbrains.kotlin.generators.dsl.junit5.generateTestGroupSuiteWithJUnit5
 
 fun main() {

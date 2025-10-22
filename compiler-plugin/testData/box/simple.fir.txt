@@ -1,24 +1,50 @@
 FILE: simple.kt
     package foo.bar
 
-    public final fun box(): R|kotlin/String| {
-        lval result: R|kotlin/String| = R|foo/bar/MyClass|().R|foo/bar/MyClass.foo|()
-        ^box when () {
-            ==(R|<local>/result|, String(Hello world)) ->  {
-                String(OK)
-            }
-            else ->  {
-                <strcat>(String(Fail: ), R|<local>/result|)
-            }
+    public final data class Prompt<Region> : R|kotlin/Any| {
+        public constructor<Region>(name: R|kotlin/String|): R|foo/bar/Prompt<Region>| {
+            super<R|kotlin/Any|>()
         }
 
+        public final val name: R|kotlin/String| = R|<local>/name|
+            public get(): R|kotlin/String|
+
+        public final operator fun component1(): R|kotlin/String|
+
+        public final fun copy(name: R|kotlin/String| = this@R|foo/bar/Prompt|.R|foo/bar/Prompt.name|): R|foo/bar/Prompt<Region>|
+
     }
-FILE: foo/bar/MyClass.kt
-    package foo.bar
+    public final data class Scope<Region> : R|kotlin/Any| {
+        public constructor<Region>(name: R|kotlin/String|): R|foo/bar/Scope<Region>| {
+            super<R|kotlin/Any|>()
+        }
 
-    public final class MyClass : R|kotlin/Any| {
-        public final fun foo(): R|kotlin/String|
+        public final val name: R|kotlin/String| = R|<local>/name|
+            public get(): R|kotlin/String|
 
-        public constructor(): R|foo/bar/MyClass|
+        public final operator fun component1(): R|kotlin/String|
 
+        public final fun copy(name: R|kotlin/String| = this@R|foo/bar/Scope|.R|foo/bar/Scope.name|): R|foo/bar/Scope<Region>|
+
+    }
+    public final fun <R> withPrompt(block: R|@ContextFunctionTypeParams(1) context(foo/bar/Prompt<out @R|io/github/kyay10/regional/Regional|()  kotlin/Any?>) foo/bar/Scope<out @R|io/github/kyay10/regional/Regional|()  kotlin/Any?>.() -> R|): R|R| {
+        ^withPrompt R|<local>/block|.R|SubstitutionOverride<kotlin/Function2.invoke: R|R|>|(R|foo/bar/Prompt.Prompt|<R|kotlin/Any|>(String(O)), R|foo/bar/Scope.Scope|<R|kotlin/Any|>(String(K)))
+    }
+    context(p: R|foo/bar/Prompt<Region>|, s: R|foo/bar/Scope<Region>|)
+    public final fun <Region> usePromptInScope(): R|kotlin/String| {
+        ^usePromptInScope R|<local>/p|.R|SubstitutionOverride<foo/bar/Prompt.name: R|kotlin/String|>|.R|kotlin/String.plus|(R|<local>/s|.R|SubstitutionOverride<foo/bar/Scope.name: R|kotlin/String|>|)
+    }
+    public final fun box(): R|kotlin/String| {
+        ^box R|foo/bar/withPrompt|<R|kotlin/String|>(<L> = context(<unused var>: R|foo/bar/Prompt<out @R|io/github/kyay10/regional/Regional|()  kotlin/Any?>|) withPrompt@fun R|foo/bar/Scope<out @R|io/github/kyay10/regional/Regional|()  kotlin/Any?>|.<anonymous>(): R|kotlin/String| <inline=NoInline>  {
+            local abstract class WithPromptRegion : R|kotlin/Any| {
+                public constructor(): R|<local>/WithPromptRegion| {
+                    super<R|kotlin/Any|>()
+                }
+
+            }
+
+            Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|foo/bar/Prompt<<local>/WithPromptRegion>|>(R|<local>/<unused var>|, Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|foo/bar/Scope<<local>/WithPromptRegion>|>(this@R|special/anonymous|))
+            ^ context(R|<local>/<unused var>|, this@R|special/anonymous|) R|foo/bar/usePromptInScope|<R|<local>/WithPromptRegion|>()
+        }
+        )
     }
