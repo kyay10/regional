@@ -51,7 +51,7 @@ gradlePlugin {
       description =
         "Kotlin compiler plugin that supports region safety by creating local classes that represent regions"
       tags = listOf("kotlin-compiler-plugin")
-      implementationClass = "io.github.kyay10.regional.SomeGradlePlugin"
+      implementationClass = "io.github.kyay10.regional.RegionalGradlePlugin"
     }
   }
 }
