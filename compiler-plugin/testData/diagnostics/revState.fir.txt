@@ -1,0 +1,75 @@
+FILE: revState.kt
+    package foo.bar
+
+    @R|kotlin/coroutines/RestrictsSuspension|() public final class MultishotScope<out Region> : R|kotlin/Any| {
+        public constructor<out Region>(): R|foo/bar/MultishotScope<Region>| {
+            super<R|kotlin/Any|>()
+        }
+
+    }
+    public final class Prompt<R, in IR : R|OR|, OR> : R|kotlin/Any| {
+        public constructor<R, in IR : R|OR|, OR>(): R|foo/bar/Prompt<R, IR, OR>| {
+            super<R|kotlin/Any|>()
+        }
+
+    }
+    public final typealias Choose<IR, OR> = R|foo/bar/Prompt<kotlin/Unit, IR, OR>|
+    context(scope: R|foo/bar/MultishotScope<Region>|)
+    public final inline suspend fun <R, Region> newReset(noinline body: R|@ContextFunctionTypeParams(1) suspend context(foo/bar/MultishotScope<@R|io/github/kyay10/regional/Regional|()  Region>) foo/bar/Prompt<R, @R|io/github/kyay10/regional/Regional|()  kotlin/Nothing, Region>.() -> R|): R|R| {
+        R|kotlin/error|(String(unreachable))
+    }
+    public final typealias RevState<S, R, IR, OR> = R|foo/bar/Prompt<kotlin/Pair<@ContextFunctionTypeParams(1) kotlin/coroutines/SuspendFunction1<foo/bar/MultishotScope<OR>, S>, R>, IR, OR>|
+    context(<unused var>: R|foo/bar/MultishotScope<Region>|)
+    public final suspend fun <S, R, Region> runRevState(value: R|S|, body: R|@ContextFunctionTypeParams(1) suspend context(foo/bar/MultishotScope<@R|io/github/kyay10/regional/Regional|()  Region>) {foo/bar/RevState<S, R, @R|io/github/kyay10/regional/Regional|()  kotlin/Nothing, Region>=} foo/bar/Prompt<kotlin/Pair<@ContextFunctionTypeParams(1) kotlin/coroutines/SuspendFunction1<foo/bar/MultishotScope<Region>, S>, R>, @R|io/github/kyay10/regional/Regional|()  kotlin/Nothing, Region>.() -> R|): R|kotlin/Pair<@ContextFunctionTypeParams(1) kotlin/coroutines/SuspendFunction1<foo/bar/MultishotScope<Region>, S>, R>| {
+        ^runRevState context(R|<local>/<unused var>|) R|foo/bar/newReset|<R|kotlin/Pair<@ContextFunctionTypeParams(1) kotlin/coroutines/SuspendFunction1<foo/bar/MultishotScope<Region>, S>, R>|, R|Region|>(<L> = context(<unused var>: R|foo/bar/MultishotScope<@R|io/github/kyay10/regional/Regional|()  Region>|) newReset@fun R|foo/bar/Prompt<kotlin/Pair<@ContextFunctionTypeParams(1) kotlin/coroutines/SuspendFunction1<foo/bar/MultishotScope<Region>, S>, R>, @R|io/github/kyay10/regional/Regional|()  kotlin/Nothing, Region>|.<anonymous>(): R|kotlin/Pair<@ContextFunctionTypeParams(1) kotlin/coroutines/SuspendFunction1<foo/bar/MultishotScope<Region>, S>, R>| <inline=NoInline>  {
+            local abstract class NewResetRegion<Outer(S), Outer(R), Outer(Region)> : R|kotlin/Any| {
+                public constructor<S, R, Region>(): R|<local>/NewResetRegion<S, R, Region>| {
+                    super<R|kotlin/Any|>()
+                }
+
+            }
+
+            Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|foo/bar/MultishotScope<<local>/NewResetRegion<S, R, Region>>|>(R|<local>/<unused var>|, Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|foo/bar/Prompt<kotlin/Pair<@ContextFunctionTypeParams(1) kotlin/coroutines/SuspendFunction1<foo/bar/MultishotScope<Region>, S>, R>, <local>/NewResetRegion<S, R, Region>, Region>|>(this@R|special/anonymous|))
+            lval f: R|@ContextFunctionTypeParams(1) suspend context(foo/bar/MultishotScope<Region>) () -> S| = context(<unused var>: R|foo/bar/MultishotScope<Region>|) fun <anonymous>(): R|S| <inline=NoInline>  {
+                ^ R|<local>/value|
+            }
+
+            ^ R|<local>/f|.R|kotlin/to|<R|@ContextFunctionTypeParams(1) suspend context(foo/bar/MultishotScope<Region>) () -> S|, R|R|>(R|<local>/body|.R|SubstitutionOverride<kotlin/coroutines/SuspendFunction2.invoke: R|R|>|(R|<local>/<unused var>|, this@R|special/anonymous|))
+        }
+        )
+    }
+    public final data class CounterState : R|kotlin/Any| {
+        public constructor(count: R|kotlin/Int|): R|foo/bar/CounterState| {
+            super<R|kotlin/Any|>()
+        }
+
+        public final val count: R|kotlin/Int| = R|<local>/count|
+            public get(): R|kotlin/Int|
+
+        public final operator fun component1(): R|kotlin/Int|
+
+        public final fun copy(count: R|kotlin/Int| = this@R|foo/bar/CounterState|.R|foo/bar/CounterState.count|): R|foo/bar/CounterState|
+
+    }
+    context(<unused var>: R|foo/bar/MultishotScope<IR>|)
+    public final suspend fun <IR> R|{foo/bar/RevState<foo/bar/CounterState, kotlin/Unit, IR, *>=} foo/bar/Prompt<kotlin/Pair<@ContextFunctionTypeParams(1) kotlin/coroutines/SuspendFunction1<foo/bar/MultishotScope<*>, foo/bar/CounterState>, kotlin/Unit>, IR, *>|.incrementCounter(): R|kotlin/Unit| {
+    }
+    context(<unused var>: R|foo/bar/MultishotScope<IR>|)
+    public final suspend fun <IR> R|{foo/bar/RevState<foo/bar/CounterState, kotlin/Unit, IR, *>=} foo/bar/Prompt<kotlin/Pair<@ContextFunctionTypeParams(1) kotlin/coroutines/SuspendFunction1<foo/bar/MultishotScope<*>, foo/bar/CounterState>, kotlin/Unit>, IR, *>|.doubleCounter(): R|kotlin/Unit| {
+    }
+    public final suspend fun R|foo/bar/MultishotScope<kotlin/Any?>|.test(): R|kotlin/Unit| {
+        context(this@R|foo/bar/test|) R|foo/bar/runRevState|<R|foo/bar/CounterState|, R|kotlin/Unit|, R|kotlin/Any?|>(R|foo/bar/CounterState.CounterState|(Int(0)), <L> = context(<unused var>: R|foo/bar/MultishotScope<@R|io/github/kyay10/regional/Regional|()  kotlin/Any?>|) runRevState@fun R|{foo/bar/RevState<foo/bar/CounterState, kotlin/Unit, @R|io/github/kyay10/regional/Regional|()  kotlin/Nothing, kotlin/Any?>=} foo/bar/Prompt<kotlin/Pair<@ContextFunctionTypeParams(1) kotlin/coroutines/SuspendFunction1<foo/bar/MultishotScope<kotlin/Any?>, foo/bar/CounterState>, kotlin/Unit>, @R|io/github/kyay10/regional/Regional|()  kotlin/Nothing, kotlin/Any?>|.<anonymous>(): R|kotlin/Unit| <inline=NoInline>  {
+            local abstract class RunRevStateRegion : R|kotlin/Any| {
+                public constructor(): R|<local>/RunRevStateRegion| {
+                    super<R|kotlin/Any|>()
+                }
+
+            }
+
+            Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|foo/bar/MultishotScope<<local>/RunRevStateRegion>|>(R|<local>/<unused var>|, Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|{foo/bar/RevState<foo/bar/CounterState, kotlin/Unit, @R|io/github/kyay10/regional/Regional|()  kotlin/Nothing, kotlin/Any?>=} foo/bar/Prompt<kotlin/Pair<@ContextFunctionTypeParams(1) kotlin/coroutines/SuspendFunction1<foo/bar/MultishotScope<kotlin/Any?>, foo/bar/CounterState>, kotlin/Unit>, <local>/RunRevStateRegion, kotlin/Any?>|>(this@R|special/anonymous|))
+            context(R|<local>/<unused var>|) this@R|special/anonymous|.R|foo/bar/doubleCounter|<R|<local>/RunRevStateRegion|>()
+            context(R|<local>/<unused var>|) this@R|special/anonymous|.R|foo/bar/doubleCounter|<R|<local>/RunRevStateRegion|>()
+            context(R|<local>/<unused var>|) this@R|special/anonymous|.R|foo/bar/incrementCounter|<R|<local>/RunRevStateRegion|>()
+        }
+        ).R|SubstitutionOverride<kotlin/Pair.first: R|@ContextFunctionTypeParams(1) suspend context(foo/bar/MultishotScope<kotlin/Any?>) () -> foo/bar/CounterState|>|.R|SubstitutionOverride<kotlin/coroutines/SuspendFunction1.invoke: R|foo/bar/CounterState|>|(this@R|foo/bar/test|)
+    }

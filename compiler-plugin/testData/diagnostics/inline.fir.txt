@@ -1,0 +1,17 @@
+FILE: inline.kt
+    package foo.bar
+
+    public final class Region<R> : R|kotlin/Any| {
+        public constructor<R>(): R|foo/bar/Region<R>| {
+            super<R|kotlin/Any|>()
+        }
+
+    }
+    public final fun withRegion(block: R|foo/bar/Region<out @R|io/github/kyay10/regional/Regional|()  kotlin/Any?>.() -> kotlin/Unit|): R|kotlin/Unit| {
+    }
+    public final inline fun withRegion2(): R|kotlin/Unit| {
+        R|foo/bar/withRegion|(<L> = withRegion@fun R|foo/bar/Region<out @R|io/github/kyay10/regional/Regional|()  kotlin/Any?>|.<anonymous>(): R|kotlin/Unit| <inline=NoInline>  {
+            lval x: R|foo/bar/Region<ERROR CLASS: Symbol not found for WithRegionRegion>| = this@R|special/anonymous|
+        }
+        )
+    }

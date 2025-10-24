@@ -4,5 +4,6 @@ public abstract interface annotation class io/github/kyay10/regional/Regional : 
 public final class io/github/kyay10/regional/RegionalKt {
 	public static final fun assertHasRegion (Ljava/lang/Object;Lkotlin/Unit;)V
 	public static synthetic fun assertHasRegion$default (Ljava/lang/Object;Lkotlin/Unit;ILjava/lang/Object;)V
+	public static final fun getInsertionPoint ()Lkotlin/Unit;
 }
 

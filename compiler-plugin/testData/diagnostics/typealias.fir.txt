@@ -1,0 +1,27 @@
+FILE: typealias.kt
+    package foo.bar
+
+    public final class Region<R> : R|kotlin/Any| {
+        public constructor<R>(): R|foo/bar/Region<R>| {
+            super<R|kotlin/Any|>()
+        }
+
+    }
+    public final typealias NewScope<R> = R|foo/bar/Region<out @R|io/github/kyay10/regional/Regional|()  R>|
+    public final typealias BlockType = R|foo/bar/NewScope<kotlin/Any?>.() -> kotlin/Unit|
+    public final fun withRegion(block: R|{foo/bar/BlockType=} foo/bar/NewScope<kotlin/Any?>.() -> kotlin/Unit|): R|kotlin/Unit| {
+    }
+    public final fun test(): R|kotlin/Unit| {
+        R|foo/bar/withRegion|(<L> = withRegion@fun R|foo/bar/NewScope<kotlin/Any?>|.<anonymous>(): R|kotlin/Unit| <inline=NoInline>  {
+            local abstract class WithRegionRegion : R|kotlin/Any| {
+                public constructor(): R|<local>/WithRegionRegion| {
+                    super<R|kotlin/Any|>()
+                }
+
+            }
+
+            Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|{foo/bar/NewScope<kotlin/Any?>=} foo/bar/Region<<local>/WithRegionRegion>|>(this@R|special/anonymous|)
+            lval x: R|foo/bar/Region<<local>/WithRegionRegion>| = this@R|special/anonymous|
+        }
+        )
+    }

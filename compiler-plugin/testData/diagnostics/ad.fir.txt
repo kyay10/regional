@@ -1,0 +1,45 @@
+FILE: ad.kt
+    public final class MultishotScope<out Region> : R|kotlin/Any| {
+        public constructor<out Region>(): R|MultishotScope<Region>| {
+            super<R|kotlin/Any|>()
+        }
+
+    }
+    public final typealias NewScope<Region> = R|MultishotScope<@R|io/github/kyay10/regional/Regional|()  Region>|
+    context(<unused var>: R|MultishotScope<Region>|)
+    public final suspend fun <E, Region> handle(body: R|@ContextFunctionTypeParams(1) suspend context({NewScope<Region>=} MultishotScope<@R|io/github/kyay10/regional/Regional|()  Region>) () -> E|): R|E| {
+        ^handle R|kotlin/error|(String(unreachable))
+    }
+    public abstract interface AD<Region> : R|kotlin/Any| {
+        context(<unused var>: R|MultishotScope<Region>|)
+        public abstract suspend fun foo(): R|kotlin/Unit|
+
+    }
+    context(<unused var>: R|MultishotScope<Region>|)
+    public final suspend fun <Region> backwards(): R|kotlin/Unit| {
+        local final suspend fun foo(): R|kotlin/Unit| {
+            ^foo context(R|<local>/<unused var>|) R|/handle|<R|kotlin/Unit|, R|Region|>(<L> = context(<unused var>: R|{NewScope<Region>=} MultishotScope<@R|io/github/kyay10/regional/Regional|()  Region>|) handle@fun <anonymous>(): R|kotlin/Unit| <inline=NoInline>  {
+                local abstract class HandleRegion<Outer(Region)> : R|kotlin/Any| {
+                    public constructor<Region>(): R|<local>/HandleRegion<Region>| {
+                        super<R|kotlin/Any|>()
+                    }
+
+                }
+
+                Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|{NewScope<Region>=} MultishotScope<<local>/HandleRegion<Region>>|>(R|<local>/<unused var>|)
+                lval res: R|<anonymous><Region>| = object : R|AD<<local>/HandleRegion<Region>>| {
+                    private constructor(): R|<anonymous><Region>| {
+                        super<R|kotlin/Any|>()
+                    }
+
+                    context(<unused var>: R|MultishotScope<<local>/HandleRegion<Region>>|)
+                    public open override suspend fun foo(): R|kotlin/Unit| {
+                    }
+
+                }
+
+            }
+            )
+        }
+
+    }

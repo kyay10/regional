@@ -1,0 +1,20 @@
+FILE: smartCasted.kt
+    package foo.bar
+
+    public final fun main(): R|kotlin/Unit| {
+        R|foo/bar/withFoo|(<L> = withFoo@fun R|foo/bar/Foo<*>|.<anonymous>(): R|kotlin/Unit| <inline=NoInline>  {
+            (this@R|special/anonymous| as R|foo/bar/Foo<kotlin/Int>|)
+            this@R|special/anonymous|.R|foo/bar/useIntFoo|()
+        }
+        )
+    }
+    public final suspend fun R|foo/bar/Foo<kotlin/Int>|.useIntFoo(): R|kotlin/Unit| {
+    }
+    public final fun withFoo(block: R|suspend foo/bar/Foo<*>.() -> kotlin/Unit|): R|kotlin/Unit| {
+    }
+    @R|kotlin/coroutines/RestrictsSuspension|() public final class Foo<T> : R|kotlin/Any| {
+        public constructor<T>(): R|foo/bar/Foo<T>| {
+            super<R|kotlin/Any|>()
+        }
+
+    }

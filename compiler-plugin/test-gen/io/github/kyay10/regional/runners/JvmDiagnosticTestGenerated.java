@@ -16,13 +16,49 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 public class JvmDiagnosticTestGenerated extends AbstractJvmDiagnosticTest {
   @Test
+  @TestMetadata("ad.kt")
+  public void testAd() {
+    runTest("compiler-plugin/testData/diagnostics/ad.kt");
+  }
+
+  @Test
   public void testAllFilesPresentInDiagnostics() {
     KtTestUtil.assertAllTestsPresentByMetadataWithExcluded(this.getClass(), new File("compiler-plugin/testData/diagnostics"), Pattern.compile("^(.+)\\.kt$"), null, true);
+  }
+
+  @Test
+  @TestMetadata("handlesLambdaParameters.kt")
+  public void testHandlesLambdaParameters() {
+    runTest("compiler-plugin/testData/diagnostics/handlesLambdaParameters.kt");
+  }
+
+  @Test
+  @TestMetadata("inline.kt")
+  public void testInline() {
+    runTest("compiler-plugin/testData/diagnostics/inline.kt");
+  }
+
+  @Test
+  @TestMetadata("revState.kt")
+  public void testRevState() {
+    runTest("compiler-plugin/testData/diagnostics/revState.kt");
   }
 
   @Test
   @TestMetadata("simple.kt")
   public void testSimple() {
     runTest("compiler-plugin/testData/diagnostics/simple.kt");
+  }
+
+  @Test
+  @TestMetadata("smartCasted.kt")
+  public void testSmartCasted() {
+    runTest("compiler-plugin/testData/diagnostics/smartCasted.kt");
+  }
+
+  @Test
+  @TestMetadata("typealias.kt")
+  public void testTypealias() {
+    runTest("compiler-plugin/testData/diagnostics/typealias.kt");
   }
 }
