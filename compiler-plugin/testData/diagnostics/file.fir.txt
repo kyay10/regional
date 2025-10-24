@@ -1,0 +1,149 @@
+FILE: file.kt
+    public abstract interface AutoCloseScope<in R> : R|kotlin/Any| {
+        public abstract fun onClose(action: R|() -> kotlin/Unit|): R|kotlin/Unit|
+
+    }
+    context(scope: R|AutoCloseScope<R>|)
+    public final fun <R, AC : R|{kotlin/AutoCloseable=} java/lang/AutoCloseable|> R|AC|.autoClose(): R|AC| {
+        ^autoClose this@R|/autoClose|.R|kotlin/also|<R|AC|>(<L> = also@fun <anonymous>(it: R|AC|): R|kotlin/Unit| <inline=Inline, kind=EXACTLY_ONCE>  {
+            R|<local>/scope|.R|SubstitutionOverride</AutoCloseScope.onClose: R|kotlin/Unit|>|(::R|java/lang/AutoCloseable.close|)
+        }
+        )
+    }
+    public final class AutoCloseScopeImpl<in R> : R|AutoCloseScope<R>|, R|{kotlin/AutoCloseable=} java/lang/AutoCloseable| {
+        public constructor<in R>(): R|AutoCloseScopeImpl<R>| {
+            super<R|kotlin/Any|>()
+        }
+
+        private final val closeActions: R|kotlin/collections/MutableList<kotlin/Function0<kotlin/Unit>>| = R|kotlin/collections/mutableListOf|<R|() -> kotlin/Unit|>()
+            private get(): R|kotlin/collections/MutableList<kotlin/Function0<kotlin/Unit>>|
+
+        public open override fun onClose(action: R|() -> kotlin/Unit|): R|kotlin/Unit| {
+            this@R|/AutoCloseScopeImpl|.R|/AutoCloseScopeImpl.closeActions|.R|SubstitutionOverride<kotlin/collections/MutableList.add: R|kotlin/Boolean|>|(R|<local>/action|)
+        }
+
+        public open override fun close(): R|kotlin/Unit| {
+             {
+                lval <iterator>: R|kotlin/collections/MutableIterator<kotlin/Function0<kotlin/Unit>>| = this@R|/AutoCloseScopeImpl|.R|/AutoCloseScopeImpl.closeActions|.R|SubstitutionOverride<kotlin/collections/MutableList.iterator: R|kotlin/collections/MutableIterator<kotlin/Function0<kotlin/Unit>>|>|()
+                while(R|<local>/<iterator>|.R|SubstitutionOverride<kotlin/collections/MutableIterator.hasNext: R|kotlin/Boolean|>|()) {
+                    lval action: R|() -> kotlin/Unit| = R|<local>/<iterator>|.R|SubstitutionOverride<kotlin/collections/MutableIterator.next: R|() -> kotlin/Unit|>|()
+                     {
+                        try {
+                            R|<local>/action|.R|SubstitutionOverride<kotlin/Function0.invoke: R|kotlin/Unit|>|()
+                        }
+                        catch (e: R|{kotlin/Exception=} java/lang/Exception|) {
+                            R|<local>/e|.R|kotlin/Throwable.printStackTrace|()
+                        }
+
+                    }
+
+                }
+
+            }
+
+            this@R|/AutoCloseScopeImpl|.R|/AutoCloseScopeImpl.closeActions|.R|SubstitutionOverride<kotlin/collections/MutableList.clear: R|kotlin/Unit|>|()
+        }
+
+    }
+    @R|kotlin/coroutines/RestrictsSuspension|() public final class Region<out R> : R|kotlin/Any| {
+        @R|kotlin/PublishedApi|() internal constructor<out R>(): R|Region<R>| {
+            super<R|kotlin/Any|>()
+        }
+
+        public final inline suspend fun <T> subregion(block: R|@ContextFunctionTypeParams(2) suspend context(Region<@R|io/github/kyay10/regional/Regional|()  R>, AutoCloseScope<@R|io/github/kyay10/regional/Regional|()  kotlin/Nothing>) () -> T|): R|T| {
+            ^subregion R|/AutoCloseScopeImpl.AutoCloseScopeImpl|<R|R|>().R|kotlin/use|<R|AutoCloseScopeImpl<R>|, R|T|>(<L> = use@fun <anonymous>(it: R|AutoCloseScopeImpl<R>|): R|T| <inline=Inline, kind=EXACTLY_ONCE>  {
+                ^ R|<local>/block|.R|SubstitutionOverride<kotlin/coroutines/SuspendFunction2.invoke: R|T|>|(R|/Region.Region|<R|@R|io/github/kyay10/regional/Regional|()  R|>(), R|<local>/it|)
+            }
+            )
+        }
+
+        public final companion object Companion : R|kotlin/Any| {
+            private constructor(): R|Region.Companion| {
+                super<R|kotlin/Any|>()
+            }
+
+            public final fun <R> region(block: R|@ContextFunctionTypeParams(2) suspend context(Region<@R|io/github/kyay10/regional/Regional|()  kotlin/Any?>, AutoCloseScope<@R|io/github/kyay10/regional/Regional|()  kotlin/Nothing>) () -> R|): R|R| {
+                ^region R|/AutoCloseScopeImpl.AutoCloseScopeImpl|<R|kotlin/Any?|>().R|kotlin/use|<R|AutoCloseScopeImpl<kotlin/Any?>|, R|R|>(<L> = use@fun <anonymous>(it: R|AutoCloseScopeImpl<kotlin/Any?>|): R|R| <inline=Inline, kind=EXACTLY_ONCE>  {
+                    (R|<local>/block| as R|(Region<kotlin/Any?>, AutoCloseScopeImpl<kotlin/Any?>, kotlin/coroutines/Continuation<R>) -> R|)
+                    ^ R|<local>/block|.R|SubstitutionOverride<kotlin/Function3.invoke: R|R|>|(R|/Region.Region|<R|kotlin/Any?|>(), R|<local>/it|, R|kotlin/coroutines/Continuation|<R|R|>(Q|kotlin/coroutines/EmptyCoroutineContext|, <L> = Continuation@fun <anonymous>(it: R|kotlin/Result<R>|): R|kotlin/Unit| <inline=CrossInline>  {
+                        ^@Continuation Unit
+                    }
+                    ))
+                }
+                )
+            }
+
+        }
+
+    }
+    public final fun <R> region(block: R|@ContextFunctionTypeParams(2) suspend context(Region<@R|io/github/kyay10/regional/Regional|()  kotlin/Any?>, AutoCloseScope<@R|io/github/kyay10/regional/Regional|()  kotlin/Nothing>) () -> R|): R|R| {
+        ^region Q|Region|.R|/Region.Companion.region|<R|R|>(R|<local>/block|)
+    }
+    context(region: R|Region<R>|)
+    public final suspend fun <R, T> subregion(block: R|@ContextFunctionTypeParams(2) suspend context(Region<@R|io/github/kyay10/regional/Regional|()  R>, AutoCloseScope<@R|io/github/kyay10/regional/Regional|()  kotlin/Nothing>) () -> T|): R|T| {
+        ^subregion R|<local>/region|.R|SubstitutionOverride</Region.subregion: R|T|>|<R|T|>(R|<local>/block|)
+    }
+    public final class FileHandle<in R> : R|kotlin/Any| {
+        private constructor<in R>(reader: R|java/io/Reader|): R|FileHandle<R>| {
+            super<R|kotlin/Any|>()
+        }
+
+        private final val reader: R|java/io/Reader| = R|<local>/reader|
+            private get(): R|java/io/Reader|
+
+        context(<unused var>: R|Region<R>|)
+        public final suspend fun read(): R|kotlin/Char| {
+            ^read this@R|/FileHandle|.R|/FileHandle.reader|.R|java/io/Reader.read|().R|kotlin/Int.toChar|()
+        }
+
+        public final companion object Companion : R|kotlin/Any| {
+            private constructor(): R|FileHandle.Companion| {
+                super<R|kotlin/Any|>()
+            }
+
+            context(<unused var>: R|AutoCloseScope<R>|)
+            public final fun <R> R|java/nio/file/Path|.open(): R|FileHandle<R>| {
+                ^open R|/FileHandle.FileHandle|<R|R|>(context(R|<local>/<unused var>|) this@R|/FileHandle.Companion.open|.R|kotlin/io/path/reader|().R|/autoClose|<R|R|, R|java/io/InputStreamReader|>())
+            }
+
+        }
+
+    }
+    context(<unused var>: R|AutoCloseScope<R>|)
+    public final fun <R> R|java/nio/file/Path|.open(): R|FileHandle<R>| {
+        ^open R|kotlin/with|<R|FileHandle.Companion|, R|FileHandle<R>|>(Q|FileHandle|, <L> = with@fun R|FileHandle.Companion|.<anonymous>(): R|FileHandle<R>| <inline=Inline, kind=EXACTLY_ONCE>  {
+            ^ context(R|<local>/<unused var>|) (this@R|special/anonymous|, this@R|/open|).R|/FileHandle.Companion.open|<R|R|>()
+        }
+        )
+    }
+    public final fun example(): R|kotlin/Char| {
+        ^example R|/region|<R|kotlin/Char|>(<L> = context(<unused var>: R|Region<@R|io/github/kyay10/regional/Regional|()  kotlin/Any?>|, <unused var>: R|AutoCloseScope<@R|io/github/kyay10/regional/Regional|()  kotlin/Nothing>|) region@fun <anonymous>(): R|kotlin/Char| <inline=NoInline>  {
+            local abstract class RegionRegion : R|kotlin/Any| {
+                public constructor(): R|<local>/RegionRegion| {
+                    super<R|kotlin/Any|>()
+                }
+
+            }
+
+            Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|AutoCloseScope<<local>/RegionRegion>|>(R|<local>/<unused var>|, Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|Region<<local>/RegionRegion>|>(R|<local>/<unused var>|))
+            lval file: R|FileHandle<<local>/RegionRegion>| = context(R|<local>/<unused var>|) Q|java/nio/file/Path|.R|java/nio/file/Path.of*s|(String(example.txt)).R|/open|<R|<local>/RegionRegion|>()
+            R|kotlin/io/println|(context(R|<local>/<unused var>|) R|<local>/file|.R|SubstitutionOverride</FileHandle.read: R|kotlin/Char|>|())
+            lval file2: R|FileHandle<<local>/RegionRegion>| = context(R|<local>/<unused var>|) R|/subregion|<R|<local>/RegionRegion|, R|FileHandle<<local>/RegionRegion>|>(<L> = context(<unused var>: R|Region<@R|io/github/kyay10/regional/Regional|()  <local>/RegionRegion>|, <unused var>: R|AutoCloseScope<@R|io/github/kyay10/regional/Regional|()  kotlin/Nothing>|) subregion@fun <anonymous>(): R|FileHandle<<local>/RegionRegion>| <inline=NoInline>  {
+                local abstract class SubregionRegion : R|@R|io/github/kyay10/regional/Regional|()  <local>/RegionRegion| {
+                    public constructor(): R|<local>/SubregionRegion| {
+                        super<R|@R|io/github/kyay10/regional/Regional|()  <local>/RegionRegion|>()
+                    }
+
+                }
+
+                Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|AutoCloseScope<<local>/SubregionRegion>|>(R|<local>/<unused var>|, Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|Region<<local>/SubregionRegion>|>(R|<local>/<unused var>|))
+                lval subfile: R|FileHandle<<local>/SubregionRegion>| = context(R|<local>/<unused var>|) Q|java/nio/file/Path|.R|java/nio/file/Path.of*s|(String(example2.txt)).R|/open|<R|<local>/SubregionRegion|>()
+                R|kotlin/io/println|(context(R|<local>/<unused var>|) R|<local>/file|.R|SubstitutionOverride</FileHandle.read: R|kotlin/Char|>|())
+                R|kotlin/io/println|(context(R|<local>/<unused var>|) R|<local>/subfile|.R|SubstitutionOverride</FileHandle.read: R|kotlin/Char|>|())
+                ^ context(R|<local>/<unused var>|) Q|java/nio/file/Path|.R|java/nio/file/Path.of*s|(String(example3.txt)).R|/open|<R|<local>/RegionRegion|>()
+            }
+            )
+            ^ context(R|<local>/<unused var>|) R|<local>/file2|.R|SubstitutionOverride</FileHandle.read: R|kotlin/Char|>|()
+        }
+        )
+    }

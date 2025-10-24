@@ -27,6 +27,12 @@ public class JvmDiagnosticTestGenerated extends AbstractJvmDiagnosticTest {
   }
 
   @Test
+  @TestMetadata("file.kt")
+  public void testFile() {
+    runTest("compiler-plugin/testData/diagnostics/file.kt");
+  }
+
+  @Test
   @TestMetadata("handlesLambdaParameters.kt")
   public void testHandlesLambdaParameters() {
     runTest("compiler-plugin/testData/diagnostics/handlesLambdaParameters.kt");
