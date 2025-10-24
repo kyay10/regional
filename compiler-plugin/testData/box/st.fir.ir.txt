@@ -1,0 +1,296 @@
+FILE fqName:<root> fileName:/st.kt
+  CLASS CLASS name:Region modality:FINAL visibility:public superTypes:[kotlin.Any]
+    annotations:
+      RestrictsSuspension
+    thisReceiver: VALUE_PARAMETER INSTANCE_RECEIVER kind:DispatchReceiver name:<this> type:<root>.Region<R of <root>.Region>
+    TYPE_PARAMETER name:R index:0 variance:out superTypes:[kotlin.Any?] reified:false
+    CLASS OBJECT name:Companion modality:FINAL visibility:public [companion] superTypes:[kotlin.Any]
+      thisReceiver: VALUE_PARAMETER INSTANCE_RECEIVER kind:DispatchReceiver name:<this> type:<root>.Region.Companion
+      CONSTRUCTOR visibility:private returnType:<root>.Region.Companion [primary]
+        BLOCK_BODY
+          DELEGATING_CONSTRUCTOR_CALL 'public constructor <init> () declared in kotlin.Any'
+          INSTANCE_INITIALIZER_CALL classDescriptor='CLASS OBJECT name:Companion modality:FINAL visibility:public [companion] superTypes:[kotlin.Any]' type=kotlin.Unit
+      FUN FAKE_OVERRIDE name:equals visibility:public modality:OPEN returnType:kotlin.Boolean [fake_override,operator]
+        VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+        VALUE_PARAMETER kind:Regular name:other index:1 type:kotlin.Any?
+        overridden:
+          public open fun equals (other: kotlin.Any?): kotlin.Boolean declared in kotlin.Any
+      FUN FAKE_OVERRIDE name:hashCode visibility:public modality:OPEN returnType:kotlin.Int [fake_override]
+        VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+        overridden:
+          public open fun hashCode (): kotlin.Int declared in kotlin.Any
+      FUN FAKE_OVERRIDE name:toString visibility:public modality:OPEN returnType:kotlin.String [fake_override]
+        VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+        overridden:
+          public open fun toString (): kotlin.String declared in kotlin.Any
+      FUN name:region visibility:public modality:FINAL returnType:R of <root>.Region.Companion.region
+        TYPE_PARAMETER name:R index:0 variance: superTypes:[kotlin.Any?] reified:false
+        VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:<root>.Region.Companion
+        VALUE_PARAMETER kind:Regular name:block index:1 type:kotlin.coroutines.SuspendFunction1<<root>.Region<@[Regional] kotlin.Any?>, R of <root>.Region.Companion.region>
+        BLOCK_BODY
+          RETURN type=kotlin.Nothing from='public final fun region <R> (block: kotlin.coroutines.SuspendFunction1<<root>.Region<@[Regional] kotlin.Any?>, R of <root>.Region.Companion.region>): R of <root>.Region.Companion.region declared in <root>.Region.Companion'
+            TYPE_OP type=R of <root>.Region.Companion.region origin=CAST typeOperand=R of <root>.Region.Companion.region
+              CALL 'public final fun startCoroutineUninterceptedOrReturn <R, T> (<this>: @[ExtensionFunctionType] kotlin.coroutines.SuspendFunction1<R of kotlin.coroutines.intrinsics.startCoroutineUninterceptedOrReturn, T of kotlin.coroutines.intrinsics.startCoroutineUninterceptedOrReturn>, receiver: R of kotlin.coroutines.intrinsics.startCoroutineUninterceptedOrReturn, completion: kotlin.coroutines.Continuation<T of kotlin.coroutines.intrinsics.startCoroutineUninterceptedOrReturn>): kotlin.Any? declared in kotlin.coroutines.intrinsics' type=kotlin.Any? origin=null
+                TYPE_ARG R: <root>.Region<@[Regional] kotlin.Any?>
+                TYPE_ARG T: R of <root>.Region.Companion.region
+                ARG <this>: GET_VAR 'block: kotlin.coroutines.SuspendFunction1<<root>.Region<@[Regional] kotlin.Any?>, R of <root>.Region.Companion.region> declared in <root>.Region.Companion.region' type=kotlin.coroutines.SuspendFunction1<<root>.Region<@[Regional] kotlin.Any?>, R of <root>.Region.Companion.region> origin=null
+                ARG receiver: CONSTRUCTOR_CALL 'internal constructor <init> () declared in <root>.Region' type=<root>.Region<@[Regional] kotlin.Any?> origin=null
+                  TYPE_ARG (of class) R: @[Regional] kotlin.Any?
+                ARG completion: CALL 'public final fun Continuation <T> (context: kotlin.coroutines.CoroutineContext, resumeWith: kotlin.Function1<kotlin.Result<T of kotlin.coroutines.Continuation>, kotlin.Unit>): kotlin.coroutines.Continuation<T of kotlin.coroutines.Continuation> declared in kotlin.coroutines' type=kotlin.coroutines.Continuation<R of <root>.Region.Companion.region> origin=null
+                  TYPE_ARG T: R of <root>.Region.Companion.region
+                  ARG context: GET_OBJECT 'CLASS IR_EXTERNAL_DECLARATION_STUB OBJECT name:EmptyCoroutineContext modality:FINAL visibility:public superTypes:[kotlin.coroutines.CoroutineContext; java.io.Serializable]' type=kotlin.coroutines.EmptyCoroutineContext
+                  ARG resumeWith: FUN_EXPR type=kotlin.Function1<kotlin.Result<R of <root>.Region.Companion.region>, kotlin.Unit> origin=LAMBDA
+                    FUN LOCAL_FUNCTION_FOR_LAMBDA name:<anonymous> visibility:local modality:FINAL returnType:kotlin.Unit
+                      VALUE_PARAMETER kind:Regular name:it index:0 type:kotlin.Result<R of <root>.Region.Companion.region>
+                      BLOCK_BODY
+                        RETURN type=kotlin.Nothing from='local final fun <anonymous> (it: kotlin.Result<R of <root>.Region.Companion.region>): kotlin.Unit declared in <root>.Region.Companion.region'
+                          GET_OBJECT 'CLASS IR_EXTERNAL_DECLARATION_STUB OBJECT name:Unit modality:FINAL visibility:public superTypes:[kotlin.Any]' type=kotlin.Unit
+    CONSTRUCTOR visibility:internal returnType:<root>.Region<R of <root>.Region> [primary]
+      annotations:
+        PublishedApi
+      BLOCK_BODY
+        DELEGATING_CONSTRUCTOR_CALL 'public constructor <init> () declared in kotlin.Any'
+        INSTANCE_INITIALIZER_CALL classDescriptor='CLASS CLASS name:Region modality:FINAL visibility:public superTypes:[kotlin.Any]' type=kotlin.Unit
+    FUN FAKE_OVERRIDE name:equals visibility:public modality:OPEN returnType:kotlin.Boolean [fake_override,operator]
+      VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+      VALUE_PARAMETER kind:Regular name:other index:1 type:kotlin.Any?
+      overridden:
+        public open fun equals (other: kotlin.Any?): kotlin.Boolean declared in kotlin.Any
+    FUN FAKE_OVERRIDE name:hashCode visibility:public modality:OPEN returnType:kotlin.Int [fake_override]
+      VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+      overridden:
+        public open fun hashCode (): kotlin.Int declared in kotlin.Any
+    FUN FAKE_OVERRIDE name:toString visibility:public modality:OPEN returnType:kotlin.String [fake_override]
+      VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+      overridden:
+        public open fun toString (): kotlin.String declared in kotlin.Any
+    FUN name:subregion visibility:public modality:FINAL returnType:T of <root>.Region.subregion [inline,suspend]
+      TYPE_PARAMETER name:T index:0 variance: superTypes:[kotlin.Any?] reified:false
+      VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:<root>.Region<R of <root>.Region>
+      VALUE_PARAMETER kind:Regular name:block index:1 type:kotlin.coroutines.SuspendFunction1<<root>.Region<@[Regional] R of <root>.Region>, T of <root>.Region.subregion>
+      BLOCK_BODY
+        RETURN type=kotlin.Nothing from='public final fun subregion <T> (block: kotlin.coroutines.SuspendFunction1<<root>.Region<@[Regional] R of <root>.Region>, T of <root>.Region.subregion>): T of <root>.Region.subregion declared in <root>.Region'
+          CALL 'public abstract fun invoke (p1: P1 of kotlin.coroutines.SuspendFunction1): R of kotlin.coroutines.SuspendFunction1 declared in kotlin.coroutines.SuspendFunction1' type=T of <root>.Region.subregion origin=null
+            ARG <this>: GET_VAR 'block: kotlin.coroutines.SuspendFunction1<<root>.Region<@[Regional] R of <root>.Region>, T of <root>.Region.subregion> declared in <root>.Region.subregion' type=kotlin.coroutines.SuspendFunction1<<root>.Region<@[Regional] R of <root>.Region>, T of <root>.Region.subregion> origin=null
+            ARG p1: CONSTRUCTOR_CALL 'internal constructor <init> () declared in <root>.Region' type=<root>.Region<@[Regional] R of <root>.Region> origin=null
+              TYPE_ARG (of class) R: @[Regional] R of <root>.Region
+  CLASS CLASS name:STRef modality:FINAL visibility:public superTypes:[kotlin.Any]
+    thisReceiver: VALUE_PARAMETER INSTANCE_RECEIVER kind:DispatchReceiver name:<this> type:<root>.STRef<S of <root>.STRef, R of <root>.STRef>
+    TYPE_PARAMETER name:S index:0 variance: superTypes:[kotlin.Any?] reified:false
+    TYPE_PARAMETER name:R index:1 variance:in superTypes:[kotlin.Any?] reified:false
+    PROPERTY name:state visibility:private modality:FINAL [var]
+      FIELD PROPERTY_BACKING_FIELD name:state type:S of <root>.STRef visibility:private
+        EXPRESSION_BODY
+          GET_VAR 'state: S of <root>.STRef declared in <root>.STRef.<init>' type=S of <root>.STRef origin=INITIALIZE_PROPERTY_FROM_PARAMETER
+      FUN DEFAULT_PROPERTY_ACCESSOR name:<get-state> visibility:private modality:FINAL returnType:S of <root>.STRef
+        VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:<root>.STRef<S of <root>.STRef, R of <root>.STRef>
+        correspondingProperty: PROPERTY name:state visibility:private modality:FINAL [var]
+        BLOCK_BODY
+          RETURN type=kotlin.Nothing from='private final fun <get-state> (): S of <root>.STRef declared in <root>.STRef'
+            GET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:state type:S of <root>.STRef visibility:private' type=S of <root>.STRef origin=null
+              receiver: GET_VAR '<this>: <root>.STRef<S of <root>.STRef, R of <root>.STRef> declared in <root>.STRef.<get-state>' type=<root>.STRef<S of <root>.STRef, R of <root>.STRef> origin=null
+      FUN DEFAULT_PROPERTY_ACCESSOR name:<set-state> visibility:private modality:FINAL returnType:kotlin.Unit
+        VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:<root>.STRef<S of <root>.STRef, R of <root>.STRef>
+        VALUE_PARAMETER kind:Regular name:<set-?> index:1 type:S of <root>.STRef
+        correspondingProperty: PROPERTY name:state visibility:private modality:FINAL [var]
+        BLOCK_BODY
+          SET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:state type:S of <root>.STRef visibility:private' type=kotlin.Unit origin=null
+            receiver: GET_VAR '<this>: <root>.STRef<S of <root>.STRef, R of <root>.STRef> declared in <root>.STRef.<set-state>' type=<root>.STRef<S of <root>.STRef, R of <root>.STRef> origin=null
+            value: GET_VAR '<set-?>: S of <root>.STRef declared in <root>.STRef.<set-state>' type=S of <root>.STRef origin=null
+    CLASS OBJECT name:Companion modality:FINAL visibility:public [companion] superTypes:[kotlin.Any]
+      thisReceiver: VALUE_PARAMETER INSTANCE_RECEIVER kind:DispatchReceiver name:<this> type:<root>.STRef.Companion
+      CONSTRUCTOR visibility:private returnType:<root>.STRef.Companion [primary]
+        BLOCK_BODY
+          DELEGATING_CONSTRUCTOR_CALL 'public constructor <init> () declared in kotlin.Any'
+          INSTANCE_INITIALIZER_CALL classDescriptor='CLASS OBJECT name:Companion modality:FINAL visibility:public [companion] superTypes:[kotlin.Any]' type=kotlin.Unit
+      FUN FAKE_OVERRIDE name:equals visibility:public modality:OPEN returnType:kotlin.Boolean [fake_override,operator]
+        VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+        VALUE_PARAMETER kind:Regular name:other index:1 type:kotlin.Any?
+        overridden:
+          public open fun equals (other: kotlin.Any?): kotlin.Boolean declared in kotlin.Any
+      FUN FAKE_OVERRIDE name:hashCode visibility:public modality:OPEN returnType:kotlin.Int [fake_override]
+        VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+        overridden:
+          public open fun hashCode (): kotlin.Int declared in kotlin.Any
+      FUN FAKE_OVERRIDE name:toString visibility:public modality:OPEN returnType:kotlin.String [fake_override]
+        VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+        overridden:
+          public open fun toString (): kotlin.String declared in kotlin.Any
+      FUN name:new visibility:public modality:FINAL returnType:<root>.STRef<S of <root>.STRef.Companion.new, R of <root>.STRef.Companion.new> [suspend]
+        TYPE_PARAMETER name:S index:0 variance: superTypes:[kotlin.Any?] reified:false
+        TYPE_PARAMETER name:R index:1 variance: superTypes:[kotlin.Any?] reified:false
+        VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:<root>.STRef.Companion
+        VALUE_PARAMETER UNDERSCORE_PARAMETER kind:Context name:$context-Region index:1 type:<root>.Region<R of <root>.STRef.Companion.new>
+        VALUE_PARAMETER kind:Regular name:init index:2 type:S of <root>.STRef.Companion.new
+        BLOCK_BODY
+          RETURN type=kotlin.Nothing from='public final fun new <S, R> ($context-Region: <root>.Region<R of <root>.STRef.Companion.new>, init: S of <root>.STRef.Companion.new): <root>.STRef<S of <root>.STRef.Companion.new, R of <root>.STRef.Companion.new> declared in <root>.STRef.Companion'
+            CONSTRUCTOR_CALL 'private constructor <init> (state: S of <root>.STRef) declared in <root>.STRef' type=<root>.STRef<S of <root>.STRef.Companion.new, R of <root>.STRef.Companion.new> origin=null
+              TYPE_ARG (of class) S: S of <root>.STRef.Companion.new
+              TYPE_ARG (of class) R: R of <root>.STRef.Companion.new
+              ARG state: GET_VAR 'init: S of <root>.STRef.Companion.new declared in <root>.STRef.Companion.new' type=S of <root>.STRef.Companion.new origin=null
+    CONSTRUCTOR visibility:private returnType:<root>.STRef<S of <root>.STRef, R of <root>.STRef> [primary]
+      VALUE_PARAMETER kind:Regular name:state index:0 type:S of <root>.STRef
+      BLOCK_BODY
+        DELEGATING_CONSTRUCTOR_CALL 'public constructor <init> () declared in kotlin.Any'
+        INSTANCE_INITIALIZER_CALL classDescriptor='CLASS CLASS name:STRef modality:FINAL visibility:public superTypes:[kotlin.Any]' type=kotlin.Unit
+    FUN FAKE_OVERRIDE name:equals visibility:public modality:OPEN returnType:kotlin.Boolean [fake_override,operator]
+      VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+      VALUE_PARAMETER kind:Regular name:other index:1 type:kotlin.Any?
+      overridden:
+        public open fun equals (other: kotlin.Any?): kotlin.Boolean declared in kotlin.Any
+    FUN FAKE_OVERRIDE name:hashCode visibility:public modality:OPEN returnType:kotlin.Int [fake_override]
+      VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+      overridden:
+        public open fun hashCode (): kotlin.Int declared in kotlin.Any
+    FUN FAKE_OVERRIDE name:toString visibility:public modality:OPEN returnType:kotlin.String [fake_override]
+      VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+      overridden:
+        public open fun toString (): kotlin.String declared in kotlin.Any
+    FUN name:get visibility:public modality:FINAL returnType:S of <root>.STRef [suspend]
+      VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:<root>.STRef<S of <root>.STRef, R of <root>.STRef>
+      VALUE_PARAMETER UNDERSCORE_PARAMETER kind:Context name:$context-Region index:1 type:<root>.Region<R of <root>.STRef>
+      BLOCK_BODY
+        RETURN type=kotlin.Nothing from='public final fun get ($context-Region: <root>.Region<R of <root>.STRef>): S of <root>.STRef declared in <root>.STRef'
+          CALL 'private final fun <get-state> (): S of <root>.STRef declared in <root>.STRef' type=S of <root>.STRef origin=GET_PROPERTY
+            ARG <this>: GET_VAR '<this>: <root>.STRef<S of <root>.STRef, R of <root>.STRef> declared in <root>.STRef.get' type=<root>.STRef<S of <root>.STRef, R of <root>.STRef> origin=IMPLICIT_ARGUMENT
+    FUN name:set visibility:public modality:FINAL returnType:kotlin.Unit [suspend]
+      VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:<root>.STRef<S of <root>.STRef, R of <root>.STRef>
+      VALUE_PARAMETER UNDERSCORE_PARAMETER kind:Context name:$context-Region index:1 type:<root>.Region<R of <root>.STRef>
+      VALUE_PARAMETER kind:Regular name:value index:2 type:S of <root>.STRef
+      BLOCK_BODY
+        CALL 'private final fun <set-state> (<set-?>: S of <root>.STRef): kotlin.Unit declared in <root>.STRef' type=kotlin.Unit origin=EQ
+          ARG <this>: GET_VAR '<this>: <root>.STRef<S of <root>.STRef, R of <root>.STRef> declared in <root>.STRef.set' type=<root>.STRef<S of <root>.STRef, R of <root>.STRef> origin=IMPLICIT_ARGUMENT
+          ARG <set-?>: GET_VAR 'value: S of <root>.STRef declared in <root>.STRef.set' type=S of <root>.STRef origin=null
+  FUN name:box visibility:public modality:FINAL returnType:kotlin.String
+    BLOCK_BODY
+      RETURN type=kotlin.Nothing from='public final fun box (): kotlin.String declared in <root>'
+        CALL 'public final fun region <R> (block: kotlin.coroutines.SuspendFunction1<<root>.Region<@[Regional] kotlin.Any?>, R of <root>.region>): R of <root>.region declared in <root>' type=kotlin.String origin=null
+          TYPE_ARG R: kotlin.String
+          ARG block: FUN_EXPR type=kotlin.coroutines.SuspendFunction1<<root>.Region<@[Regional] kotlin.Any?>, kotlin.String> origin=LAMBDA
+            FUN LOCAL_FUNCTION_FOR_LAMBDA name:<anonymous> visibility:local modality:FINAL returnType:kotlin.String [suspend]
+              VALUE_PARAMETER UNDERSCORE_PARAMETER kind:Context name:$context-Region index:0 type:<root>.Region<@[Regional] kotlin.Any?>
+              BLOCK_BODY
+                CLASS GENERATED[io.github.kyay10.regional.fir.GeneratedRegionKey] CLASS name:RegionRegion modality:ABSTRACT visibility:local superTypes:[kotlin.Any]
+                  thisReceiver: VALUE_PARAMETER INSTANCE_RECEIVER kind:DispatchReceiver name:<this> type:<root>.box.<anonymous>.RegionRegion
+                  CONSTRUCTOR GENERATED[io.github.kyay10.regional.fir.GeneratedRegionKey] visibility:public returnType:<root>.box.<anonymous>.RegionRegion [primary]
+                    BLOCK_BODY
+                      DELEGATING_CONSTRUCTOR_CALL 'public constructor <init> () declared in kotlin.Any'
+                      INSTANCE_INITIALIZER_CALL classDescriptor='CLASS GENERATED[io.github.kyay10.regional.fir.GeneratedRegionKey] CLASS name:RegionRegion modality:ABSTRACT visibility:local superTypes:[kotlin.Any]' type=kotlin.Unit
+                  FUN FAKE_OVERRIDE name:equals visibility:public modality:OPEN returnType:kotlin.Boolean [fake_override,operator]
+                    VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+                    VALUE_PARAMETER kind:Regular name:other index:1 type:kotlin.Any?
+                    overridden:
+                      public open fun equals (other: kotlin.Any?): kotlin.Boolean declared in kotlin.Any
+                  FUN FAKE_OVERRIDE name:hashCode visibility:public modality:OPEN returnType:kotlin.Int [fake_override]
+                    VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+                    overridden:
+                      public open fun hashCode (): kotlin.Int declared in kotlin.Any
+                  FUN FAKE_OVERRIDE name:toString visibility:public modality:OPEN returnType:kotlin.String [fake_override]
+                    VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+                    overridden:
+                      public open fun toString (): kotlin.String declared in kotlin.Any
+                CALL 'public final fun assertHasRegion <T> (value: kotlin.Any?, next: kotlin.Unit): kotlin.Unit declared in io.github.kyay10.regional' type=kotlin.Unit origin=null
+                  TYPE_ARG T: <root>.Region<<root>.box.<anonymous>.RegionRegion>
+                  ARG value: GET_VAR '$context-Region: <root>.Region<@[Regional] kotlin.Any?> declared in <root>.box.<anonymous>' type=<root>.Region<@[Regional] kotlin.Any?> origin=null
+                VAR name:ref type:<root>.STRef<kotlin.Int, <root>.box.<anonymous>.RegionRegion> [val]
+                  CALL 'public final fun new <S, R> ($context-Region: <root>.Region<R of <root>.STRef.Companion.new>, init: S of <root>.STRef.Companion.new): <root>.STRef<S of <root>.STRef.Companion.new, R of <root>.STRef.Companion.new> declared in <root>.STRef.Companion' type=<root>.STRef<kotlin.Int, <root>.box.<anonymous>.RegionRegion> origin=null
+                    TYPE_ARG S: kotlin.Int
+                    TYPE_ARG R: <root>.box.<anonymous>.RegionRegion
+                    ARG <this>: GET_OBJECT 'CLASS OBJECT name:Companion modality:FINAL visibility:public [companion] superTypes:[kotlin.Any]' type=<root>.STRef.Companion
+                    ARG $context-Region: GET_VAR '$context-Region: <root>.Region<@[Regional] kotlin.Any?> declared in <root>.box.<anonymous>' type=<root>.Region<@[Regional] kotlin.Any?> origin=null
+                    ARG init: CONST Int type=kotlin.Int value=0
+                CALL 'public final fun set ($context-Region: <root>.Region<R of <root>.STRef>, value: S of <root>.STRef): kotlin.Unit declared in <root>.STRef' type=kotlin.Unit origin=null
+                  ARG <this>: GET_VAR 'val ref: <root>.STRef<kotlin.Int, <root>.box.<anonymous>.RegionRegion> declared in <root>.box.<anonymous>' type=<root>.STRef<kotlin.Int, <root>.box.<anonymous>.RegionRegion> origin=null
+                  ARG $context-Region: GET_VAR '$context-Region: <root>.Region<@[Regional] kotlin.Any?> declared in <root>.box.<anonymous>' type=<root>.Region<@[Regional] kotlin.Any?> origin=null
+                  ARG value: CONST Int type=kotlin.Int value=42
+                CALL 'public final fun require (value: kotlin.Boolean): kotlin.Unit declared in kotlin' type=kotlin.Unit origin=null
+                  ARG value: CALL 'public final fun EQEQ (arg0: kotlin.Any?, arg1: kotlin.Any?): kotlin.Boolean declared in kotlin.internal.ir' type=kotlin.Boolean origin=EQEQ
+                    ARG arg0: CALL 'public final fun get ($context-Region: <root>.Region<R of <root>.STRef>): S of <root>.STRef declared in <root>.STRef' type=kotlin.Int origin=null
+                      ARG <this>: GET_VAR 'val ref: <root>.STRef<kotlin.Int, <root>.box.<anonymous>.RegionRegion> declared in <root>.box.<anonymous>' type=<root>.STRef<kotlin.Int, <root>.box.<anonymous>.RegionRegion> origin=null
+                      ARG $context-Region: GET_VAR '$context-Region: <root>.Region<@[Regional] kotlin.Any?> declared in <root>.box.<anonymous>' type=<root>.Region<@[Regional] kotlin.Any?> origin=null
+                    ARG arg1: CONST Int type=kotlin.Int value=42
+                VAR name:refDeclaredInside type:<root>.STRef<kotlin.String, <root>.box.<anonymous>.RegionRegion> [val]
+                  CALL 'public final fun subregion <R, T> (region: <root>.Region<R of <root>.subregion>, block: kotlin.coroutines.SuspendFunction1<<root>.Region<@[Regional] R of <root>.subregion>, T of <root>.subregion>): T of <root>.subregion declared in <root>' type=<root>.STRef<kotlin.String, <root>.box.<anonymous>.RegionRegion> origin=null
+                    TYPE_ARG R: <root>.box.<anonymous>.RegionRegion
+                    TYPE_ARG T: <root>.STRef<kotlin.String, <root>.box.<anonymous>.RegionRegion>
+                    ARG region: GET_VAR '$context-Region: <root>.Region<@[Regional] kotlin.Any?> declared in <root>.box.<anonymous>' type=<root>.Region<@[Regional] kotlin.Any?> origin=null
+                    ARG block: FUN_EXPR type=kotlin.coroutines.SuspendFunction1<<root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion>, <root>.STRef<kotlin.String, <root>.box.<anonymous>.RegionRegion>> origin=LAMBDA
+                      FUN LOCAL_FUNCTION_FOR_LAMBDA name:<anonymous> visibility:local modality:FINAL returnType:<root>.STRef<kotlin.String, <root>.box.<anonymous>.RegionRegion> [suspend]
+                        VALUE_PARAMETER UNDERSCORE_PARAMETER kind:Context name:$context-Region index:0 type:<root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion>
+                        BLOCK_BODY
+                          CLASS GENERATED[io.github.kyay10.regional.fir.GeneratedRegionKey] CLASS name:SubregionRegion modality:ABSTRACT visibility:local superTypes:[@[Regional] <root>.box.<anonymous>.RegionRegion]
+                            thisReceiver: VALUE_PARAMETER INSTANCE_RECEIVER kind:DispatchReceiver name:<this> type:<root>.box.<anonymous>.<anonymous>.SubregionRegion
+                            CONSTRUCTOR GENERATED[io.github.kyay10.regional.fir.GeneratedRegionKey] visibility:public returnType:<root>.box.<anonymous>.<anonymous>.SubregionRegion [primary]
+                              BLOCK_BODY
+                                DELEGATING_CONSTRUCTOR_CALL 'public constructor <init> () declared in <root>.box.<anonymous>.RegionRegion'
+                                INSTANCE_INITIALIZER_CALL classDescriptor='CLASS GENERATED[io.github.kyay10.regional.fir.GeneratedRegionKey] CLASS name:SubregionRegion modality:ABSTRACT visibility:local superTypes:[@[Regional] <root>.box.<anonymous>.RegionRegion]' type=kotlin.Unit
+                            FUN FAKE_OVERRIDE name:equals visibility:public modality:OPEN returnType:kotlin.Boolean [fake_override,operator]
+                              VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+                              VALUE_PARAMETER kind:Regular name:other index:1 type:kotlin.Any?
+                              overridden:
+                                public open fun equals (other: kotlin.Any?): kotlin.Boolean declared in <root>.box.<anonymous>.RegionRegion
+                            FUN FAKE_OVERRIDE name:hashCode visibility:public modality:OPEN returnType:kotlin.Int [fake_override]
+                              VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+                              overridden:
+                                public open fun hashCode (): kotlin.Int declared in <root>.box.<anonymous>.RegionRegion
+                            FUN FAKE_OVERRIDE name:toString visibility:public modality:OPEN returnType:kotlin.String [fake_override]
+                              VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+                              overridden:
+                                public open fun toString (): kotlin.String declared in <root>.box.<anonymous>.RegionRegion
+                          CALL 'public final fun assertHasRegion <T> (value: kotlin.Any?, next: kotlin.Unit): kotlin.Unit declared in io.github.kyay10.regional' type=kotlin.Unit origin=null
+                            TYPE_ARG T: <root>.Region<<root>.box.<anonymous>.<anonymous>.SubregionRegion>
+                            ARG value: GET_VAR '$context-Region: <root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion> declared in <root>.box.<anonymous>.<anonymous>' type=<root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion> origin=null
+                          VAR name:innerRef type:<root>.STRef<kotlin.Int, <root>.box.<anonymous>.<anonymous>.SubregionRegion> [val]
+                            CALL 'public final fun new <S, R> ($context-Region: <root>.Region<R of <root>.STRef.Companion.new>, init: S of <root>.STRef.Companion.new): <root>.STRef<S of <root>.STRef.Companion.new, R of <root>.STRef.Companion.new> declared in <root>.STRef.Companion' type=<root>.STRef<kotlin.Int, <root>.box.<anonymous>.<anonymous>.SubregionRegion> origin=null
+                              TYPE_ARG S: kotlin.Int
+                              TYPE_ARG R: <root>.box.<anonymous>.<anonymous>.SubregionRegion
+                              ARG <this>: GET_OBJECT 'CLASS OBJECT name:Companion modality:FINAL visibility:public [companion] superTypes:[kotlin.Any]' type=<root>.STRef.Companion
+                              ARG $context-Region: GET_VAR '$context-Region: <root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion> declared in <root>.box.<anonymous>.<anonymous>' type=<root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion> origin=null
+                              ARG init: CONST Int type=kotlin.Int value=0
+                          CALL 'public final fun set ($context-Region: <root>.Region<R of <root>.STRef>, value: S of <root>.STRef): kotlin.Unit declared in <root>.STRef' type=kotlin.Unit origin=null
+                            ARG <this>: GET_VAR 'val innerRef: <root>.STRef<kotlin.Int, <root>.box.<anonymous>.<anonymous>.SubregionRegion> declared in <root>.box.<anonymous>.<anonymous>' type=<root>.STRef<kotlin.Int, <root>.box.<anonymous>.<anonymous>.SubregionRegion> origin=null
+                            ARG $context-Region: GET_VAR '$context-Region: <root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion> declared in <root>.box.<anonymous>.<anonymous>' type=<root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion> origin=null
+                            ARG value: CONST Int type=kotlin.Int value=100
+                          CALL 'public final fun require (value: kotlin.Boolean): kotlin.Unit declared in kotlin' type=kotlin.Unit origin=null
+                            ARG value: CALL 'public final fun EQEQ (arg0: kotlin.Any?, arg1: kotlin.Any?): kotlin.Boolean declared in kotlin.internal.ir' type=kotlin.Boolean origin=EQEQ
+                              ARG arg0: CALL 'public final fun get ($context-Region: <root>.Region<R of <root>.STRef>): S of <root>.STRef declared in <root>.STRef' type=kotlin.Int origin=null
+                                ARG <this>: GET_VAR 'val innerRef: <root>.STRef<kotlin.Int, <root>.box.<anonymous>.<anonymous>.SubregionRegion> declared in <root>.box.<anonymous>.<anonymous>' type=<root>.STRef<kotlin.Int, <root>.box.<anonymous>.<anonymous>.SubregionRegion> origin=null
+                                ARG $context-Region: GET_VAR '$context-Region: <root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion> declared in <root>.box.<anonymous>.<anonymous>' type=<root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion> origin=null
+                              ARG arg1: CONST Int type=kotlin.Int value=100
+                          CALL 'public final fun require (value: kotlin.Boolean): kotlin.Unit declared in kotlin' type=kotlin.Unit origin=null
+                            ARG value: CALL 'public final fun EQEQ (arg0: kotlin.Any?, arg1: kotlin.Any?): kotlin.Boolean declared in kotlin.internal.ir' type=kotlin.Boolean origin=EQEQ
+                              ARG arg0: CALL 'public final fun get ($context-Region: <root>.Region<R of <root>.STRef>): S of <root>.STRef declared in <root>.STRef' type=kotlin.Int origin=null
+                                ARG <this>: GET_VAR 'val ref: <root>.STRef<kotlin.Int, <root>.box.<anonymous>.RegionRegion> declared in <root>.box.<anonymous>' type=<root>.STRef<kotlin.Int, <root>.box.<anonymous>.RegionRegion> origin=null
+                                ARG $context-Region: GET_VAR '$context-Region: <root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion> declared in <root>.box.<anonymous>.<anonymous>' type=<root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion> origin=null
+                              ARG arg1: CONST Int type=kotlin.Int value=42
+                          RETURN type=kotlin.Nothing from='local final fun <anonymous> ($context-Region: <root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion>): <root>.STRef<kotlin.String, <root>.box.<anonymous>.RegionRegion> declared in <root>.box.<anonymous>'
+                            CALL 'public final fun new <S, R> ($context-Region: <root>.Region<R of <root>.STRef.Companion.new>, init: S of <root>.STRef.Companion.new): <root>.STRef<S of <root>.STRef.Companion.new, R of <root>.STRef.Companion.new> declared in <root>.STRef.Companion' type=<root>.STRef<kotlin.String, <root>.box.<anonymous>.RegionRegion> origin=null
+                              TYPE_ARG S: kotlin.String
+                              TYPE_ARG R: <root>.box.<anonymous>.RegionRegion
+                              ARG <this>: GET_OBJECT 'CLASS OBJECT name:Companion modality:FINAL visibility:public [companion] superTypes:[kotlin.Any]' type=<root>.STRef.Companion
+                              ARG $context-Region: GET_VAR '$context-Region: <root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion> declared in <root>.box.<anonymous>.<anonymous>' type=<root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion> origin=null
+                              ARG init: CONST String type=kotlin.String value="OK"
+                RETURN type=kotlin.Nothing from='local final fun <anonymous> ($context-Region: <root>.Region<@[Regional] kotlin.Any?>): kotlin.String declared in <root>.box'
+                  CALL 'public final fun get ($context-Region: <root>.Region<R of <root>.STRef>): S of <root>.STRef declared in <root>.STRef' type=kotlin.String origin=null
+                    ARG <this>: GET_VAR 'val refDeclaredInside: <root>.STRef<kotlin.String, <root>.box.<anonymous>.RegionRegion> declared in <root>.box.<anonymous>' type=<root>.STRef<kotlin.String, <root>.box.<anonymous>.RegionRegion> origin=null
+                    ARG $context-Region: GET_VAR '$context-Region: <root>.Region<@[Regional] kotlin.Any?> declared in <root>.box.<anonymous>' type=<root>.Region<@[Regional] kotlin.Any?> origin=null
+  FUN name:region visibility:public modality:FINAL returnType:R of <root>.region
+    TYPE_PARAMETER name:R index:0 variance: superTypes:[kotlin.Any?] reified:false
+    VALUE_PARAMETER kind:Regular name:block index:0 type:kotlin.coroutines.SuspendFunction1<<root>.Region<@[Regional] kotlin.Any?>, R of <root>.region>
+    BLOCK_BODY
+      RETURN type=kotlin.Nothing from='public final fun region <R> (block: kotlin.coroutines.SuspendFunction1<<root>.Region<@[Regional] kotlin.Any?>, R of <root>.region>): R of <root>.region declared in <root>'
+        CALL 'public final fun region <R> (block: kotlin.coroutines.SuspendFunction1<<root>.Region<@[Regional] kotlin.Any?>, R of <root>.Region.Companion.region>): R of <root>.Region.Companion.region declared in <root>.Region.Companion' type=R of <root>.region origin=null
+          TYPE_ARG R: R of <root>.region
+          ARG <this>: GET_OBJECT 'CLASS OBJECT name:Companion modality:FINAL visibility:public [companion] superTypes:[kotlin.Any]' type=<root>.Region.Companion
+          ARG block: GET_VAR 'block: kotlin.coroutines.SuspendFunction1<<root>.Region<@[Regional] kotlin.Any?>, R of <root>.region> declared in <root>.region' type=kotlin.coroutines.SuspendFunction1<<root>.Region<@[Regional] kotlin.Any?>, R of <root>.region> origin=null
+  FUN name:subregion visibility:public modality:FINAL returnType:T of <root>.subregion [suspend]
+    TYPE_PARAMETER name:R index:0 variance: superTypes:[kotlin.Any?] reified:false
+    TYPE_PARAMETER name:T index:1 variance: superTypes:[kotlin.Any?] reified:false
+    VALUE_PARAMETER kind:Context name:region index:0 type:<root>.Region<R of <root>.subregion>
+    VALUE_PARAMETER kind:Regular name:block index:1 type:kotlin.coroutines.SuspendFunction1<<root>.Region<@[Regional] R of <root>.subregion>, T of <root>.subregion>
+    BLOCK_BODY
+      RETURN type=kotlin.Nothing from='public final fun subregion <R, T> (region: <root>.Region<R of <root>.subregion>, block: kotlin.coroutines.SuspendFunction1<<root>.Region<@[Regional] R of <root>.subregion>, T of <root>.subregion>): T of <root>.subregion declared in <root>'
+        CALL 'public final fun subregion <T> (block: kotlin.coroutines.SuspendFunction1<<root>.Region<@[Regional] R of <root>.Region>, T of <root>.Region.subregion>): T of <root>.Region.subregion declared in <root>.Region' type=T of <root>.subregion origin=null
+          TYPE_ARG T: T of <root>.subregion
+          ARG <this>: GET_VAR 'region: <root>.Region<R of <root>.subregion> declared in <root>.subregion' type=<root>.Region<R of <root>.subregion> origin=null
+          ARG block: GET_VAR 'block: kotlin.coroutines.SuspendFunction1<<root>.Region<@[Regional] R of <root>.subregion>, T of <root>.subregion> declared in <root>.subregion' type=kotlin.coroutines.SuspendFunction1<<root>.Region<@[Regional] R of <root>.subregion>, T of <root>.subregion> origin=null

@@ -1,0 +1,97 @@
+FILE: st.kt
+    @R|kotlin/coroutines/RestrictsSuspension|() public final class Region<out R> : R|kotlin/Any| {
+        @R|kotlin/PublishedApi|() internal constructor<out R>(): R|Region<R>| {
+            super<R|kotlin/Any|>()
+        }
+
+        public final inline suspend fun <T> subregion(block: R|@ContextFunctionTypeParams(1) suspend context(Region<@R|io/github/kyay10/regional/Regional|()  R>) () -> T|): R|T| {
+            ^subregion R|<local>/block|.R|SubstitutionOverride<kotlin/coroutines/SuspendFunction1.invoke: R|T|>|(R|/Region.Region|<R|@R|io/github/kyay10/regional/Regional|()  R|>())
+        }
+
+        public final companion object Companion : R|kotlin/Any| {
+            private constructor(): R|Region.Companion| {
+                super<R|kotlin/Any|>()
+            }
+
+            public final fun <R> region(block: R|@ContextFunctionTypeParams(1) suspend context(Region<@R|io/github/kyay10/regional/Regional|()  kotlin/Any?>) () -> R|): R|R| {
+                ^region (R|<local>/block|.R|kotlin/coroutines/intrinsics/startCoroutineUninterceptedOrReturn|<R|Region<@R|io/github/kyay10/regional/Regional|()  kotlin/Any?>|, R|R|>(R|/Region.Region|<R|@R|io/github/kyay10/regional/Regional|()  kotlin/Any?|>(), R|kotlin/coroutines/Continuation|<R|R|>(Q|kotlin/coroutines/EmptyCoroutineContext|, <L> = Continuation@fun <anonymous>(it: R|kotlin/Result<R>|): R|kotlin/Unit| <inline=CrossInline>  {
+                    ^@Continuation Unit
+                }
+                )) as R|R|)
+            }
+
+        }
+
+    }
+    public final fun <R> region(block: R|@ContextFunctionTypeParams(1) suspend context(Region<@R|io/github/kyay10/regional/Regional|()  kotlin/Any?>) () -> R|): R|R| {
+        ^region Q|Region|.R|/Region.Companion.region|<R|R|>(R|<local>/block|)
+    }
+    context(region: R|Region<R>|)
+    public final suspend fun <R, T> subregion(block: R|@ContextFunctionTypeParams(1) suspend context(Region<@R|io/github/kyay10/regional/Regional|()  R>) () -> T|): R|T| {
+        ^subregion R|<local>/region|.R|SubstitutionOverride</Region.subregion: R|T|>|<R|T|>(R|<local>/block|)
+    }
+    public final class STRef<S, in R> : R|kotlin/Any| {
+        private constructor<S, in R>(state: R|S|): R|STRef<S, R>| {
+            super<R|kotlin/Any|>()
+        }
+
+        private final var state: R|S| = R|<local>/state|
+            private get(): R|S|
+            private set(value: R|S|): R|kotlin/Unit|
+
+        public final companion object Companion : R|kotlin/Any| {
+            private constructor(): R|STRef.Companion| {
+                super<R|kotlin/Any|>()
+            }
+
+            context(<unused var>: R|Region<R>|)
+            public final suspend fun <S, R> new(init: R|S|): R|STRef<S, R>| {
+                ^new R|/STRef.STRef|<R|S|, R|R|>(R|<local>/init|)
+            }
+
+        }
+
+        context(<unused var>: R|Region<R>|)
+        public final suspend fun get(): R|S| {
+            ^get this@R|/STRef|.R|/STRef.state|
+        }
+
+        context(<unused var>: R|Region<R>|)
+        public final suspend fun set(value: R|S|): R|kotlin/Unit| {
+            this@R|/STRef|.R|/STRef.state| = R|<local>/value|
+        }
+
+    }
+    public final fun box(): R|kotlin/String| {
+        ^box R|/region|<R|kotlin/String|>(<L> = context(<unused var>: R|Region<@R|io/github/kyay10/regional/Regional|()  kotlin/Any?>|) region@fun <anonymous>(): R|kotlin/String| <inline=NoInline>  {
+            local abstract class RegionRegion : R|kotlin/Any| {
+                public constructor(): R|<local>/RegionRegion| {
+                    super<R|kotlin/Any|>()
+                }
+
+            }
+
+            Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|Region<<local>/RegionRegion>|>(R|<local>/<unused var>|)
+            lval ref: R|STRef<kotlin/Int, <local>/RegionRegion>| = context(R|<local>/<unused var>|) Q|STRef|.R|/STRef.Companion.new|<R|kotlin/Int|, R|<local>/RegionRegion|>(Int(0))
+            context(R|<local>/<unused var>|) R|<local>/ref|.R|SubstitutionOverride</STRef.set: R|kotlin/Unit|>|(Int(42))
+            R|kotlin/require|(==(context(R|<local>/<unused var>|) R|<local>/ref|.R|SubstitutionOverride</STRef.get: R|kotlin/Int|>|(), Int(42)))
+            lval refDeclaredInside: R|STRef<kotlin/String, <local>/RegionRegion>| = context(R|<local>/<unused var>|) R|/subregion|<R|<local>/RegionRegion|, R|STRef<kotlin/String, <local>/RegionRegion>|>(<L> = context(<unused var>: R|Region<@R|io/github/kyay10/regional/Regional|()  <local>/RegionRegion>|) subregion@fun <anonymous>(): R|STRef<kotlin/String, <local>/RegionRegion>| <inline=NoInline>  {
+                local abstract class SubregionRegion : R|@R|io/github/kyay10/regional/Regional|()  <local>/RegionRegion| {
+                    public constructor(): R|<local>/SubregionRegion| {
+                        super<R|@R|io/github/kyay10/regional/Regional|()  <local>/RegionRegion|>()
+                    }
+
+                }
+
+                Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|Region<<local>/SubregionRegion>|>(R|<local>/<unused var>|)
+                lval innerRef: R|STRef<kotlin/Int, <local>/SubregionRegion>| = context(R|<local>/<unused var>|) Q|STRef|.R|/STRef.Companion.new|<R|kotlin/Int|, R|<local>/SubregionRegion|>(Int(0))
+                context(R|<local>/<unused var>|) R|<local>/innerRef|.R|SubstitutionOverride</STRef.set: R|kotlin/Unit|>|(Int(100))
+                R|kotlin/require|(==(context(R|<local>/<unused var>|) R|<local>/innerRef|.R|SubstitutionOverride</STRef.get: R|kotlin/Int|>|(), Int(100)))
+                R|kotlin/require|(==(context(R|<local>/<unused var>|) R|<local>/ref|.R|SubstitutionOverride</STRef.get: R|kotlin/Int|>|(), Int(42)))
+                ^ context(R|<local>/<unused var>|) Q|STRef|.R|/STRef.Companion.new|<R|kotlin/String|, R|<local>/RegionRegion|>(String(OK))
+            }
+            )
+            ^ context(R|<local>/<unused var>|) R|<local>/refDeclaredInside|.R|SubstitutionOverride</STRef.get: R|kotlin/String|>|()
+        }
+        )
+    }
