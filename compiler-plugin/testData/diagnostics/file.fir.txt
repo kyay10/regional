@@ -116,31 +116,31 @@ FILE: file.kt
         }
         )
     }
-    public final fun example(): R|kotlin/Char| {
+    public final fun <T> example(): R|kotlin/Char| {
         ^example R|/region|<R|kotlin/Char|>(<L> = context(<unused var>: R|Region<@R|io/github/kyay10/regional/Regional|()  kotlin/Any?>|, <unused var>: R|AutoCloseScope<@R|io/github/kyay10/regional/Regional|()  kotlin/Nothing>|) region@fun <anonymous>(): R|kotlin/Char| <inline=NoInline>  {
-            local abstract class RegionRegion : R|kotlin/Any| {
-                public constructor(): R|<local>/RegionRegion| {
+            local abstract class RegionRegion<Outer(T)> : R|kotlin/Any| {
+                public constructor(): R|<local>/RegionRegion<T>| {
                     super<R|kotlin/Any|>()
                 }
 
             }
 
-            Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|AutoCloseScope<<local>/RegionRegion>|>(R|<local>/<unused var>|, Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|Region<<local>/RegionRegion>|>(R|<local>/<unused var>|))
-            lval file: R|FileHandle<<local>/RegionRegion>| = context(R|<local>/<unused var>|) Q|java/nio/file/Path|.R|java/nio/file/Path.of*s|(String(example.txt)).R|/open|<R|<local>/RegionRegion|>()
+            Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|AutoCloseScope<<local>/RegionRegion<T>>|>(R|<local>/<unused var>|, Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|Region<<local>/RegionRegion<T>>|>(R|<local>/<unused var>|))
+            lval file: R|FileHandle<<local>/RegionRegion<T>>| = context(R|<local>/<unused var>|) Q|java/nio/file/Path|.R|java/nio/file/Path.of*s|(String(example.txt)).R|/open|<R|<local>/RegionRegion<T>|>()
             R|kotlin/io/println|(context(R|<local>/<unused var>|) R|<local>/file|.R|SubstitutionOverride</FileHandle.read: R|kotlin/Char|>|())
-            lval file2: R|FileHandle<<local>/RegionRegion>| = context(R|<local>/<unused var>|) R|/subregion|<R|<local>/RegionRegion|, R|FileHandle<<local>/RegionRegion>|>(<L> = context(<unused var>: R|Region<@R|io/github/kyay10/regional/Regional|()  <local>/RegionRegion>|, <unused var>: R|AutoCloseScope<@R|io/github/kyay10/regional/Regional|()  kotlin/Nothing>|) subregion@fun <anonymous>(): R|FileHandle<<local>/RegionRegion>| <inline=NoInline>  {
-                local abstract class SubregionRegion : R|@R|io/github/kyay10/regional/Regional|()  <local>/RegionRegion| {
-                    public constructor(): R|<local>/SubregionRegion| {
-                        super<R|@R|io/github/kyay10/regional/Regional|()  <local>/RegionRegion|>()
+            lval file2: R|FileHandle<<local>/RegionRegion<T>>| = context(R|<local>/<unused var>|) R|/subregion|<R|<local>/RegionRegion<T>|, R|FileHandle<<local>/RegionRegion<T>>|>(<L> = context(<unused var>: R|Region<@R|io/github/kyay10/regional/Regional|()  <local>/RegionRegion<T>>|, <unused var>: R|AutoCloseScope<@R|io/github/kyay10/regional/Regional|()  kotlin/Nothing>|) subregion@fun <anonymous>(): R|FileHandle<<local>/RegionRegion<T>>| <inline=NoInline>  {
+                local abstract class SubregionRegion<Outer(T)> : R|@R|io/github/kyay10/regional/Regional|()  <local>/RegionRegion<T>| {
+                    public constructor(): R|<local>/SubregionRegion<T>| {
+                        super<R|@R|io/github/kyay10/regional/Regional|()  <local>/RegionRegion<T>|>()
                     }
 
                 }
 
-                Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|AutoCloseScope<<local>/SubregionRegion>|>(R|<local>/<unused var>|, Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|Region<<local>/SubregionRegion>|>(R|<local>/<unused var>|))
-                lval subfile: R|FileHandle<<local>/SubregionRegion>| = context(R|<local>/<unused var>|) Q|java/nio/file/Path|.R|java/nio/file/Path.of*s|(String(example2.txt)).R|/open|<R|<local>/SubregionRegion|>()
+                Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|AutoCloseScope<<local>/SubregionRegion<T>>|>(R|<local>/<unused var>|, Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|Region<<local>/SubregionRegion<T>>|>(R|<local>/<unused var>|))
+                lval subfile: R|FileHandle<<local>/SubregionRegion<T>>| = context(R|<local>/<unused var>|) Q|java/nio/file/Path|.R|java/nio/file/Path.of*s|(String(example2.txt)).R|/open|<R|<local>/SubregionRegion<T>|>()
                 R|kotlin/io/println|(context(R|<local>/<unused var>|) R|<local>/file|.R|SubstitutionOverride</FileHandle.read: R|kotlin/Char|>|())
                 R|kotlin/io/println|(context(R|<local>/<unused var>|) R|<local>/subfile|.R|SubstitutionOverride</FileHandle.read: R|kotlin/Char|>|())
-                ^ context(R|<local>/<unused var>|) Q|java/nio/file/Path|.R|java/nio/file/Path.of*s|(String(example3.txt)).R|/open|<R|<local>/RegionRegion|>()
+                ^ context(R|<local>/<unused var>|) Q|java/nio/file/Path|.R|java/nio/file/Path.of*s|(String(example3.txt)).R|/open|<R|<local>/RegionRegion<T>|>()
             }
             )
             ^ context(R|<local>/<unused var>|) R|<local>/file2|.R|SubstitutionOverride</FileHandle.read: R|kotlin/Char|>|()

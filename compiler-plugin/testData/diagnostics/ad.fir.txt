@@ -20,7 +20,7 @@ FILE: ad.kt
         local final suspend fun foo(): R|kotlin/Unit| {
             ^foo context(R|<local>/<unused var>|) R|/handle|<R|kotlin/Unit|, R|Region|>(<L> = context(<unused var>: R|{NewScope<Region>=} MultishotScope<@R|io/github/kyay10/regional/Regional|()  Region>|) handle@fun <anonymous>(): R|kotlin/Unit| <inline=NoInline>  {
                 local abstract class HandleRegion<Outer(Region)> : R|kotlin/Any| {
-                    public constructor<Region>(): R|<local>/HandleRegion<Region>| {
+                    public constructor(): R|<local>/HandleRegion<Region>| {
                         super<R|kotlin/Any|>()
                     }
 

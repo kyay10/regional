@@ -23,7 +23,7 @@ FILE: revState.kt
     public final suspend fun <S, R, Region> runRevState(value: R|S|, body: R|@ContextFunctionTypeParams(1) suspend context(foo/bar/MultishotScope<@R|io/github/kyay10/regional/Regional|()  Region>) {foo/bar/RevState<S, R, @R|io/github/kyay10/regional/Regional|()  kotlin/Nothing, Region>=} foo/bar/Prompt<kotlin/Pair<@ContextFunctionTypeParams(1) kotlin/coroutines/SuspendFunction1<foo/bar/MultishotScope<Region>, S>, R>, @R|io/github/kyay10/regional/Regional|()  kotlin/Nothing, Region>.() -> R|): R|kotlin/Pair<@ContextFunctionTypeParams(1) kotlin/coroutines/SuspendFunction1<foo/bar/MultishotScope<Region>, S>, R>| {
         ^runRevState context(R|<local>/<unused var>|) R|foo/bar/newReset|<R|kotlin/Pair<@ContextFunctionTypeParams(1) kotlin/coroutines/SuspendFunction1<foo/bar/MultishotScope<Region>, S>, R>|, R|Region|>(<L> = context(<unused var>: R|foo/bar/MultishotScope<@R|io/github/kyay10/regional/Regional|()  Region>|) newReset@fun R|foo/bar/Prompt<kotlin/Pair<@ContextFunctionTypeParams(1) kotlin/coroutines/SuspendFunction1<foo/bar/MultishotScope<Region>, S>, R>, @R|io/github/kyay10/regional/Regional|()  kotlin/Nothing, Region>|.<anonymous>(): R|kotlin/Pair<@ContextFunctionTypeParams(1) kotlin/coroutines/SuspendFunction1<foo/bar/MultishotScope<Region>, S>, R>| <inline=NoInline>  {
             local abstract class NewResetRegion<Outer(S), Outer(R), Outer(Region)> : R|kotlin/Any| {
-                public constructor<S, R, Region>(): R|<local>/NewResetRegion<S, R, Region>| {
+                public constructor(): R|<local>/NewResetRegion<S, R, Region>| {
                     super<R|kotlin/Any|>()
                 }
 

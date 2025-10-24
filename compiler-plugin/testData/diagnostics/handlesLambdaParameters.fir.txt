@@ -22,7 +22,7 @@ FILE: handlesLambdaParameters.kt
     public final suspend fun <R, Region> runChoice(body: R|@ContextFunctionTypeParams(2) suspend context({foo/bar/Choose<@R|io/github/kyay10/regional/Regional|()  kotlin/Nothing, Region>=} foo/bar/Prompt<kotlin/Unit, @R|io/github/kyay10/regional/Regional|()  kotlin/Nothing, Region>, foo/bar/MultishotScope<@R|io/github/kyay10/regional/Regional|()  Region>) () -> R|, handler: R|@ContextFunctionTypeParams(1) suspend context(foo/bar/MultishotScope<Region>) (R) -> kotlin/Unit|): R|kotlin/Unit| {
         ^runChoice context(R|<local>/<unused var>|) R|foo/bar/newReset|<R|kotlin/Unit|, R|Region|>(<L> = context(<unused var>: R|foo/bar/MultishotScope<@R|io/github/kyay10/regional/Regional|()  Region>|) newReset@fun R|foo/bar/Prompt<kotlin/Unit, @R|io/github/kyay10/regional/Regional|()  kotlin/Nothing, Region>|.<anonymous>(): R|kotlin/Unit| <inline=NoInline>  {
             local abstract class NewResetRegion<Outer(R), Outer(Region)> : R|kotlin/Any| {
-                public constructor<R, Region>(): R|<local>/NewResetRegion<R, Region>| {
+                public constructor(): R|<local>/NewResetRegion<R, Region>| {
                     super<R|kotlin/Any|>()
                 }
 

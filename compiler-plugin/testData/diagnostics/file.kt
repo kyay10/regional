@@ -74,7 +74,7 @@ fun <R> Path.open(): FileHandle<R> = with(FileHandle) { open() }
 
 // User code
 
-fun example() = region {
+fun <T> example() = region {
   val file = Path.of("example.txt").open()
   println(file.read())
   val file2 = subregion {
