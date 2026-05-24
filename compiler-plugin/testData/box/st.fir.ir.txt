@@ -197,23 +197,27 @@ FILE fqName:<root> fileName:/st.kt
                     TYPE_ARG S: kotlin.Int
                     TYPE_ARG R: <root>.box.<anonymous>.RegionRegion
                     ARG <this>: GET_OBJECT 'CLASS OBJECT name:Companion modality:FINAL visibility:public [companion] superTypes:[kotlin.Any]' type=<root>.STRef.Companion
-                    ARG $context-Region: GET_VAR '$context-Region: <root>.Region<@[Regional] kotlin.Any?> declared in <root>.box.<anonymous>' type=<root>.Region<@[Regional] kotlin.Any?> origin=null
+                    ARG $context-Region: TYPE_OP type=<root>.Region<<root>.box.<anonymous>.RegionRegion> origin=IMPLICIT_CAST typeOperand=<root>.Region<<root>.box.<anonymous>.RegionRegion>
+                      GET_VAR '$context-Region: <root>.Region<@[Regional] kotlin.Any?> declared in <root>.box.<anonymous>' type=<root>.Region<@[Regional] kotlin.Any?> origin=null
                     ARG init: CONST Int type=kotlin.Int value=0
                 CALL 'public final fun set ($context-Region: <root>.Region<R of <root>.STRef>, value: S of <root>.STRef): kotlin.Unit declared in <root>.STRef' type=kotlin.Unit origin=null
                   ARG <this>: GET_VAR 'val ref: <root>.STRef<kotlin.Int, <root>.box.<anonymous>.RegionRegion> declared in <root>.box.<anonymous>' type=<root>.STRef<kotlin.Int, <root>.box.<anonymous>.RegionRegion> origin=null
-                  ARG $context-Region: GET_VAR '$context-Region: <root>.Region<@[Regional] kotlin.Any?> declared in <root>.box.<anonymous>' type=<root>.Region<@[Regional] kotlin.Any?> origin=null
+                  ARG $context-Region: TYPE_OP type=<root>.Region<<root>.box.<anonymous>.RegionRegion> origin=IMPLICIT_CAST typeOperand=<root>.Region<<root>.box.<anonymous>.RegionRegion>
+                    GET_VAR '$context-Region: <root>.Region<@[Regional] kotlin.Any?> declared in <root>.box.<anonymous>' type=<root>.Region<@[Regional] kotlin.Any?> origin=null
                   ARG value: CONST Int type=kotlin.Int value=42
                 CALL 'public final fun require (value: kotlin.Boolean): kotlin.Unit declared in kotlin' type=kotlin.Unit origin=null
                   ARG value: CALL 'public final fun EQEQ (arg0: kotlin.Any?, arg1: kotlin.Any?): kotlin.Boolean declared in kotlin.internal.ir' type=kotlin.Boolean origin=EQEQ
                     ARG arg0: CALL 'public final fun get ($context-Region: <root>.Region<R of <root>.STRef>): S of <root>.STRef declared in <root>.STRef' type=kotlin.Int origin=null
                       ARG <this>: GET_VAR 'val ref: <root>.STRef<kotlin.Int, <root>.box.<anonymous>.RegionRegion> declared in <root>.box.<anonymous>' type=<root>.STRef<kotlin.Int, <root>.box.<anonymous>.RegionRegion> origin=null
-                      ARG $context-Region: GET_VAR '$context-Region: <root>.Region<@[Regional] kotlin.Any?> declared in <root>.box.<anonymous>' type=<root>.Region<@[Regional] kotlin.Any?> origin=null
+                      ARG $context-Region: TYPE_OP type=<root>.Region<<root>.box.<anonymous>.RegionRegion> origin=IMPLICIT_CAST typeOperand=<root>.Region<<root>.box.<anonymous>.RegionRegion>
+                        GET_VAR '$context-Region: <root>.Region<@[Regional] kotlin.Any?> declared in <root>.box.<anonymous>' type=<root>.Region<@[Regional] kotlin.Any?> origin=null
                     ARG arg1: CONST Int type=kotlin.Int value=42
                 VAR name:refDeclaredInside type:<root>.STRef<kotlin.String, <root>.box.<anonymous>.RegionRegion> [val]
                   CALL 'public final fun subregion <R, T> (region: <root>.Region<R of <root>.subregion>, block: kotlin.coroutines.SuspendFunction1<<root>.Region<@[Regional] R of <root>.subregion>, T of <root>.subregion>): T of <root>.subregion declared in <root>' type=<root>.STRef<kotlin.String, <root>.box.<anonymous>.RegionRegion> origin=null
                     TYPE_ARG R: <root>.box.<anonymous>.RegionRegion
                     TYPE_ARG T: <root>.STRef<kotlin.String, <root>.box.<anonymous>.RegionRegion>
-                    ARG region: GET_VAR '$context-Region: <root>.Region<@[Regional] kotlin.Any?> declared in <root>.box.<anonymous>' type=<root>.Region<@[Regional] kotlin.Any?> origin=null
+                    ARG region: TYPE_OP type=<root>.Region<<root>.box.<anonymous>.RegionRegion> origin=IMPLICIT_CAST typeOperand=<root>.Region<<root>.box.<anonymous>.RegionRegion>
+                      GET_VAR '$context-Region: <root>.Region<@[Regional] kotlin.Any?> declared in <root>.box.<anonymous>' type=<root>.Region<@[Regional] kotlin.Any?> origin=null
                     ARG block: FUN_EXPR type=kotlin.coroutines.SuspendFunction1<<root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion>, <root>.STRef<kotlin.String, <root>.box.<anonymous>.RegionRegion>> origin=LAMBDA
                       FUN LOCAL_FUNCTION_FOR_LAMBDA name:<anonymous> visibility:local modality:FINAL returnType:<root>.STRef<kotlin.String, <root>.box.<anonymous>.RegionRegion> [suspend]
                         VALUE_PARAMETER UNDERSCORE_PARAMETER kind:Context name:$context-Region index:0 type:<root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion>
@@ -245,35 +249,41 @@ FILE fqName:<root> fileName:/st.kt
                               TYPE_ARG S: kotlin.Int
                               TYPE_ARG R: <root>.box.<anonymous>.<anonymous>.SubregionRegion
                               ARG <this>: GET_OBJECT 'CLASS OBJECT name:Companion modality:FINAL visibility:public [companion] superTypes:[kotlin.Any]' type=<root>.STRef.Companion
-                              ARG $context-Region: GET_VAR '$context-Region: <root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion> declared in <root>.box.<anonymous>.<anonymous>' type=<root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion> origin=null
+                              ARG $context-Region: TYPE_OP type=<root>.Region<<root>.box.<anonymous>.<anonymous>.SubregionRegion> origin=IMPLICIT_CAST typeOperand=<root>.Region<<root>.box.<anonymous>.<anonymous>.SubregionRegion>
+                                GET_VAR '$context-Region: <root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion> declared in <root>.box.<anonymous>.<anonymous>' type=<root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion> origin=null
                               ARG init: CONST Int type=kotlin.Int value=0
                           CALL 'public final fun set ($context-Region: <root>.Region<R of <root>.STRef>, value: S of <root>.STRef): kotlin.Unit declared in <root>.STRef' type=kotlin.Unit origin=null
                             ARG <this>: GET_VAR 'val innerRef: <root>.STRef<kotlin.Int, <root>.box.<anonymous>.<anonymous>.SubregionRegion> declared in <root>.box.<anonymous>.<anonymous>' type=<root>.STRef<kotlin.Int, <root>.box.<anonymous>.<anonymous>.SubregionRegion> origin=null
-                            ARG $context-Region: GET_VAR '$context-Region: <root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion> declared in <root>.box.<anonymous>.<anonymous>' type=<root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion> origin=null
+                            ARG $context-Region: TYPE_OP type=<root>.Region<<root>.box.<anonymous>.<anonymous>.SubregionRegion> origin=IMPLICIT_CAST typeOperand=<root>.Region<<root>.box.<anonymous>.<anonymous>.SubregionRegion>
+                              GET_VAR '$context-Region: <root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion> declared in <root>.box.<anonymous>.<anonymous>' type=<root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion> origin=null
                             ARG value: CONST Int type=kotlin.Int value=100
                           CALL 'public final fun require (value: kotlin.Boolean): kotlin.Unit declared in kotlin' type=kotlin.Unit origin=null
                             ARG value: CALL 'public final fun EQEQ (arg0: kotlin.Any?, arg1: kotlin.Any?): kotlin.Boolean declared in kotlin.internal.ir' type=kotlin.Boolean origin=EQEQ
                               ARG arg0: CALL 'public final fun get ($context-Region: <root>.Region<R of <root>.STRef>): S of <root>.STRef declared in <root>.STRef' type=kotlin.Int origin=null
                                 ARG <this>: GET_VAR 'val innerRef: <root>.STRef<kotlin.Int, <root>.box.<anonymous>.<anonymous>.SubregionRegion> declared in <root>.box.<anonymous>.<anonymous>' type=<root>.STRef<kotlin.Int, <root>.box.<anonymous>.<anonymous>.SubregionRegion> origin=null
-                                ARG $context-Region: GET_VAR '$context-Region: <root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion> declared in <root>.box.<anonymous>.<anonymous>' type=<root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion> origin=null
+                                ARG $context-Region: TYPE_OP type=<root>.Region<<root>.box.<anonymous>.<anonymous>.SubregionRegion> origin=IMPLICIT_CAST typeOperand=<root>.Region<<root>.box.<anonymous>.<anonymous>.SubregionRegion>
+                                  GET_VAR '$context-Region: <root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion> declared in <root>.box.<anonymous>.<anonymous>' type=<root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion> origin=null
                               ARG arg1: CONST Int type=kotlin.Int value=100
                           CALL 'public final fun require (value: kotlin.Boolean): kotlin.Unit declared in kotlin' type=kotlin.Unit origin=null
                             ARG value: CALL 'public final fun EQEQ (arg0: kotlin.Any?, arg1: kotlin.Any?): kotlin.Boolean declared in kotlin.internal.ir' type=kotlin.Boolean origin=EQEQ
                               ARG arg0: CALL 'public final fun get ($context-Region: <root>.Region<R of <root>.STRef>): S of <root>.STRef declared in <root>.STRef' type=kotlin.Int origin=null
                                 ARG <this>: GET_VAR 'val ref: <root>.STRef<kotlin.Int, <root>.box.<anonymous>.RegionRegion> declared in <root>.box.<anonymous>' type=<root>.STRef<kotlin.Int, <root>.box.<anonymous>.RegionRegion> origin=null
-                                ARG $context-Region: GET_VAR '$context-Region: <root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion> declared in <root>.box.<anonymous>.<anonymous>' type=<root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion> origin=null
+                                ARG $context-Region: TYPE_OP type=<root>.Region<<root>.box.<anonymous>.<anonymous>.SubregionRegion> origin=IMPLICIT_CAST typeOperand=<root>.Region<<root>.box.<anonymous>.<anonymous>.SubregionRegion>
+                                  GET_VAR '$context-Region: <root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion> declared in <root>.box.<anonymous>.<anonymous>' type=<root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion> origin=null
                               ARG arg1: CONST Int type=kotlin.Int value=42
                           RETURN type=kotlin.Nothing from='local final fun <anonymous> ($context-Region: <root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion>): <root>.STRef<kotlin.String, <root>.box.<anonymous>.RegionRegion> declared in <root>.box.<anonymous>'
                             CALL 'public final fun new <S, R> ($context-Region: <root>.Region<R of <root>.STRef.Companion.new>, init: S of <root>.STRef.Companion.new): <root>.STRef<S of <root>.STRef.Companion.new, R of <root>.STRef.Companion.new> declared in <root>.STRef.Companion' type=<root>.STRef<kotlin.String, <root>.box.<anonymous>.RegionRegion> origin=null
                               TYPE_ARG S: kotlin.String
                               TYPE_ARG R: <root>.box.<anonymous>.RegionRegion
                               ARG <this>: GET_OBJECT 'CLASS OBJECT name:Companion modality:FINAL visibility:public [companion] superTypes:[kotlin.Any]' type=<root>.STRef.Companion
-                              ARG $context-Region: GET_VAR '$context-Region: <root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion> declared in <root>.box.<anonymous>.<anonymous>' type=<root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion> origin=null
+                              ARG $context-Region: TYPE_OP type=<root>.Region<<root>.box.<anonymous>.<anonymous>.SubregionRegion> origin=IMPLICIT_CAST typeOperand=<root>.Region<<root>.box.<anonymous>.<anonymous>.SubregionRegion>
+                                GET_VAR '$context-Region: <root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion> declared in <root>.box.<anonymous>.<anonymous>' type=<root>.Region<@[Regional] <root>.box.<anonymous>.RegionRegion> origin=null
                               ARG init: CONST String type=kotlin.String value="OK"
                 RETURN type=kotlin.Nothing from='local final fun <anonymous> ($context-Region: <root>.Region<@[Regional] kotlin.Any?>): kotlin.String declared in <root>.box'
                   CALL 'public final fun get ($context-Region: <root>.Region<R of <root>.STRef>): S of <root>.STRef declared in <root>.STRef' type=kotlin.String origin=null
                     ARG <this>: GET_VAR 'val refDeclaredInside: <root>.STRef<kotlin.String, <root>.box.<anonymous>.RegionRegion> declared in <root>.box.<anonymous>' type=<root>.STRef<kotlin.String, <root>.box.<anonymous>.RegionRegion> origin=null
-                    ARG $context-Region: GET_VAR '$context-Region: <root>.Region<@[Regional] kotlin.Any?> declared in <root>.box.<anonymous>' type=<root>.Region<@[Regional] kotlin.Any?> origin=null
+                    ARG $context-Region: TYPE_OP type=<root>.Region<<root>.box.<anonymous>.RegionRegion> origin=IMPLICIT_CAST typeOperand=<root>.Region<<root>.box.<anonymous>.RegionRegion>
+                      GET_VAR '$context-Region: <root>.Region<@[Regional] kotlin.Any?> declared in <root>.box.<anonymous>' type=<root>.Region<@[Regional] kotlin.Any?> origin=null
   FUN name:region visibility:public modality:FINAL returnType:R of <root>.region
     TYPE_PARAMETER name:R index:0 variance: superTypes:[kotlin.Any?] reified:false
     VALUE_PARAMETER kind:Regular name:block index:0 type:kotlin.coroutines.SuspendFunction1<<root>.Region<@[Regional] kotlin.Any?>, R of <root>.region>
