@@ -1,13 +1,11 @@
 [versions]
 kotlin = "2.4.0-RC"
-nexus-publish = "2.0.0"
 gradle-plugin-publish = "2.1.1"
 build-config = "6.0.9"
 junit = "4.13.2"
 
 [libraries]
 junit = { module = "junit:junit", version.ref = "junit" }
-nexus-publish = { module = "io.github.gradle-nexus.publish-plugin:io.github.gradle-nexus.publish-plugin.gradle.plugin", version.ref = "nexus-publish" }
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
