@@ -15,8 +15,8 @@ plugins {
 
 nmcpSettings {
   centralPortal {
-    val sonatypeUsername: String by settings
-    val sonatypePassword: String by settings
+    val sonatypeUsername: String? by settings
+    val sonatypePassword: String? by settings
     username = sonatypeUsername
     password = sonatypePassword
   }
