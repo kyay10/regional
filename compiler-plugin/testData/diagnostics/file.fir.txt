@@ -15,8 +15,8 @@ FILE: file.kt
             super<R|kotlin/Any|>()
         }
 
-        private final val closeActions: R|kotlin/collections/MutableList<kotlin/Function0<kotlin/Unit>>| = R|kotlin/collections/mutableListOf|<R|() -> kotlin/Unit|>()
-            private get(): R|kotlin/collections/MutableList<kotlin/Function0<kotlin/Unit>>|
+        private final val closeActions: R|kotlin/collections/MutableList<() -> kotlin/Unit>| = R|kotlin/collections/mutableListOf|<R|() -> kotlin/Unit|>()
+            private get(): R|kotlin/collections/MutableList<() -> kotlin/Unit>|
 
         public open override fun onClose(action: R|() -> kotlin/Unit|): R|kotlin/Unit| {
             this@R|/AutoCloseScopeImpl|.R|/AutoCloseScopeImpl.closeActions|.R|SubstitutionOverride<kotlin/collections/MutableList.add: R|kotlin/Boolean|>|(R|<local>/action|)
@@ -24,7 +24,7 @@ FILE: file.kt
 
         public open override fun close(): R|kotlin/Unit| {
              {
-                lval <iterator>: R|kotlin/collections/MutableIterator<kotlin/Function0<kotlin/Unit>>| = this@R|/AutoCloseScopeImpl|.R|/AutoCloseScopeImpl.closeActions|.R|SubstitutionOverride<kotlin/collections/MutableList.iterator: R|kotlin/collections/MutableIterator<kotlin/Function0<kotlin/Unit>>|>|()
+                lval <iterator>: R|kotlin/collections/MutableIterator<() -> kotlin/Unit>| = this@R|/AutoCloseScopeImpl|.R|/AutoCloseScopeImpl.closeActions|.R|SubstitutionOverride<kotlin/collections/MutableList.iterator: R|kotlin/collections/MutableIterator<() -> kotlin/Unit>|>|()
                 while(R|<local>/<iterator>|.R|SubstitutionOverride<kotlin/collections/MutableIterator.hasNext: R|kotlin/Boolean|>|()) {
                     lval action: R|() -> kotlin/Unit| = R|<local>/<iterator>|.R|SubstitutionOverride<kotlin/collections/MutableIterator.next: R|() -> kotlin/Unit|>|()
                      {
@@ -50,7 +50,7 @@ FILE: file.kt
             super<R|kotlin/Any|>()
         }
 
-        public final inline suspend fun <T> subregion(block: R|@ContextFunctionTypeParams(2) suspend context(Region<@R|io/github/kyay10/regional/Regional|()  R>, AutoCloseScope<@R|io/github/kyay10/regional/Regional|()  kotlin/Nothing>) () -> T|): R|T| {
+        public final inline suspend fun <T> subregion(block: R|suspend context(Region<@R|io/github/kyay10/regional/Regional|()  R>, AutoCloseScope<@R|io/github/kyay10/regional/Regional|()  kotlin/Nothing>) () -> T|): R|T| {
             ^subregion R|/AutoCloseScopeImpl.AutoCloseScopeImpl|<R|R|>().R|kotlin/use|<R|AutoCloseScopeImpl<R>|, R|T|>(<L> = use@fun <anonymous>(it: R|AutoCloseScopeImpl<R>|): R|T| <inline=Inline, kind=EXACTLY_ONCE>  {
                 ^ R|<local>/block|.R|SubstitutionOverride<kotlin/coroutines/SuspendFunction2.invoke: R|T|>|(R|/Region.Region|<R|@R|io/github/kyay10/regional/Regional|()  R|>(), R|<local>/it|)
             }
@@ -62,7 +62,7 @@ FILE: file.kt
                 super<R|kotlin/Any|>()
             }
 
-            public final fun <R> region(block: R|@ContextFunctionTypeParams(2) suspend context(Region<@R|io/github/kyay10/regional/Regional|()  kotlin/Any?>, AutoCloseScope<@R|io/github/kyay10/regional/Regional|()  kotlin/Nothing>) () -> R|): R|R| {
+            public final fun <R> region(block: R|suspend context(Region<@R|io/github/kyay10/regional/Regional|()  kotlin/Any?>, AutoCloseScope<@R|io/github/kyay10/regional/Regional|()  kotlin/Nothing>) () -> R|): R|R| {
                 ^region R|/AutoCloseScopeImpl.AutoCloseScopeImpl|<R|kotlin/Any?|>().R|kotlin/use|<R|AutoCloseScopeImpl<kotlin/Any?>|, R|R|>(<L> = use@fun <anonymous>(it: R|AutoCloseScopeImpl<kotlin/Any?>|): R|R| <inline=Inline, kind=EXACTLY_ONCE>  {
                     (R|<local>/block| as R|(Region<kotlin/Any?>, AutoCloseScopeImpl<kotlin/Any?>, kotlin/coroutines/Continuation<R>) -> R|)
                     ^ R|<local>/block|.R|SubstitutionOverride<kotlin/Function3.invoke: R|R|>|(R|/Region.Region|<R|kotlin/Any?|>(), R|<local>/it|, R|kotlin/coroutines/Continuation|<R|R|>(Q|kotlin/coroutines/EmptyCoroutineContext|, <L> = Continuation@fun <anonymous>(it: R|kotlin/Result<R>|): R|kotlin/Unit| <inline=CrossInline>  {
@@ -76,11 +76,11 @@ FILE: file.kt
         }
 
     }
-    public final fun <R> region(block: R|@ContextFunctionTypeParams(2) suspend context(Region<@R|io/github/kyay10/regional/Regional|()  kotlin/Any?>, AutoCloseScope<@R|io/github/kyay10/regional/Regional|()  kotlin/Nothing>) () -> R|): R|R| {
+    public final fun <R> region(block: R|suspend context(Region<@R|io/github/kyay10/regional/Regional|()  kotlin/Any?>, AutoCloseScope<@R|io/github/kyay10/regional/Regional|()  kotlin/Nothing>) () -> R|): R|R| {
         ^region Q|Region|.R|/Region.Companion.region|<R|R|>(R|<local>/block|)
     }
     context(region: R|Region<R>|)
-    public final suspend fun <R, T> subregion(block: R|@ContextFunctionTypeParams(2) suspend context(Region<@R|io/github/kyay10/regional/Regional|()  R>, AutoCloseScope<@R|io/github/kyay10/regional/Regional|()  kotlin/Nothing>) () -> T|): R|T| {
+    public final suspend fun <R, T> subregion(block: R|suspend context(Region<@R|io/github/kyay10/regional/Regional|()  R>, AutoCloseScope<@R|io/github/kyay10/regional/Regional|()  kotlin/Nothing>) () -> T|): R|T| {
         ^subregion R|<local>/region|.R|SubstitutionOverride</Region.subregion: R|T|>|<R|T|>(R|<local>/block|)
     }
     public final class FileHandle<in R> : R|kotlin/Any| {

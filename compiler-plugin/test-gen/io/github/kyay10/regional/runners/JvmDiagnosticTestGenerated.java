@@ -15,10 +15,14 @@ import java.util.regex.Pattern;
 @TestMetadata("compiler-plugin/testData/diagnostics")
 @TestDataPath("$PROJECT_ROOT")
 public class JvmDiagnosticTestGenerated extends AbstractJvmDiagnosticTest {
+  private void run(String fileName) {
+    runTest("compiler-plugin/testData/diagnostics/" + fileName);
+  }
+
   @Test
   @TestMetadata("ad.kt")
   public void testAd() {
-    runTest("compiler-plugin/testData/diagnostics/ad.kt");
+    run("ad.kt");
   }
 
   @Test
@@ -29,42 +33,42 @@ public class JvmDiagnosticTestGenerated extends AbstractJvmDiagnosticTest {
   @Test
   @TestMetadata("file.kt")
   public void testFile() {
-    runTest("compiler-plugin/testData/diagnostics/file.kt");
+    run("file.kt");
   }
 
   @Test
   @TestMetadata("handlesLambdaParameters.kt")
   public void testHandlesLambdaParameters() {
-    runTest("compiler-plugin/testData/diagnostics/handlesLambdaParameters.kt");
+    run("handlesLambdaParameters.kt");
   }
 
   @Test
   @TestMetadata("inline.kt")
   public void testInline() {
-    runTest("compiler-plugin/testData/diagnostics/inline.kt");
+    run("inline.kt");
   }
 
   @Test
   @TestMetadata("revState.kt")
   public void testRevState() {
-    runTest("compiler-plugin/testData/diagnostics/revState.kt");
+    run("revState.kt");
   }
 
   @Test
   @TestMetadata("simple.kt")
   public void testSimple() {
-    runTest("compiler-plugin/testData/diagnostics/simple.kt");
+    run("simple.kt");
   }
 
   @Test
   @TestMetadata("smartCasted.kt")
   public void testSmartCasted() {
-    runTest("compiler-plugin/testData/diagnostics/smartCasted.kt");
+    run("smartCasted.kt");
   }
 
   @Test
   @TestMetadata("typealias.kt")
   public void testTypealias() {
-    runTest("compiler-plugin/testData/diagnostics/typealias.kt");
+    run("typealias.kt");
   }
 }

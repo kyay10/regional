@@ -4,7 +4,7 @@ FILE: st.kt
             super<R|kotlin/Any|>()
         }
 
-        public final inline suspend fun <T> subregion(block: R|@ContextFunctionTypeParams(1) suspend context(Region<@R|io/github/kyay10/regional/Regional|()  R>) () -> T|): R|T| {
+        public final inline suspend fun <T> subregion(block: R|suspend context(Region<@R|io/github/kyay10/regional/Regional|()  R>) () -> T|): R|T| {
             ^subregion R|<local>/block|.R|SubstitutionOverride<kotlin/coroutines/SuspendFunction1.invoke: R|T|>|(R|/Region.Region|<R|@R|io/github/kyay10/regional/Regional|()  R|>())
         }
 
@@ -13,7 +13,7 @@ FILE: st.kt
                 super<R|kotlin/Any|>()
             }
 
-            public final fun <R> region(block: R|@ContextFunctionTypeParams(1) suspend context(Region<@R|io/github/kyay10/regional/Regional|()  kotlin/Any?>) () -> R|): R|R| {
+            public final fun <R> region(block: R|suspend context(Region<@R|io/github/kyay10/regional/Regional|()  kotlin/Any?>) () -> R|): R|R| {
                 ^region (R|<local>/block|.R|kotlin/coroutines/intrinsics/startCoroutineUninterceptedOrReturn|<R|Region<@R|io/github/kyay10/regional/Regional|()  kotlin/Any?>|, R|R|>(R|/Region.Region|<R|@R|io/github/kyay10/regional/Regional|()  kotlin/Any?|>(), R|kotlin/coroutines/Continuation|<R|R|>(Q|kotlin/coroutines/EmptyCoroutineContext|, <L> = Continuation@fun <anonymous>(it: R|kotlin/Result<R>|): R|kotlin/Unit| <inline=CrossInline>  {
                     ^@Continuation Unit
                 }
@@ -23,11 +23,11 @@ FILE: st.kt
         }
 
     }
-    public final fun <R> region(block: R|@ContextFunctionTypeParams(1) suspend context(Region<@R|io/github/kyay10/regional/Regional|()  kotlin/Any?>) () -> R|): R|R| {
+    public final fun <R> region(block: R|suspend context(Region<@R|io/github/kyay10/regional/Regional|()  kotlin/Any?>) () -> R|): R|R| {
         ^region Q|Region|.R|/Region.Companion.region|<R|R|>(R|<local>/block|)
     }
     context(region: R|Region<R>|)
-    public final suspend fun <R, T> subregion(block: R|@ContextFunctionTypeParams(1) suspend context(Region<@R|io/github/kyay10/regional/Regional|()  R>) () -> T|): R|T| {
+    public final suspend fun <R, T> subregion(block: R|suspend context(Region<@R|io/github/kyay10/regional/Regional|()  R>) () -> T|): R|T| {
         ^subregion R|<local>/region|.R|SubstitutionOverride</Region.subregion: R|T|>|<R|T|>(R|<local>/block|)
     }
     public final class STRef<S, in R> : R|kotlin/Any| {

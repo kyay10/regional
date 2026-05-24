@@ -47,7 +47,6 @@ import org.jetbrains.kotlin.fir.expressions.FirPropertyAccessExpression
 import org.jetbrains.kotlin.fir.expressions.FirSmartCastExpression
 import org.jetbrains.kotlin.fir.expressions.FirStatement
 import org.jetbrains.kotlin.fir.expressions.FirVariableAssignment
-import org.jetbrains.kotlin.fir.expressions.UnresolvedExpressionTypeAccess
 import org.jetbrains.kotlin.fir.expressions.buildResolvedArgumentList
 import org.jetbrains.kotlin.fir.expressions.builder.FirFunctionCallBuilder
 import org.jetbrains.kotlin.fir.expressions.builder.buildArgumentList
@@ -76,6 +75,7 @@ import org.jetbrains.kotlin.fir.resolve.ScopeSession
 import org.jetbrains.kotlin.fir.resolve.calls.ConeSimpleLeafResolutionAtom
 import org.jetbrains.kotlin.fir.resolve.calls.FirCallResolver
 import org.jetbrains.kotlin.fir.resolve.calls.ImplicitExtensionReceiverValue
+import org.jetbrains.kotlin.fir.resolve.calls.ResolutionContext
 import org.jetbrains.kotlin.fir.resolve.calls.candidate.CallInfo
 import org.jetbrains.kotlin.fir.resolve.calls.candidate.Candidate
 import org.jetbrains.kotlin.fir.resolve.calls.candidate.FirNamedReferenceWithCandidate
@@ -90,13 +90,13 @@ import org.jetbrains.kotlin.fir.resolve.toRegularClassSymbol
 import org.jetbrains.kotlin.fir.resolve.transformers.FirSyntheticCallGenerator
 import org.jetbrains.kotlin.fir.resolve.transformers.IntegerLiteralAndOperatorApproximationTransformer
 import org.jetbrains.kotlin.fir.resolve.transformers.ReturnTypeCalculator
+import org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.BodyResolveContext
 import org.jetbrains.kotlin.fir.scopes.FirKotlinScopeProvider
 import org.jetbrains.kotlin.fir.scopes.FirScope
 import org.jetbrains.kotlin.fir.symbols.FirBasedSymbol
 import org.jetbrains.kotlin.fir.symbols.SymbolInternals
 import org.jetbrains.kotlin.fir.symbols.impl.FirAnonymousFunctionSymbol
 import org.jetbrains.kotlin.fir.symbols.impl.FirAnonymousObjectSymbol
-import org.jetbrains.kotlin.fir.symbols.impl.FirCallableSymbol
 import org.jetbrains.kotlin.fir.symbols.impl.FirFunctionSymbol
 import org.jetbrains.kotlin.fir.symbols.impl.FirNamedFunctionSymbol
 import org.jetbrains.kotlin.fir.symbols.impl.FirRegularClassSymbol
@@ -110,6 +110,7 @@ import org.jetbrains.kotlin.fir.types.ConeIntersectionType
 import org.jetbrains.kotlin.fir.types.ConeKotlinType
 import org.jetbrains.kotlin.fir.types.ConeLookupTagBasedType
 import org.jetbrains.kotlin.fir.types.ConeStubType
+import org.jetbrains.kotlin.fir.types.ConeStubTypeForTypeVariableInSubtyping
 import org.jetbrains.kotlin.fir.types.ConeTypeParameterType
 import org.jetbrains.kotlin.fir.types.ConeTypeVariableType
 import org.jetbrains.kotlin.fir.types.FirTypeRef
@@ -239,7 +240,8 @@ class RegionalFunctionTransformer(session: FirSession) : FirFunctionCallRefineme
       callInfo.argumentAtoms,
       symbol.fir,
       null,
-      callInfo.origin == FirFunctionCallOrigin.Operator
+      callInfo.origin == FirFunctionCallOrigin.Operator,
+      lookInContextParameters = false
     )
     val capturedTypeParams = callInfo.containingDeclarations.capturedTypeParams()
     val usedNames = mutableSetOf<String>()
@@ -352,14 +354,8 @@ private fun List<FirDeclaration>.capturedTypeParams() = buildList {
 }
 
 class RegionalFixSmartCastInReceivers(session: FirSession) : FirExpressionResolutionExtension(session), SessionHolder {
+  @OptIn(Candidate.UpdatingCandidateInvariants::class)
   override fun addNewImplicitReceivers(
-    functionCall: FirFunctionCall,
-    sessionHolder: SessionAndScopeSessionHolder,
-    containingCallableSymbol: FirCallableSymbol<*>
-  ) = addNewImplicitReceivers(functionCall, sessionHolder, containingCallableSymbol as FirBasedSymbol<*>)
-
-  @OptIn(UnresolvedExpressionTypeAccess::class, Candidate.UpdatingCandidateInvariants::class)
-  fun addNewImplicitReceivers(
     functionCall: FirFunctionCall,
     sessionHolder: SessionAndScopeSessionHolder,
     containingCallableSymbol: FirBasedSymbol<*>
@@ -592,6 +588,10 @@ private fun String.titleCase() = replaceFirstChar { it.uppercaseChar() }
 
 class FakeBodyResolveComponents(override val session: FirSession, override val scopeSession: ScopeSession) :
   BodyResolveComponents() {
+  override val context: BodyResolveContext
+    get() = throw UnsupportedOperationException("Not implemented")
+  override val resolutionContext: ResolutionContext
+    get() = throw UnsupportedOperationException("Not implemented")
   override val returnTypeCalculator: ReturnTypeCalculator
     get() = throw UnsupportedOperationException("Not implemented")
   override val implicitValueStorage: ImplicitValueStorage

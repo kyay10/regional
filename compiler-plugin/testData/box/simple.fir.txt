@@ -27,7 +27,7 @@ FILE: simple.kt
         public final fun copy(name: R|kotlin/String| = this@R|foo/bar/Scope|.R|foo/bar/Scope.name|): R|foo/bar/Scope<Region>|
 
     }
-    public final fun <R> withPrompt(block: R|@ContextFunctionTypeParams(1) context(foo/bar/Prompt<out @R|io/github/kyay10/regional/Regional|()  kotlin/Any?>) foo/bar/Scope<out @R|io/github/kyay10/regional/Regional|()  kotlin/Any?>.() -> R|): R|R| {
+    public final fun <R> withPrompt(block: R|context(foo/bar/Prompt<out @R|io/github/kyay10/regional/Regional|()  kotlin/Any?>) foo/bar/Scope<out @R|io/github/kyay10/regional/Regional|()  kotlin/Any?>.() -> R|): R|R| {
         ^withPrompt R|<local>/block|.R|SubstitutionOverride<kotlin/Function2.invoke: R|R|>|(R|foo/bar/Prompt.Prompt|<R|kotlin/Any|>(String(O)), R|foo/bar/Scope.Scope|<R|kotlin/Any|>(String(K)))
     }
     context(p: R|foo/bar/Prompt<Region>|, s: R|foo/bar/Scope<Region>|)

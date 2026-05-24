@@ -46,6 +46,7 @@ class RegionGenerator(session: FirSession) : FirDeclarationGenerationExtension(s
       origin = GeneratedRegionKey.origin
       returnTypeRef = owner.defaultType().toFirResolvedTypeRef()
       status = FirResolvedDeclarationStatusImpl(Visibilities.Public, Modality.FINAL, EffectiveVisibility.Public)
+      isLocal = true
       delegatedConstructor = buildDelegatedConstructorCall {
         val singleSupertype = owner.resolvedSuperTypes.single()
         constructedTypeRef = singleSupertype.toFirResolvedTypeRef()

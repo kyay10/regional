@@ -7,7 +7,7 @@ FILE: ad.kt
     }
     public final typealias NewScope<Region> = R|MultishotScope<@R|io/github/kyay10/regional/Regional|()  Region>|
     context(<unused var>: R|MultishotScope<Region>|)
-    public final suspend fun <E, Region> handle(body: R|@ContextFunctionTypeParams(1) suspend context({NewScope<Region>=} MultishotScope<@R|io/github/kyay10/regional/Regional|()  Region>) () -> E|): R|E| {
+    public final suspend fun <E, Region> handle(body: R|suspend context({NewScope<Region>=} MultishotScope<@R|io/github/kyay10/regional/Regional|()  Region>) () -> E|): R|E| {
         ^handle R|kotlin/error|(String(unreachable))
     }
     public abstract interface AD<Region> : R|kotlin/Any| {
