@@ -4,7 +4,7 @@ import kotlin.contracts.ExperimentalContracts
 import kotlin.contracts.contract
 
 @Target(AnnotationTarget.TYPE)
-public annotation class Regional
+public annotation class Regional(val name: String = "Region")
 
 public val insertionPoint: Unit get() = Unit
 

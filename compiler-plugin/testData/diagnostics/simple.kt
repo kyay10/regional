@@ -10,6 +10,6 @@ fun withRegion(block: Region<out @Regional Any?>.() -> Unit) {}
 
 fun test() {
   withRegion {
-    val x: Region<WithRegionRegion> = this
+    val x: Region<region> = this
   }
 }

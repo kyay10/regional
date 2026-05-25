@@ -10,6 +10,6 @@ fun withRegion(block: Region<out @Regional Any?>.() -> Unit) {}
 
 <!NOTHING_TO_INLINE!>inline<!> fun withRegion2() {
   withRegion {
-    val x: Region<<!UNRESOLVED_REFERENCE!>WithRegionRegion<!>> = this
+    val x: Region<<!UNRESOLVED_REFERENCE!>region<!>> = this
   }
 }

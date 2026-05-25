@@ -14,6 +14,6 @@ fun withRegion(block: BlockType) {}
 
 fun test() {
   withRegion {
-    val x: Region<WithRegionRegion> = this@withRegion
+    val x: Region<region> = this@withRegion
   }
 }

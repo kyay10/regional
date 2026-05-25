@@ -11,15 +11,15 @@ FILE: simple.kt
     }
     public final fun test(): R|kotlin/Unit| {
         R|foo/bar/withRegion|(<L> = withRegion@fun R|foo/bar/Region<out @R|io/github/kyay10/regional/Regional|()  kotlin/Any?>|.<anonymous>(): R|kotlin/Unit| <inline=NoInline>  {
-            local abstract class WithRegionRegion : R|kotlin/Any| {
-                public constructor(): R|<local>/WithRegionRegion| {
+            local abstract class region : R|kotlin/Any| {
+                public constructor(): R|<local>/region| {
                     super<R|kotlin/Any|>()
                 }
 
             }
 
-            Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|foo/bar/Region<<local>/WithRegionRegion>|>(this@R|special/anonymous|)
-            lval x: R|foo/bar/Region<<local>/WithRegionRegion>| = this@R|special/anonymous|
+            Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|foo/bar/Region<<local>/region>|>(this@R|special/anonymous|)
+            lval x: R|foo/bar/Region<<local>/region>| = this@R|special/anonymous|
         }
         )
     }

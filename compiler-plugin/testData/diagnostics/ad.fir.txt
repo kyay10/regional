@@ -19,20 +19,20 @@ FILE: ad.kt
     public final suspend fun <Region> backwards(): R|kotlin/Unit| {
         local final suspend fun foo(): R|kotlin/Unit| {
             ^foo context(R|<local>/<unused var>|) R|/handle|<R|kotlin/Unit|, R|Region|>(<L> = context(<unused var>: R|{NewScope<Region>=} MultishotScope<@R|io/github/kyay10/regional/Regional|()  Region>|) handle@fun <anonymous>(): R|kotlin/Unit| <inline=NoInline>  {
-                local abstract class HandleRegion<Outer(Region)> : R|kotlin/Any| {
-                    public constructor(): R|<local>/HandleRegion<Region>| {
+                local abstract class region<Outer(Region)> : R|kotlin/Any| {
+                    public constructor(): R|<local>/region<Region>| {
                         super<R|kotlin/Any|>()
                     }
 
                 }
 
-                Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|{NewScope<Region>=} MultishotScope<<local>/HandleRegion<Region>>|>(R|<local>/<unused var>|)
-                lval res: R|<anonymous><Region>| = object : R|AD<<local>/HandleRegion<Region>>| {
+                Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|{NewScope<Region>=} MultishotScope<<local>/region<Region>>|>(R|<local>/<unused var>|)
+                lval res: R|<anonymous><Region>| = object : R|AD<<local>/region<Region>>| {
                     private constructor(): R|<anonymous><Region>| {
                         super<R|kotlin/Any|>()
                     }
 
-                    context(<unused var>: R|MultishotScope<<local>/HandleRegion<Region>>|)
+                    context(<unused var>: R|MultishotScope<<local>/region<Region>>|)
                     public open override suspend fun foo(): R|kotlin/Unit| {
                     }
 

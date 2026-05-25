@@ -11,7 +11,7 @@ FILE: inline.kt
     }
     public final inline fun withRegion2(): R|kotlin/Unit| {
         R|foo/bar/withRegion|(<L> = withRegion@fun R|foo/bar/Region<out @R|io/github/kyay10/regional/Regional|()  kotlin/Any?>|.<anonymous>(): R|kotlin/Unit| <inline=NoInline>  {
-            lval x: R|foo/bar/Region<ERROR CLASS: Symbol not found for WithRegionRegion>| = this@R|special/anonymous|
+            lval x: R|foo/bar/Region<ERROR CLASS: Symbol not found for region>| = this@R|special/anonymous|
         }
         )
     }

@@ -22,7 +22,7 @@ fun <R> region(block: suspend context(Region<@Regional Any?>) () -> R): R =
   Region.region(block)
 
 context(region: Region<R>)
-suspend fun <R, T> subregion(block: suspend context(Region<@Regional R>) () -> T): T =
+suspend fun <R, T> subregion(block: suspend context(Region<@Regional("subregion") R>) () -> T): T =
   region.subregion(block)
 
 // Trusted Kernel
@@ -52,7 +52,7 @@ fun box(): String = region {
     innerRef.set(100)
     require(innerRef.get() == 100)
     require(ref.get() == 42)
-    STRef.new<_, RegionRegion>("OK")
+    STRef.new<_, region>("OK")
   }
   refDeclaredInside.get()
 }

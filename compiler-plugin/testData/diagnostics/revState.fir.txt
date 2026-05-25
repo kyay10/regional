@@ -22,14 +22,21 @@ FILE: revState.kt
     context(<unused var>: R|foo/bar/MultishotScope<Region>|)
     public final suspend fun <S, R, Region> runRevState(value: R|S|, body: R|suspend context(foo/bar/MultishotScope<@R|io/github/kyay10/regional/Regional|()  Region>) {foo/bar/RevState<S, R, @R|io/github/kyay10/regional/Regional|()  kotlin/Nothing, Region>=} foo/bar/Prompt<kotlin/Pair<suspend context(foo/bar/MultishotScope<Region>) () -> S, R>, @R|io/github/kyay10/regional/Regional|()  kotlin/Nothing, Region>.() -> R|): R|kotlin/Pair<suspend context(foo/bar/MultishotScope<Region>) () -> S, R>| {
         ^runRevState context(R|<local>/<unused var>|) R|foo/bar/newReset|<R|kotlin/Pair<suspend context(foo/bar/MultishotScope<Region>) () -> S, R>|, R|Region|>(<L> = context(<unused var>: R|foo/bar/MultishotScope<@R|io/github/kyay10/regional/Regional|()  Region>|) newReset@fun R|foo/bar/Prompt<kotlin/Pair<suspend context(foo/bar/MultishotScope<Region>) () -> S, R>, @R|io/github/kyay10/regional/Regional|()  kotlin/Nothing, Region>|.<anonymous>(): R|kotlin/Pair<suspend context(foo/bar/MultishotScope<Region>) () -> S, R>| <inline=NoInline>  {
-            local abstract class NewResetRegion<Outer(S), Outer(R), Outer(Region)> : R|kotlin/Any| {
-                public constructor(): R|<local>/NewResetRegion<S, R, Region>| {
+            local abstract class region<Outer(S), Outer(R), Outer(Region)> : R|kotlin/Any| {
+                public constructor(): R|<local>/region<S, R, Region>| {
                     super<R|kotlin/Any|>()
                 }
 
             }
 
-            Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|foo/bar/MultishotScope<<local>/NewResetRegion<S, R, Region>>|>(R|<local>/<unused var>|, Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|foo/bar/Prompt<kotlin/Pair<suspend context(foo/bar/MultishotScope<Region>) () -> S, R>, <local>/NewResetRegion<S, R, Region>, Region>|>(this@R|special/anonymous|))
+            local abstract class region1<Outer(S), Outer(R), Outer(Region)> : R|kotlin/Any| {
+                public constructor(): R|<local>/region1<S, R, Region>| {
+                    super<R|kotlin/Any|>()
+                }
+
+            }
+
+            Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|foo/bar/MultishotScope<<local>/region<S, R, Region>>|>(R|<local>/<unused var>|, Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|foo/bar/Prompt<kotlin/Pair<suspend context(foo/bar/MultishotScope<Region>) () -> S, R>, <local>/region<S, R, Region>, Region>|>(this@R|special/anonymous|))
             lval f: R|suspend context(foo/bar/MultishotScope<Region>) () -> S| = context(<unused var>: R|foo/bar/MultishotScope<Region>|) fun <anonymous>(): R|S| <inline=NoInline>  {
                 ^ R|<local>/value|
             }
@@ -59,17 +66,24 @@ FILE: revState.kt
     }
     public final suspend fun R|foo/bar/MultishotScope<kotlin/Any?>|.test(): R|kotlin/Unit| {
         context(this@R|foo/bar/test|) R|foo/bar/runRevState|<R|foo/bar/CounterState|, R|kotlin/Unit|, R|kotlin/Any?|>(R|foo/bar/CounterState.CounterState|(Int(0)), <L> = context(<unused var>: R|foo/bar/MultishotScope<@R|io/github/kyay10/regional/Regional|()  kotlin/Any?>|) runRevState@fun R|{foo/bar/RevState<foo/bar/CounterState, kotlin/Unit, @R|io/github/kyay10/regional/Regional|()  kotlin/Nothing, kotlin/Any?>=} foo/bar/Prompt<kotlin/Pair<suspend context(foo/bar/MultishotScope<kotlin/Any?>) () -> foo/bar/CounterState, kotlin/Unit>, @R|io/github/kyay10/regional/Regional|()  kotlin/Nothing, kotlin/Any?>|.<anonymous>(): R|kotlin/Unit| <inline=NoInline>  {
-            local abstract class RunRevStateRegion : R|kotlin/Any| {
-                public constructor(): R|<local>/RunRevStateRegion| {
+            local abstract class region : R|kotlin/Any| {
+                public constructor(): R|<local>/region| {
                     super<R|kotlin/Any|>()
                 }
 
             }
 
-            Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|foo/bar/MultishotScope<<local>/RunRevStateRegion>|>(R|<local>/<unused var>|, Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|{foo/bar/RevState<foo/bar/CounterState, kotlin/Unit, @R|io/github/kyay10/regional/Regional|()  kotlin/Nothing, kotlin/Any?>=} foo/bar/Prompt<kotlin/Pair<suspend context(foo/bar/MultishotScope<kotlin/Any?>) () -> foo/bar/CounterState, kotlin/Unit>, <local>/RunRevStateRegion, kotlin/Any?>|>(this@R|special/anonymous|))
-            context(R|<local>/<unused var>|) this@R|special/anonymous|.R|foo/bar/doubleCounter|<R|<local>/RunRevStateRegion|>()
-            context(R|<local>/<unused var>|) this@R|special/anonymous|.R|foo/bar/doubleCounter|<R|<local>/RunRevStateRegion|>()
-            context(R|<local>/<unused var>|) this@R|special/anonymous|.R|foo/bar/incrementCounter|<R|<local>/RunRevStateRegion|>()
+            local abstract class region1 : R|kotlin/Any| {
+                public constructor(): R|<local>/region1| {
+                    super<R|kotlin/Any|>()
+                }
+
+            }
+
+            Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|foo/bar/MultishotScope<<local>/region>|>(R|<local>/<unused var>|, Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|{foo/bar/RevState<foo/bar/CounterState, kotlin/Unit, @R|io/github/kyay10/regional/Regional|()  kotlin/Nothing, kotlin/Any?>=} foo/bar/Prompt<kotlin/Pair<suspend context(foo/bar/MultishotScope<kotlin/Any?>) () -> foo/bar/CounterState, kotlin/Unit>, <local>/region, kotlin/Any?>|>(this@R|special/anonymous|))
+            context(R|<local>/<unused var>|) this@R|special/anonymous|.R|foo/bar/doubleCounter|<R|<local>/region|>()
+            context(R|<local>/<unused var>|) this@R|special/anonymous|.R|foo/bar/doubleCounter|<R|<local>/region|>()
+            context(R|<local>/<unused var>|) this@R|special/anonymous|.R|foo/bar/incrementCounter|<R|<local>/region|>()
         }
         ).R|SubstitutionOverride<kotlin/Pair.first: R|suspend context(foo/bar/MultishotScope<kotlin/Any?>) () -> foo/bar/CounterState|>|.R|SubstitutionOverride<kotlin/coroutines/SuspendFunction1.invoke: R|foo/bar/CounterState|>|(this@R|foo/bar/test|)
     }

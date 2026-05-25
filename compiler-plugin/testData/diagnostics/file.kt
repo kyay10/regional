@@ -55,7 +55,7 @@ fun <R> region(block: suspend context(Region<@Regional Any?>, AutoCloseScope<@Re
   Region.region(block)
 
 context(region: Region<R>)
-suspend fun <R, T> subregion(block: suspend context(Region<@Regional R>, AutoCloseScope<@Regional Nothing>) () -> T): T =
+suspend fun <R, T> subregion(block: suspend context(Region<@Regional("subregion") R>, AutoCloseScope<@Regional("subregion") Nothing>) () -> T): T =
   region.subregion(block)
 
 // Trusted Kernel
@@ -81,7 +81,7 @@ fun <T> example() = region {
     val subfile = Path.of("example2.txt").open()
     println(file.read())
     println(subfile.read())
-    Path.of("example3.txt").open<RegionRegion>()
+    Path.of("example3.txt").open<region>()
   }
   file2.read()
 }

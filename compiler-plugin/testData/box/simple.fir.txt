@@ -36,15 +36,22 @@ FILE: simple.kt
     }
     public final fun box(): R|kotlin/String| {
         ^box R|foo/bar/withPrompt|<R|kotlin/String|>(<L> = context(<unused var>: R|foo/bar/Prompt<out @R|io/github/kyay10/regional/Regional|()  kotlin/Any?>|) withPrompt@fun R|foo/bar/Scope<out @R|io/github/kyay10/regional/Regional|()  kotlin/Any?>|.<anonymous>(): R|kotlin/String| <inline=NoInline>  {
-            local abstract class WithPromptRegion : R|kotlin/Any| {
-                public constructor(): R|<local>/WithPromptRegion| {
+            local abstract class region : R|kotlin/Any| {
+                public constructor(): R|<local>/region| {
                     super<R|kotlin/Any|>()
                 }
 
             }
 
-            Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|foo/bar/Prompt<<local>/WithPromptRegion>|>(R|<local>/<unused var>|, Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|foo/bar/Scope<<local>/WithPromptRegion>|>(this@R|special/anonymous|))
-            ^ context(R|<local>/<unused var>|, this@R|special/anonymous|) R|foo/bar/usePromptInScope|<R|<local>/WithPromptRegion|>()
+            local abstract class region1 : R|kotlin/Any| {
+                public constructor(): R|<local>/region1| {
+                    super<R|kotlin/Any|>()
+                }
+
+            }
+
+            Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|foo/bar/Prompt<<local>/region>|>(R|<local>/<unused var>|, Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|foo/bar/Scope<<local>/region>|>(this@R|special/anonymous|))
+            ^ context(R|<local>/<unused var>|, this@R|special/anonymous|) R|foo/bar/usePromptInScope|<R|<local>/region|>()
         }
         )
     }

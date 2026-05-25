@@ -19,8 +19,8 @@ interface AD<Region> {
 context(_: MultishotScope<Region>)
 suspend fun <Region> backwards() {
   suspend fun foo() = handle {
-    val res = object : AD<HandleRegion> {
-      context(_: MultishotScope<HandleRegion>)
+    val res = object : AD<region> {
+      context(_: MultishotScope<region>)
       override suspend fun foo() {
       }
     }
