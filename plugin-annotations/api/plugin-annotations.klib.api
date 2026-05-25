@@ -1,0 +1,19 @@
+// Klib ABI Dump
+// Targets: [androidNativeArm32, androidNativeArm64, androidNativeX64, androidNativeX86, iosArm64, iosSimulatorArm64, iosX64, js, linuxArm64, linuxX64, macosArm64, mingwX64, tvosArm64, tvosSimulatorArm64, wasmJs, wasmWasi, watchosArm32, watchosArm64, watchosDeviceArm64, watchosSimulatorArm64]
+// Rendering settings:
+// - Signature version: 2
+// - Show manifest properties: true
+// - Show declarations: true
+
+// Library unique name: <io.github.kyay10.regional:plugin-annotations>
+open annotation class io.github.kyay10.regional/Regional : kotlin/Annotation { // io.github.kyay10.regional/Regional|null[0]
+    constructor <init>(kotlin/String = ...) // io.github.kyay10.regional/Regional.<init>|<init>(kotlin.String){}[0]
+
+    final val name // io.github.kyay10.regional/Regional.name|{}name[0]
+        final fun <get-name>(): kotlin/String // io.github.kyay10.regional/Regional.name.<get-name>|<get-name>(){}[0]
+}
+
+final val io.github.kyay10.regional/insertionPoint // io.github.kyay10.regional/insertionPoint|{}insertionPoint[0]
+    final fun <get-insertionPoint>() // io.github.kyay10.regional/insertionPoint.<get-insertionPoint>|<get-insertionPoint>(){}[0]
+
+final fun <#A: kotlin/Any?> io.github.kyay10.regional/assertHasRegion(kotlin/Any?, kotlin/Unit = ...) // io.github.kyay10.regional/assertHasRegion|assertHasRegion(kotlin.Any?;kotlin.Unit){0§<kotlin.Any?>}[0]
