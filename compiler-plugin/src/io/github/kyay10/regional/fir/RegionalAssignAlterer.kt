@@ -29,7 +29,7 @@ import org.jetbrains.kotlin.fir.declarations.FirTypeParameterRefsOwner
 import org.jetbrains.kotlin.fir.declarations.FirVariable
 import org.jetbrains.kotlin.fir.declarations.builder.buildOuterClassTypeParameterRef
 import org.jetbrains.kotlin.fir.declarations.builder.buildRegularClass
-import org.jetbrains.kotlin.fir.declarations.getStringArgument
+import org.jetbrains.kotlin.fir.declarations.findArgumentByName
 import org.jetbrains.kotlin.fir.declarations.impl.FirDeclarationStatusImpl
 import org.jetbrains.kotlin.fir.declarations.origin
 import org.jetbrains.kotlin.fir.declarations.toAnnotationClassId
@@ -41,6 +41,7 @@ import org.jetbrains.kotlin.fir.expressions.FirAnonymousFunctionExpression
 import org.jetbrains.kotlin.fir.expressions.FirExpression
 import org.jetbrains.kotlin.fir.expressions.FirFunctionCall
 import org.jetbrains.kotlin.fir.expressions.FirFunctionCallOrigin
+import org.jetbrains.kotlin.fir.expressions.FirLiteralExpression
 import org.jetbrains.kotlin.fir.expressions.FirPropertyAccessExpression
 import org.jetbrains.kotlin.fir.expressions.FirStatement
 import org.jetbrains.kotlin.fir.expressions.FirVariableAssignment
@@ -117,6 +118,7 @@ private val INSERTION_POINT = Name.identifier("insertionPoint")
 private val INSERT_CLASS_HERE = Name.special("<insert class here>")
 private val INSERT_CASTS_HERE = Name.special("<insert casts here>")
 private val REGIONAL_NAME = Name.identifier("name")
+private val REGIONAL_SUPER_REGION = Name.identifier("superRegion")
 
 data object GeneratedRegionKey : GeneratedDeclarationKey()
 object ClassAnchorElementKey : FirDeclarationDataKey()
@@ -163,6 +165,7 @@ class RegionalAssignAlterer(session: FirSession) : FirAssignExpressionAltererExt
     val regionClassSymbol = rValue.symbol as? FirRegularClassSymbol ?: return null
     return when (lValue.name) {
       INSERT_CLASS_HERE -> regionClassSymbol.fir.apply {
+        if (superTypeRefs.any { !it.coneType.isAnyOrNullableAny }) return@apply
         val name = regionClassSymbol.regionalName ?: return@apply
         val superTypes = buildList {
           for (param in anonFunction.valueParameters + anonFunction.contextParameters) {
@@ -238,15 +241,20 @@ class RegionalFunctionTransformer(session: FirSession) : FirFunctionCallRefineme
     val usedNames = mutableSetOf<String>()
     for ((parameter, argument) in mapping.parameterToCallArgumentMap) {
       val paramType = parameter.returnTypeRef.coneTypeOrNull?.fullyExpandedType() ?: continue
-      val regions = buildSet {
+      val regionToSuper = buildMap {
         paramType.typeArguments.forEach {
           it.type?.fullyExpandedType()?.typeArguments?.forEach { subType ->
             subType.type?.fullyExpandedType()?.customAnnotations?.forEach {
-              if (it.toAnnotationClassId(session) == REGIONAL_CLASS_ID) add(it.regionName)
+              if (it.toAnnotationClassId(session) == REGIONAL_CLASS_ID) {
+                val regionName = it.regionName
+                if (this[regionName] == null)
+                  put(it.regionName, it.getStringArgument(REGIONAL_SUPER_REGION, returnFirstWhenNotFound = false)?.takeIf { it.isNotEmpty() })
+              }
             }
           }
         }
       }
+      val regions = regionToSuper.keys
       if (paramType.isSomeFunctionType(session) && regions.isNotEmpty()) {
         for (subArgument in argument.arguments) {
           val expression = subArgument.expression
@@ -259,11 +267,11 @@ class RegionalFunctionTransformer(session: FirSession) : FirFunctionCallRefineme
               setOf(INSERT_CLASS_HERE, INSERT_CASTS_HERE)
             ) continue
             val regionClasses = regions.associate { regionName ->
-              var regionName = regionName
-              if (regionName in usedNames) regionName += usedNames.size
-              usedNames.add(regionName)
-              val regionClassId = ClassId(CallableId.PACKAGE_FQ_NAME_FOR_LOCAL, FqName(regionName), true)
-              regionName to buildRegularClass {
+              var actualRegionName = regionName
+              if (actualRegionName in usedNames) actualRegionName += usedNames.size
+              usedNames.add(actualRegionName)
+              val regionClassId = ClassId(CallableId.PACKAGE_FQ_NAME_FOR_LOCAL, FqName(actualRegionName), true)
+              actualRegionName to buildRegularClass {
                 // Gives it the same source as the label would in return@someLambda or this@someLambda
                 source = expression.anonymousFunction.label?.source ?: expression.source?.fakeElement(
                   KtFakeSourceElementKind.GeneratedLambdaLabel
@@ -284,6 +292,14 @@ class RegionalFunctionTransformer(session: FirSession) : FirFunctionCallRefineme
                 anchor = callInfo.callSite.source
                 regionalName = regionName
               }
+            }
+            regionClasses.forEach { (regionName, regionClass) ->
+              val superRegion = regionToSuper[regionName] ?: return@forEach
+              val superRegionClass = regionClasses[superRegion] ?: return@forEach
+              regionClass.replaceSuperTypeRefs(listOf(buildResolvedTypeRef {
+                source = regionClass.source
+                coneType = superRegionClass.symbol.regionDefaultType
+              }))
             }
             expression.anonymousFunction.replaceBody(buildBlock {
               source = body.source
@@ -461,8 +477,7 @@ private inline fun FirElement.buildTypeAssertCallBasic(
         val annotation =
           subType.fullyExpandedType().customAnnotations.firstOrNull { it.toAnnotationClassId(c.session) == REGIONAL_CLASS_ID }
             ?: return@withArguments arg
-        val region = classes[annotation.regionName] ?: return@withArguments arg
-        region.constructType(region.typeParameterSymbols.map { it.defaultType }.toTypedArray())
+        classes[annotation.regionName]?.regionDefaultType ?: return@withArguments arg
       }
     }
     variance = Variance.INVARIANT
@@ -470,8 +485,19 @@ private inline fun FirElement.buildTypeAssertCallBasic(
   block()
 }
 
+private val FirRegularClassSymbol.regionDefaultType: ConeClassLikeType
+  get() = this.constructType(typeParameterSymbols.map { it.defaultType }.toTypedArray())
+
 private val FirAnnotation.regionName: String
   get() = getStringArgument(REGIONAL_NAME) ?: "region"
+
+fun FirAnnotation.getStringArgument(name: Name, returnFirstWhenNotFound: Boolean = true): String? = getPrimitiveArgumentValue(name, returnFirstWhenNotFound)
+
+private inline fun <reified T> FirAnnotation.getPrimitiveArgumentValue(name: Name, returnFirstWhenNotFound: Boolean = true): T? {
+  val argument = findArgumentByName(name, returnFirstWhenNotFound) ?: return null
+  val literal = argument as? FirLiteralExpression ?: return null
+  return literal.value as? T
+}
 
 class FakeBodyResolveComponents(override val session: FirSession, override val scopeSession: ScopeSession) :
   BodyResolveComponents() {

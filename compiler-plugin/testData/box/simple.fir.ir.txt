@@ -184,12 +184,12 @@ FILE fqName:foo.bar fileName:/simple.kt
   FUN name:box visibility:public modality:FINAL returnType:kotlin.String
     BLOCK_BODY
       RETURN type=kotlin.Nothing from='public final fun box (): kotlin.String declared in foo.bar'
-        CALL 'public final fun withPrompt <R> (block: @[ExtensionFunctionType] kotlin.Function2<foo.bar.Prompt<out @[Regional(name = <null>)] kotlin.Any?>, foo.bar.Scope<out @[Regional(name = <null>)] kotlin.Any?>, R of foo.bar.withPrompt>): R of foo.bar.withPrompt declared in foo.bar' type=kotlin.String origin=null
+        CALL 'public final fun withPrompt <R> (block: @[ExtensionFunctionType] kotlin.Function2<foo.bar.Prompt<out @[Regional(name = <null>, superRegion = <null>)] kotlin.Any?>, foo.bar.Scope<out @[Regional(name = <null>, superRegion = <null>)] kotlin.Any?>, R of foo.bar.withPrompt>): R of foo.bar.withPrompt declared in foo.bar' type=kotlin.String origin=null
           TYPE_ARG R: kotlin.String
-          ARG block: FUN_EXPR type=@[ExtensionFunctionType] kotlin.Function2<foo.bar.Prompt<out @[Regional(name = <null>)] kotlin.Any?>, foo.bar.Scope<out @[Regional(name = <null>)] kotlin.Any?>, kotlin.String> origin=LAMBDA
+          ARG block: FUN_EXPR type=@[ExtensionFunctionType] kotlin.Function2<foo.bar.Prompt<out @[Regional(name = <null>, superRegion = <null>)] kotlin.Any?>, foo.bar.Scope<out @[Regional(name = <null>, superRegion = <null>)] kotlin.Any?>, kotlin.String> origin=LAMBDA
             FUN LOCAL_FUNCTION_FOR_LAMBDA name:<anonymous> visibility:local modality:FINAL returnType:kotlin.String
-              VALUE_PARAMETER UNDERSCORE_PARAMETER kind:Context name:$context-Prompt index:0 type:foo.bar.Prompt<out @[Regional(name = <null>)] kotlin.Any?>
-              VALUE_PARAMETER kind:ExtensionReceiver name:$this$withPrompt index:1 type:foo.bar.Scope<out @[Regional(name = <null>)] kotlin.Any?>
+              VALUE_PARAMETER UNDERSCORE_PARAMETER kind:Context name:$context-Prompt index:0 type:foo.bar.Prompt<out @[Regional(name = <null>, superRegion = <null>)] kotlin.Any?>
+              VALUE_PARAMETER kind:ExtensionReceiver name:$this$withPrompt index:1 type:foo.bar.Scope<out @[Regional(name = <null>, superRegion = <null>)] kotlin.Any?>
               BLOCK_BODY
                 CLASS GENERATED[io.github.kyay10.regional.fir.GeneratedRegionKey] CLASS name:region modality:ABSTRACT visibility:local superTypes:[kotlin.Any]
                   thisReceiver: VALUE_PARAMETER INSTANCE_RECEIVER kind:DispatchReceiver name:<this> type:foo.bar.box.<anonymous>.region
@@ -212,17 +212,17 @@ FILE fqName:foo.bar fileName:/simple.kt
                       public open fun toString (): kotlin.String declared in kotlin.Any
                 CALL 'public final fun assertHasRegion <T> (value: kotlin.Any?, next: kotlin.Unit): kotlin.Unit declared in io.github.kyay10.regional' type=kotlin.Unit origin=null
                   TYPE_ARG T: foo.bar.Prompt<foo.bar.box.<anonymous>.region>
-                  ARG value: GET_VAR '$context-Prompt: foo.bar.Prompt<out @[Regional(name = <null>)] kotlin.Any?> declared in foo.bar.box.<anonymous>' type=foo.bar.Prompt<out @[Regional(name = <null>)] kotlin.Any?> origin=null
+                  ARG value: GET_VAR '$context-Prompt: foo.bar.Prompt<out @[Regional(name = <null>, superRegion = <null>)] kotlin.Any?> declared in foo.bar.box.<anonymous>' type=foo.bar.Prompt<out @[Regional(name = <null>, superRegion = <null>)] kotlin.Any?> origin=null
                   ARG next: CALL 'public final fun assertHasRegion <T> (value: kotlin.Any?, next: kotlin.Unit): kotlin.Unit declared in io.github.kyay10.regional' type=kotlin.Unit origin=null
                     TYPE_ARG T: foo.bar.Scope<foo.bar.box.<anonymous>.region>
-                    ARG value: GET_VAR '$this$withPrompt: foo.bar.Scope<out @[Regional(name = <null>)] kotlin.Any?> declared in foo.bar.box.<anonymous>' type=foo.bar.Scope<out @[Regional(name = <null>)] kotlin.Any?> origin=null
-                RETURN type=kotlin.Nothing from='local final fun <anonymous> ($context-Prompt: foo.bar.Prompt<out @[Regional(name = <null>)] kotlin.Any?>, $this$withPrompt: foo.bar.Scope<out @[Regional(name = <null>)] kotlin.Any?>): kotlin.String declared in foo.bar.box'
+                    ARG value: GET_VAR '$this$withPrompt: foo.bar.Scope<out @[Regional(name = <null>, superRegion = <null>)] kotlin.Any?> declared in foo.bar.box.<anonymous>' type=foo.bar.Scope<out @[Regional(name = <null>, superRegion = <null>)] kotlin.Any?> origin=null
+                RETURN type=kotlin.Nothing from='local final fun <anonymous> ($context-Prompt: foo.bar.Prompt<out @[Regional(name = <null>, superRegion = <null>)] kotlin.Any?>, $this$withPrompt: foo.bar.Scope<out @[Regional(name = <null>, superRegion = <null>)] kotlin.Any?>): kotlin.String declared in foo.bar.box'
                   CALL 'public final fun usePromptInScope <Region> (p: foo.bar.Prompt<Region of foo.bar.usePromptInScope>, s: foo.bar.Scope<Region of foo.bar.usePromptInScope>): kotlin.String declared in foo.bar' type=kotlin.String origin=null
                     TYPE_ARG Region: foo.bar.box.<anonymous>.region
                     ARG p: TYPE_OP type=foo.bar.Prompt<foo.bar.box.<anonymous>.region> origin=IMPLICIT_CAST typeOperand=foo.bar.Prompt<foo.bar.box.<anonymous>.region>
-                      GET_VAR '$context-Prompt: foo.bar.Prompt<out @[Regional(name = <null>)] kotlin.Any?> declared in foo.bar.box.<anonymous>' type=foo.bar.Prompt<out @[Regional(name = <null>)] kotlin.Any?> origin=null
+                      GET_VAR '$context-Prompt: foo.bar.Prompt<out @[Regional(name = <null>, superRegion = <null>)] kotlin.Any?> declared in foo.bar.box.<anonymous>' type=foo.bar.Prompt<out @[Regional(name = <null>, superRegion = <null>)] kotlin.Any?> origin=null
                     ARG s: TYPE_OP type=foo.bar.Scope<foo.bar.box.<anonymous>.region> origin=IMPLICIT_CAST typeOperand=foo.bar.Scope<foo.bar.box.<anonymous>.region>
-                      GET_VAR '$this$withPrompt: foo.bar.Scope<out @[Regional(name = <null>)] kotlin.Any?> declared in foo.bar.box.<anonymous>' type=foo.bar.Scope<out @[Regional(name = <null>)] kotlin.Any?> origin=IMPLICIT_ARGUMENT
+                      GET_VAR '$this$withPrompt: foo.bar.Scope<out @[Regional(name = <null>, superRegion = <null>)] kotlin.Any?> declared in foo.bar.box.<anonymous>' type=foo.bar.Scope<out @[Regional(name = <null>, superRegion = <null>)] kotlin.Any?> origin=IMPLICIT_ARGUMENT
   FUN name:usePromptInScope visibility:public modality:FINAL returnType:kotlin.String
     TYPE_PARAMETER name:Region index:0 variance: superTypes:[kotlin.Any?] reified:false
     VALUE_PARAMETER kind:Context name:p index:0 type:foo.bar.Prompt<Region of foo.bar.usePromptInScope>
@@ -236,11 +236,11 @@ FILE fqName:foo.bar fileName:/simple.kt
             ARG <this>: GET_VAR 's: foo.bar.Scope<Region of foo.bar.usePromptInScope> declared in foo.bar.usePromptInScope' type=foo.bar.Scope<Region of foo.bar.usePromptInScope> origin=null
   FUN name:withPrompt visibility:public modality:FINAL returnType:R of foo.bar.withPrompt
     TYPE_PARAMETER name:R index:0 variance: superTypes:[kotlin.Any?] reified:false
-    VALUE_PARAMETER kind:Regular name:block index:0 type:@[ExtensionFunctionType] kotlin.Function2<foo.bar.Prompt<out @[Regional(name = <null>)] kotlin.Any?>, foo.bar.Scope<out @[Regional(name = <null>)] kotlin.Any?>, R of foo.bar.withPrompt>
+    VALUE_PARAMETER kind:Regular name:block index:0 type:@[ExtensionFunctionType] kotlin.Function2<foo.bar.Prompt<out @[Regional(name = <null>, superRegion = <null>)] kotlin.Any?>, foo.bar.Scope<out @[Regional(name = <null>, superRegion = <null>)] kotlin.Any?>, R of foo.bar.withPrompt>
     BLOCK_BODY
-      RETURN type=kotlin.Nothing from='public final fun withPrompt <R> (block: @[ExtensionFunctionType] kotlin.Function2<foo.bar.Prompt<out @[Regional(name = <null>)] kotlin.Any?>, foo.bar.Scope<out @[Regional(name = <null>)] kotlin.Any?>, R of foo.bar.withPrompt>): R of foo.bar.withPrompt declared in foo.bar'
+      RETURN type=kotlin.Nothing from='public final fun withPrompt <R> (block: @[ExtensionFunctionType] kotlin.Function2<foo.bar.Prompt<out @[Regional(name = <null>, superRegion = <null>)] kotlin.Any?>, foo.bar.Scope<out @[Regional(name = <null>, superRegion = <null>)] kotlin.Any?>, R of foo.bar.withPrompt>): R of foo.bar.withPrompt declared in foo.bar'
         CALL 'public abstract fun invoke (p1: P1 of kotlin.Function2, p2: P2 of kotlin.Function2): R of kotlin.Function2 declared in kotlin.Function2' type=R of foo.bar.withPrompt origin=INVOKE
-          ARG <this>: GET_VAR 'block: @[ExtensionFunctionType] kotlin.Function2<foo.bar.Prompt<out @[Regional(name = <null>)] kotlin.Any?>, foo.bar.Scope<out @[Regional(name = <null>)] kotlin.Any?>, R of foo.bar.withPrompt> declared in foo.bar.withPrompt' type=@[ExtensionFunctionType] kotlin.Function2<foo.bar.Prompt<out @[Regional(name = <null>)] kotlin.Any?>, foo.bar.Scope<out @[Regional(name = <null>)] kotlin.Any?>, R of foo.bar.withPrompt> origin=VARIABLE_AS_FUNCTION
+          ARG <this>: GET_VAR 'block: @[ExtensionFunctionType] kotlin.Function2<foo.bar.Prompt<out @[Regional(name = <null>, superRegion = <null>)] kotlin.Any?>, foo.bar.Scope<out @[Regional(name = <null>, superRegion = <null>)] kotlin.Any?>, R of foo.bar.withPrompt> declared in foo.bar.withPrompt' type=@[ExtensionFunctionType] kotlin.Function2<foo.bar.Prompt<out @[Regional(name = <null>, superRegion = <null>)] kotlin.Any?>, foo.bar.Scope<out @[Regional(name = <null>, superRegion = <null>)] kotlin.Any?>, R of foo.bar.withPrompt> origin=VARIABLE_AS_FUNCTION
           ARG p1: CONSTRUCTOR_CALL 'public constructor <init> (name: kotlin.String) declared in foo.bar.Prompt' type=foo.bar.Prompt<kotlin.Any> origin=null
             TYPE_ARG (of class) Region: kotlin.Any
             ARG name: CONST String type=kotlin.String value="O"

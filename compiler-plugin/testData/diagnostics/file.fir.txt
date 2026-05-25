@@ -136,13 +136,6 @@ FILE: file.kt
 
                 }
 
-                local abstract class subregion1<Outer(T)> : R|kotlin/Any| {
-                    public constructor(): R|<local>/subregion1<T>| {
-                        super<R|kotlin/Any|>()
-                    }
-
-                }
-
                 Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|AutoCloseScope<<local>/subregion<T>>|>(R|<local>/<unused var>|, Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|Region<<local>/subregion<T>>|>(R|<local>/<unused var>|))
                 lval subfile: R|FileHandle<<local>/subregion<T>>| = context(R|<local>/<unused var>|) Q|java/nio/file/Path|.R|java/nio/file/Path.of*s|(String(example2.txt)).R|/open|<R|<local>/subregion<T>|>()
                 R|kotlin/io/println|(context(R|<local>/<unused var>|) R|<local>/file|.R|SubstitutionOverride</FileHandle.read: R|kotlin/Char|>|())

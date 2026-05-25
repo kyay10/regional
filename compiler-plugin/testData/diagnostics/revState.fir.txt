@@ -66,13 +66,6 @@ FILE: revState.kt
 
             }
 
-            local abstract class region1 : R|kotlin/Any| {
-                public constructor(): R|<local>/region1| {
-                    super<R|kotlin/Any|>()
-                }
-
-            }
-
             Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|foo/bar/MultishotScope<<local>/region>|>(R|<local>/<unused var>|, Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|{foo/bar/RevState<foo/bar/CounterState, kotlin/Unit, @R|io/github/kyay10/regional/Regional|()  kotlin/Nothing, kotlin/Any?>=} foo/bar/Prompt<kotlin/Pair<suspend context(foo/bar/MultishotScope<kotlin/Any?>) () -> foo/bar/CounterState, kotlin/Unit>, <local>/region, kotlin/Any?>|>(this@R|special/anonymous|))
             context(R|<local>/<unused var>|) this@R|special/anonymous|.R|foo/bar/doubleCounter|<R|<local>/region|>()
             context(R|<local>/<unused var>|) this@R|special/anonymous|.R|foo/bar/doubleCounter|<R|<local>/region|>()
