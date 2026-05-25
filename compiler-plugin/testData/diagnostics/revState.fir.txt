@@ -29,13 +29,6 @@ FILE: revState.kt
 
             }
 
-            local abstract class region1<Outer(S), Outer(R), Outer(Region)> : R|kotlin/Any| {
-                public constructor(): R|<local>/region1<S, R, Region>| {
-                    super<R|kotlin/Any|>()
-                }
-
-            }
-
             Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|foo/bar/MultishotScope<<local>/region<S, R, Region>>|>(R|<local>/<unused var>|, Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|foo/bar/Prompt<kotlin/Pair<suspend context(foo/bar/MultishotScope<Region>) () -> S, R>, <local>/region<S, R, Region>, Region>|>(this@R|special/anonymous|))
             lval f: R|suspend context(foo/bar/MultishotScope<Region>) () -> S| = context(<unused var>: R|foo/bar/MultishotScope<Region>|) fun <anonymous>(): R|S| <inline=NoInline>  {
                 ^ R|<local>/value|

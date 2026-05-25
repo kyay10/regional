@@ -28,13 +28,6 @@ FILE: handlesLambdaParameters.kt
 
             }
 
-            local abstract class region1<Outer(R), Outer(Region)> : R|kotlin/Any| {
-                public constructor(): R|<local>/region1<R, Region>| {
-                    super<R|kotlin/Any|>()
-                }
-
-            }
-
             Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|foo/bar/MultishotScope<<local>/region<R, Region>>|>(R|<local>/<unused var>|, Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|foo/bar/Prompt<kotlin/Unit, <local>/region<R, Region>, Region>|>(this@R|special/anonymous|))
             R|<local>/handler|.R|SubstitutionOverride<kotlin/coroutines/SuspendFunction2.invoke: R|kotlin/Unit|>|(R|<local>/<unused var>|, R|<local>/body|.R|SubstitutionOverride<kotlin/coroutines/SuspendFunction2.invoke: R|R|>|(this@R|special/anonymous|, R|<local>/<unused var>|))
         }

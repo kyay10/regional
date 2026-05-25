@@ -210,25 +210,6 @@ FILE fqName:foo.bar fileName:/simple.kt
                     VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
                     overridden:
                       public open fun toString (): kotlin.String declared in kotlin.Any
-                CLASS GENERATED[io.github.kyay10.regional.fir.GeneratedRegionKey] CLASS name:region1 modality:ABSTRACT visibility:local superTypes:[kotlin.Any]
-                  thisReceiver: VALUE_PARAMETER INSTANCE_RECEIVER kind:DispatchReceiver name:<this> type:foo.bar.box.<anonymous>.region1
-                  CONSTRUCTOR GENERATED[io.github.kyay10.regional.fir.GeneratedRegionKey] visibility:public returnType:foo.bar.box.<anonymous>.region1 [primary]
-                    BLOCK_BODY
-                      DELEGATING_CONSTRUCTOR_CALL 'public constructor <init> () declared in kotlin.Any'
-                      INSTANCE_INITIALIZER_CALL classDescriptor='CLASS GENERATED[io.github.kyay10.regional.fir.GeneratedRegionKey] CLASS name:region1 modality:ABSTRACT visibility:local superTypes:[kotlin.Any]' type=kotlin.Unit
-                  FUN FAKE_OVERRIDE name:equals visibility:public modality:OPEN returnType:kotlin.Boolean [fake_override,operator]
-                    VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
-                    VALUE_PARAMETER kind:Regular name:other index:1 type:kotlin.Any?
-                    overridden:
-                      public open fun equals (other: kotlin.Any?): kotlin.Boolean declared in kotlin.Any
-                  FUN FAKE_OVERRIDE name:hashCode visibility:public modality:OPEN returnType:kotlin.Int [fake_override]
-                    VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
-                    overridden:
-                      public open fun hashCode (): kotlin.Int declared in kotlin.Any
-                  FUN FAKE_OVERRIDE name:toString visibility:public modality:OPEN returnType:kotlin.String [fake_override]
-                    VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
-                    overridden:
-                      public open fun toString (): kotlin.String declared in kotlin.Any
                 CALL 'public final fun assertHasRegion <T> (value: kotlin.Any?, next: kotlin.Unit): kotlin.Unit declared in io.github.kyay10.regional' type=kotlin.Unit origin=null
                   TYPE_ARG T: foo.bar.Prompt<foo.bar.box.<anonymous>.region>
                   ARG value: GET_VAR '$context-Prompt: foo.bar.Prompt<out @[Regional(name = <null>)] kotlin.Any?> declared in foo.bar.box.<anonymous>' type=foo.bar.Prompt<out @[Regional(name = <null>)] kotlin.Any?> origin=null

@@ -43,13 +43,6 @@ FILE: simple.kt
 
             }
 
-            local abstract class region1 : R|kotlin/Any| {
-                public constructor(): R|<local>/region1| {
-                    super<R|kotlin/Any|>()
-                }
-
-            }
-
             Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|foo/bar/Prompt<<local>/region>|>(R|<local>/<unused var>|, Q|io/github/kyay10/regional|.R|io/github/kyay10/regional/assertHasRegion|<R|foo/bar/Scope<<local>/region>|>(this@R|special/anonymous|))
             ^ context(R|<local>/<unused var>|, this@R|special/anonymous|) R|foo/bar/usePromptInScope|<R|<local>/region|>()
         }

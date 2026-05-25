@@ -238,7 +238,7 @@ class RegionalFunctionTransformer(session: FirSession) : FirFunctionCallRefineme
     val usedNames = mutableSetOf<String>()
     for ((parameter, argument) in mapping.parameterToCallArgumentMap) {
       val paramType = parameter.returnTypeRef.coneTypeOrNull?.fullyExpandedType() ?: continue
-      val regions = buildList {
+      val regions = buildSet {
         paramType.typeArguments.forEach {
           it.type?.fullyExpandedType()?.typeArguments?.forEach { subType ->
             subType.type?.fullyExpandedType()?.customAnnotations?.forEach {
